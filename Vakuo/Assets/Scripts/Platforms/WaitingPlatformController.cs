@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaitingPlataformController : MonoBehaviour
+public class WaitingPlatformController : MonoBehaviour
 {
     [SerializeField]
     private float _speed;
@@ -13,8 +13,6 @@ public class WaitingPlataformController : MonoBehaviour
     [SerializeField]
     private Vector3 _endPosition;
     
-    private Rigidbody _rigidbody;
-
     private float _startTime;
     private float _length;
     private float _lengthInTime;
@@ -23,8 +21,6 @@ public class WaitingPlataformController : MonoBehaviour
 
     void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-
         _startTime = Time.time;
         _length = Vector3.Distance(_startPosition, _endPosition);
         _lengthInTime = _length / _speed;
@@ -34,6 +30,9 @@ public class WaitingPlataformController : MonoBehaviour
 
     private void LoopMovement()
     {
+        if (_lengthInTime == 0)
+            return;
+
         float timeSpent = (Time.time - _startTime);
         float fracJourney = timeSpent / _totalTime;
 
@@ -59,7 +58,7 @@ public class WaitingPlataformController : MonoBehaviour
             transform.position = posEnd;
 
         float moveFrac = (timeSpent - (floor * _totalTime)) / _lengthInTime;
-        _rigidbody.MovePosition(Vector3.Lerp(posInit, posEnd, moveFrac));
+        transform.position = Vector3.Lerp(posInit, posEnd, moveFrac);
     }
 
     void Update()

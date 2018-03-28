@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LinearPlataformController : MonoBehaviour {
+public class LinearPlatformController : MonoBehaviour {
     private enum MovementType { Invert, Repeat, Destroy };
     [SerializeField]
     private MovementType _type;
