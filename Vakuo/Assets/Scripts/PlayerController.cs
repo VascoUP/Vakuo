@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour {
             }
             else if (_ridingRigidbody != null)
             {
-                //_rigidbody.MovePosition(_ridingRigidbody.transform.position + _ridingObjectOffset);
                 transform.position = _ridingRigidbody.transform.position + _ridingObjectOffset;
             }
         }
