@@ -72,7 +72,6 @@ public class InteractionController : MonoBehaviour
 
         if(_keyState.status == KeyStateMachine.InputStatus.PRESSING && !_channelingRunning)
         {
-            Debug.Log("Start channeling");
             _channelingCoroutine = WaitChanneling();
             StartCoroutine(_channelingCoroutine);
             return;
@@ -83,14 +82,12 @@ public class InteractionController : MonoBehaviour
             // Activate text
             if(!_isActive)
             {
-                Debug.Log("Set active interact");
                 ActivateText("Interact");
             }
 
             // Stop coroutine
             if(_channelingRunning)
             {
-                Debug.Log("Stop channeling");
                 StopChanneling();
             }
         }
@@ -100,9 +97,7 @@ public class InteractionController : MonoBehaviour
     {
         _channelingRunning = true;
         _text.text = "Channeling";
-        Debug.Log("Coroutine");
         yield return new WaitForSeconds(_channelingTime);
-        Debug.Log("End channeling");
         DeactivateText();
         _channelingRunning = false;
     }

@@ -35,7 +35,16 @@ public class AstronautController : MonoBehaviour {
     // Current velocity of the astronaut
     private Vector3 _velocity = Vector3.zero;
     // Indicates if the astronaut is jumping in a frame
-    private bool _isJump = false;
+    private bool _isJumpFrame = false;
+
+    // Wait for a push effect to be over
+    private IEnumerator waitPush;
+    // Indicates if a push effect is taking place
+    private bool _isPushed = false;
+    [SerializeField]
+    private float _pushMinTime = 2f;
+    [SerializeField]
+    private float _clampPushMagnitude = 10f;
 
     // Acceleration downward of the astronaut while in the air
     [SerializeField]
@@ -68,6 +77,39 @@ public class AstronautController : MonoBehaviour {
         _cc = GetComponent<CharacterController>();
 	}
 
+    private bool IsEndPushed()
+    {
+        return (_cc.isGrounded || _ridingPlatform != null);
+    }
+
+    private IEnumerator WaitEndPush(float pushTime)
+    {
+        _isPushed = true;
+        // Wait for minimim cooldown
+        yield return new WaitForSeconds(pushTime);
+        // Wait for push to be over
+        yield return new WaitUntil(IsEndPushed);
+
+        Vector2 clampVector = new Vector2(_velocity.x, _velocity.z);
+        float magnitude = clampVector.magnitude;
+        while (clampVector.magnitude != 0f)
+        {
+            // Calculate clamped vector
+            magnitude -= _clampPushMagnitude * Time.deltaTime;
+            if (magnitude <= 0)
+                magnitude = 0f;
+            clampVector = Vector2.ClampMagnitude(clampVector, magnitude);
+
+            // Set velocity
+            _velocity.x = clampVector.x;
+            _velocity.z = clampVector.y;
+
+            yield return null;
+        }
+
+        _isPushed = false;
+    }
+
     // Checks if the astronaut is touching a platform or not using Raycast
     private void CheckPlatform()
     {
@@ -96,18 +138,32 @@ public class AstronautController : MonoBehaviour {
         }
     }
 
+    public void Push(float pushSpeed, float ySpeed, Vector3 direction)
+    {
+        _isJumpFrame = true;
+        _velocity = new Vector3(pushSpeed * direction.x, ySpeed * direction.y, pushSpeed * direction.z);
+
+        if(_isPushed)
+        {
+            StopCoroutine(waitPush);
+        }
+
+        waitPush = WaitEndPush(_pushMinTime);
+        StartCoroutine(waitPush);
+    }
+
     // Jumps the astronaut up in the air with a given force.
     // Public so it can be called by other scripts
     public void Jump(float speed)
     {
-        _isJump = true;
+        _isJumpFrame = true;
         _velocity.y = speed;
     }
 
     // Updates the boolean isGrounded by checking if the feet are colliding with an object that is ground
     private void UpdateYVelocity()
     {
-        if (!_isJump && (_cc.isGrounded || _ridingPlatform != null))
+        if (!_isJumpFrame && (_cc.isGrounded || _ridingPlatform != null))
         {
             _velocity.y = 0f;
         }
@@ -134,7 +190,7 @@ public class AstronautController : MonoBehaviour {
     // Checks for input and isGrounded and decides if character should jump or not
     private void Jump()
     {
-        if (Input.GetButton("Jump") && (_cc.isGrounded || _ridingPlatform != null) && !_isJump)
+        if (Input.GetButton("Jump") && (_cc.isGrounded || _ridingPlatform != null) && !_isJumpFrame)
         {
             Jump(_jumpSpeed);
         }
@@ -146,19 +202,20 @@ public class AstronautController : MonoBehaviour {
         Vector3 moveVelocity = Vector3.zero;
         Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         
-        if (_cc.isGrounded || _ridingPlatform != null)
+        if(!_isPushed)
         {
-            moveVelocity = transform.TransformDirection(input * _walkSpeed);
+            if (_cc.isGrounded || _ridingPlatform != null)
+            {
+                moveVelocity = transform.TransformDirection(input * _walkSpeed);
+            }
+            else if(_ridingPlatform == null)
+            {
+                // Player will be able to change his velocity mid air but on a smaller scale
+                moveVelocity = transform.TransformDirection(input * _walkSpeed * _midAirControlRatio) + new Vector3(_velocity.x, 0, _velocity.z);
+            }
+
+            _velocity = moveVelocity + Vector3.up * _velocity.y;
         }
-        else if(_ridingPlatform == null)
-        {
-            // Player will be able to change his velocity mid air but on a smaller scale
-            moveVelocity = transform.TransformDirection(input * _walkSpeed * _midAirControlRatio) + new Vector3(_velocity.x, 0, _velocity.z);
-            // Keep move velocity on a grounded magnitude
-            moveVelocity = Vector3.ClampMagnitude(moveVelocity, _jumpMaxSpeed);
-        }
-        
-        _velocity = moveVelocity + Vector3.up * _velocity.y;
         
         if(_ridingPlatform != null)
         {
@@ -180,7 +237,7 @@ public class AstronautController : MonoBehaviour {
             _cc.Move(_velocity * Time.deltaTime);
         }
 
-        _isJump = false;
+        _isJumpFrame = false;
     }
 
     private void Update()

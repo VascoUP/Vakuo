@@ -9,10 +9,8 @@ public class JumperController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Is player");
             AstronautController controller = collision.gameObject.GetComponent<AstronautController>();
             if(controller != null)
             {

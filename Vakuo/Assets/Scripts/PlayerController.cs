@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     private enum MovementState { IDLE, AIRBORN };
@@ -68,7 +66,6 @@ public class PlayerController : MonoBehaviour {
         {
             xdirection += _ridingRigidbody.velocity.x * 0.8f;
             ydirection += _ridingRigidbody.velocity.y * 0.8f;
-            Debug.Log(ydirection);
             zdirection += _ridingRigidbody.velocity.z * 0.8f;
         }
 
