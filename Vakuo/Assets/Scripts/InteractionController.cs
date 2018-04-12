@@ -65,7 +65,7 @@ public class InteractionController : MonoBehaviour
 
         if (frontHasHit)
         {
-            if (frontHit.transform.gameObject.tag == "Interactable")
+            if (frontHit.transform.gameObject.tag == "Interactable" )
             {
                 if (_interactableObject != null && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID())
                 {
