@@ -1,6 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public delegate void EnemyDead(GameObject enemy);
 
 public class EnemyController : MonoBehaviour, IColliderListener {
     [SerializeField]
@@ -10,10 +11,14 @@ public class EnemyController : MonoBehaviour, IColliderListener {
     [SerializeField]
     private int _lifes = 1;
 
+    public EnemyDead onDeath;
+
     private bool _onCooldown = false;
     
     void Start()
     {
+        onDeath += OnDeath;
+
         // Set collider events for Head and Body children
         Collider[] colliders = GetComponentsInChildren<Collider>();
         foreach (Collider collider in colliders)
@@ -26,12 +31,17 @@ public class EnemyController : MonoBehaviour, IColliderListener {
         }
     }
 
+    private void OnDeath(GameObject enemy)
+    {
+        Debug.Log("enemy dead");
+    }
+
     private IEnumerator WaitCooldown()
     {
         yield return new WaitForSeconds(1f);
         _onCooldown = false;
     }
-
+    
     private void OnHeadCollision(AstronautController astronaut)
     {
         astronaut.Jump(_ySpeed);

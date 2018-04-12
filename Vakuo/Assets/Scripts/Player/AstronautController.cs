@@ -181,7 +181,7 @@ public class AstronautController : MonoBehaviour {
         transform.Rotate(0, mouseInput.x, 0);
 
         currentHeadRotation =
-            Mathf.Clamp(currentHeadRotation + mouseInput.y, headMinRotation, headMaxRotation);
+            Mathf.Clamp(currentHeadRotation - mouseInput.y, headMinRotation, headMaxRotation);
 
         _head.localRotation = Quaternion.identity;
         _head.Rotate(Vector3.right, currentHeadRotation);
