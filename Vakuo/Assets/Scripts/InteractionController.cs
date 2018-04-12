@@ -9,6 +9,8 @@ public class InteractionController : MonoBehaviour
     private Transform _feet;
     [SerializeField]
     private float _feetToGround;
+    [SerializeField]
+    private float _frontDistance;
 
     private Transform _interactableObject;
     private bool _isOnTop = true;
@@ -41,15 +43,34 @@ public class InteractionController : MonoBehaviour
 
     private bool CheckInteractable()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(_feet.position, Vector3.down, out hit, _feetToGround))
+        RaycastHit feetHit;
+        bool feetHasHit = Physics.Raycast(_feet.position, Vector3.down, out feetHit, _feetToGround);
+        RaycastHit frontHit;
+        bool frontHasHit = Physics.Raycast(transform.position, transform.forward, out frontHit, _frontDistance);
+        
+        if (feetHasHit)
         {
-            if(hit.transform.gameObject.tag == "Interactable")
+            if(feetHit.transform.gameObject.tag == "Interactable")
             {
-                if(_interactableObject != null && hit.transform.GetInstanceID() != _interactableObject.GetInstanceID())
+                if(_interactableObject != null && 
+                    feetHit.transform.GetInstanceID() != _interactableObject.GetInstanceID() && 
+                    ((frontHasHit && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID()) || !frontHasHit))
                 {
                     StopChanneling();
-                    _interactableObject = hit.transform;
+                    _interactableObject = feetHit.transform;
+                }
+                return true;
+            }
+        }
+
+        if (frontHasHit)
+        {
+            if (frontHit.transform.gameObject.tag == "Interactable")
+            {
+                if (_interactableObject != null && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID())
+                {
+                    StopChanneling();
+                    _interactableObject = frontHit.transform;
                 }
                 return true;
             }

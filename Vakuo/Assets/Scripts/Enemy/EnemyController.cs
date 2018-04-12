@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour, IColliderListener {
@@ -31,7 +30,7 @@ public class EnemyController : MonoBehaviour, IColliderListener {
         yield return new WaitForSeconds(1f);
         _onCooldown = false;
     }
-
+    
     private void OnHeadCollision(AstronautController astronaut)
     {
         astronaut.Jump(_ySpeed);
