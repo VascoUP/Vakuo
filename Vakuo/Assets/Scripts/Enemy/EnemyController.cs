@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+public delegate void EnemyDead(GameObject enemy);
+
 public class EnemyController : MonoBehaviour, IColliderListener {
     [SerializeField]
     private float _ySpeed;
@@ -9,10 +11,14 @@ public class EnemyController : MonoBehaviour, IColliderListener {
     [SerializeField]
     private int _lifes = 1;
 
+    public EnemyDead onDeath;
+
     private bool _onCooldown = false;
     
     void Start()
     {
+        onDeath += OnDeath;
+
         // Set collider events for Head and Body children
         Collider[] colliders = GetComponentsInChildren<Collider>();
         foreach (Collider collider in colliders)
@@ -23,6 +29,11 @@ public class EnemyController : MonoBehaviour, IColliderListener {
                 cl.Initialize(this);
             }
         }
+    }
+
+    private void OnDeath(GameObject enemy)
+    {
+        Debug.Log("enemy dead");
     }
 
     private IEnumerator WaitCooldown()

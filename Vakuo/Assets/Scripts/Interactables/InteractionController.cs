@@ -15,8 +15,6 @@ public class InteractionController : MonoBehaviour
     private Transform _interactableObject;
     private bool _isOnTop = true;
 
-    [SerializeField]
-    private float _channelingTime;
     private IEnumerator _channelingCoroutine;
     private bool _channelingRunning = false;
 
@@ -32,12 +30,12 @@ public class InteractionController : MonoBehaviour
         if (CheckInteractable())
         {
             _isOnTop = true;
-            OnTop();
+            OnArea();
         }
         else if(_isOnTop)
         {
             _isOnTop = false;
-            OnExitTop();
+            OnExitArea();
         }
     }
 
@@ -57,8 +55,8 @@ public class InteractionController : MonoBehaviour
                     ((frontHasHit && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID()) || !frontHasHit))
                 {
                     StopChanneling();
-                    _interactableObject = feetHit.transform;
                 }
+                _interactableObject = feetHit.transform;
                 return true;
             }
         }
@@ -70,8 +68,8 @@ public class InteractionController : MonoBehaviour
                 if (_interactableObject != null && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID())
                 {
                     StopChanneling();
-                    _interactableObject = frontHit.transform;
                 }
+                _interactableObject = frontHit.transform;
                 return true;
             }
         }
@@ -79,7 +77,7 @@ public class InteractionController : MonoBehaviour
         return false;
     }
 
-    private void OnExitTop()
+    private void OnExitArea()
     {
         // Reset state machine if not on top
         _keyState.status = KeyStateMachine.InputStatus.IGNORE;
@@ -87,13 +85,20 @@ public class InteractionController : MonoBehaviour
         StopChanneling();
     }
 
-    private void OnTop()
+    private void OnArea()
     {
         _keyState.Update();
 
         if(_keyState.status == KeyStateMachine.InputStatus.PRESSING && !_channelingRunning)
         {
-            _channelingCoroutine = WaitChanneling();
+            InteractionAction action = _interactableObject.gameObject.GetComponent<InteractionAction>();
+            if(action == null)
+            {
+                _interactableObject = null;
+                return;
+            }
+
+            _channelingCoroutine = WaitChanneling(action.channelingTime);
             StartCoroutine(_channelingCoroutine);
             return;
         }
@@ -114,13 +119,27 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitChanneling()
+    private void OnEndChanneling()
+    {
+        DeactivateText();
+        InteractionAction action = _interactableObject.gameObject.GetComponent<InteractionAction>();
+        if(action != null)
+        {
+            action.OnInteraction();
+        }
+        else
+        {
+            Debug.Log("Action is null");
+        }
+    }
+
+    private IEnumerator WaitChanneling(float channelingTime)
     {
         _channelingRunning = true;
         _text.text = "Channeling";
-        yield return new WaitForSeconds(_channelingTime);
-        DeactivateText();
+        yield return new WaitForSeconds(channelingTime);
         _channelingRunning = false;
+        OnEndChanneling();
     }
 
     private void StopChanneling()

@@ -11,7 +11,16 @@
     public void GetItems()
     {
         _enemyControllers = GetComponentsInChildren<EnemyController>();
+        foreach(EnemyController controller in _enemyControllers)
+        {
+
+        }
     }
+
+    /*public void OnEnemyDeath(GameObject enemy)
+    {
+
+    }*/
 
     public override void EnableItems(bool isEnable)
     {
