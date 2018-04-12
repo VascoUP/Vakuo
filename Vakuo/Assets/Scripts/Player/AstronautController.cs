@@ -1,9 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Controller for the player's game object
 public class AstronautController : MonoBehaviour {
+    // Instance of game manager
+    private GameManager _gameManager;
+    
+    // Delegate funtion that calls right update function according to the current state
+    private UpdateMonoBehavior onUpdate;
+
     // Character controller component of the astronaut game object
     private CharacterController _cc;
     
@@ -73,7 +78,10 @@ public class AstronautController : MonoBehaviour {
     private Vector3 _ridingOffset;
 
     void Start () {
-        Cursor.visible = false;
+        _gameManager = Utils.GetComponentOnGameObject<GameManager>("Game Manager");
+        _gameManager.onEnterState += OnEnterState;
+        _gameManager.onExitState += OnExitState;
+
         _cc = GetComponent<CharacterController>();
 	}
 
@@ -242,10 +250,47 @@ public class AstronautController : MonoBehaviour {
 
     private void Update()
     {
+        if(onUpdate != null)
+            onUpdate();
+    }
+
+    private void UpdateRunning()
+    {
+        Debug.Log("Update running");
         CheckPlatform();
         UpdateYVelocity();
         Aim();
         Jump();
         Move();
+    }
+
+    private void OnEnterState(GameStatus state)
+    {
+        Debug.Log("Enter " + state);
+        switch (state)
+        {
+            case GameStatus.RUNNING:
+                onUpdate += UpdateRunning;
+                break;
+        }
+    }
+
+    private void OnExitState(GameStatus state)
+    {
+        Debug.Log("Exit " + state);
+        switch (state)
+        {
+            case GameStatus.RUNNING:
+                onUpdate -= UpdateRunning;
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _gameManager.onEnterState -= OnEnterState;
+        _gameManager.onExitState -= OnExitState;
+
+        StopAllCoroutines();
     }
 }

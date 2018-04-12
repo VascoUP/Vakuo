@@ -17,11 +17,6 @@
         }
     }
 
-    /*public void OnEnemyDeath(GameObject enemy)
-    {
-
-    }*/
-
     public override void EnableItems(bool isEnable)
     {
         if (_enemyControllers == null)
