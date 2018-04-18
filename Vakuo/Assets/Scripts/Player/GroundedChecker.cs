@@ -6,7 +6,6 @@ public class GroundedChecker : MonoBehaviour {
 
     private EventManager _events;
     private CharacterController _cc;
-    private AstronautController _ac;
 
     private bool _previousFrameGrounded = true;
     private float _highestPoint;
@@ -18,7 +17,6 @@ public class GroundedChecker : MonoBehaviour {
     {
         _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _cc = GetComponent<CharacterController>();
-        _ac = GetComponent<AstronautController>();
     }
 
 	void Update ()
