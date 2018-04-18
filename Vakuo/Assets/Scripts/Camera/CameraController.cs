@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
-{
+{    
+    // Instance of event manager
+    private EventManager _events;
+
     [SerializeField]
     private Transform _target;
     private AstronautController _astronautController;
@@ -12,7 +15,7 @@ public class CameraController : MonoBehaviour
     private float _distance;
     // Used if no astronaut controller is found
     [SerializeField]
-    private float _height; 
+    private float _rotation; 
     [SerializeField]
     private float _minHeight;
     [SerializeField]
@@ -22,7 +25,7 @@ public class CameraController : MonoBehaviour
     private float _damping;
 
     [SerializeField]
-    private Vector3 _targetLookAtOffset;
+    private Vector2 _targetLookOffset;
 
     [SerializeField]
     private float _bumperDistanceCheck;
@@ -31,8 +34,29 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 _bumperRayOffset;
 
+    [SerializeField]
+    private float _shakeDuration;
+    [SerializeField]
+    private float _shakeForceGrounded;
+    [SerializeField]
+    private float _shakeForcePush;
+    [SerializeField]
+    private float _shakeForceAttack;
+    [SerializeField]
+    private float _shakeForceEnemyDeath;
+    private float _shakeForce;
+    private bool _isShaking = false;
+
     private void Start()
     {
+        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
+        //_events.onEnterState += OnEnterState;
+        //_events.onExitState += OnExitState;
+        _events.onPlayerGrounded += OnPlayerGrounded;
+        _events.onPlayerPushed += OnPush;
+        _events.onAttack += OnAttack;
+        _events.onEnemyDeath += OnEnemyDeath;
+
         _astronautController = _target.GetComponent<AstronautController>();
         if(_astronautController != null)
         {
@@ -42,14 +66,69 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    IEnumerator WaitCameraShake()
+    {
+        _isShaking = true;
+        yield return new WaitForSeconds(_shakeDuration);
+        _isShaking = false;
+    }
+
+    private void OnPlayerGrounded()
+    {
+        CameraShake(_shakeForceGrounded);
+    }
+
+    private void OnPush(GameObject enemy)
+    {
+        CameraShake(_shakeForcePush);
+    }
+
+    private void OnAttack()
+    {
+        CameraShake(_shakeForceAttack);
+    }
+
+    private void OnEnemyDeath()
+    {
+        CameraShake(_shakeForceEnemyDeath);
+    }
+
+    private void OnEnterState(GameStatus state)
+    {
+        switch (state)
+        {
+            case GameStatus.CAMERA_SEQUENCE:
+                break;
+        }
+    }
+
+    private void OnExitState(GameStatus state)
+    {
+        switch (state)
+        {
+            case GameStatus.CAMERA_SEQUENCE:
+                break;
+        }
+    }
+
+    public void CameraShake(float force)
+    {
+        if(_isShaking)
+        {
+            StopAllCoroutines();
+        }
+        _shakeForce = force;
+        StartCoroutine(WaitCameraShake());
+    }
+
     private void FollowPlayer()
     {
         if(_astronautController != null)
         {
-            _height = _astronautController.currentHeadRotation * __headToCamRatio + 4;
+            _rotation = -_astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
         }
 
-        Vector3 wantedPosition = _target.TransformPoint(0, _height, -_distance);
+        Vector3 wantedPosition = _target.TransformPoint(0, _rotation, -_distance);
 
         // check to see if there is anything behind the target
         RaycastHit hit;
@@ -69,11 +148,26 @@ public class CameraController : MonoBehaviour
         transform.position = wantedPosition;
         
         transform.LookAt(_target.transform);
-        transform.Rotate(_targetLookAtOffset);
+        transform.Translate(_targetLookOffset.x, _targetLookOffset.y, 0);
+        transform.Rotate(Vector3.up, _rotation);
+    }
+
+    private void ShakeCamera()
+    {
+        transform.localPosition += Random.insideUnitSphere * _shakeForce;
     }
 
     private void LateUpdate()
     {
         FollowPlayer();
+        if(_isShaking)
+        {
+            ShakeCamera();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

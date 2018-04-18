@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // States of the game
-public enum GameStatus { RUNNING, PAUSED, MIMIC };
-
-// Delegate funtion for when the games enters a new state
-public delegate void StateEnter(GameStatus enterState);
-// Delegate funtion for when the games exits a state
-public delegate void StateExit(GameStatus exitState);
-// Delegate funtion that used to call different update funtions
-public delegate void UpdateMonoBehavior();
+public enum GameStatus { RUNNING, PAUSED, MIMIC, CAMERA_SEQUENCE };
 
 public class GameManager : MonoBehaviour {
     private GameStatus _state = GameStatus.RUNNING;
 
-    public StateEnter onEnterState;
-    public StateExit onExitState;
+    private EventManager _events;
 
     // Delegate funtion that calls right update function according to the current state
     private UpdateMonoBehavior onUpdate;
 
     [SerializeField]
-    public GameObject _pauseMenu;
+    private float _cameraSequenceDuration;
+    [SerializeField]
+    private GameObject _pauseMenu;
 
     private void Start()
     {
-        onEnterState += OnEnterState;
-        onExitState += OnExitState;
+        _events = GetComponent<EventManager>();
+
+        _events.onEnterState += OnEnterState;
+        _events.onExitState += OnExitState;
+        _events.onPlayerPushed += OnPlayerPushed;
 
         onUpdate += FirstFrame;
     }
@@ -38,7 +35,7 @@ public class GameManager : MonoBehaviour {
 
     private void FirstFrame()
     {
-        onEnterState(GameStatus.RUNNING);
+        _events.onEnterState(GameStatus.RUNNING);
         onUpdate -= FirstFrame;
     }
 
@@ -58,6 +55,18 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    IEnumerator WaitEndCameraSequence()
+    {
+        yield return new WaitForSecondsRealtime(_cameraSequenceDuration);
+        ChangeState(GameStatus.RUNNING);
+    }
+
+    private void OnPlayerPushed(GameObject enemy)
+    {
+        ChangeState(GameStatus.CAMERA_SEQUENCE);
+        StartCoroutine(WaitEndCameraSequence());
+    }
+
     private void OnEnterState(GameStatus state)
     {
         switch(state)
@@ -75,6 +84,9 @@ public class GameManager : MonoBehaviour {
 
                 Cursor.visible = false;
                 break;
+            case GameStatus.CAMERA_SEQUENCE:
+                Time.timeScale = 0.5f;
+                break;
         }
     }
 
@@ -91,13 +103,16 @@ public class GameManager : MonoBehaviour {
             case GameStatus.RUNNING:
                 onUpdate -= UpdateRunning;
                 break;
+            case GameStatus.CAMERA_SEQUENCE:
+                Time.timeScale = 1f;
+                break;
         }
     }
 
     public void ChangeState(GameStatus nSate)
     {
-        onExitState(_state);
-        onEnterState(nSate);
+        _events.onExitState(_state);
+        _events.onEnterState(nSate);
         _state = nSate;
     }
 
@@ -105,5 +120,10 @@ public class GameManager : MonoBehaviour {
     {
         OnExitState(_state);
         Application.Quit();
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

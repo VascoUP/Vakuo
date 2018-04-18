@@ -3,7 +3,11 @@ using UnityEngine;
 
 public delegate void EnemyDead(GameObject enemy);
 
-public class EnemyController : MonoBehaviour, IColliderListener {
+public class EnemyController : MonoBehaviour, IColliderListener
+{
+    // Instance of event manager
+    private EventManager _events;
+
     [SerializeField]
     private float _ySpeed;
     [SerializeField]
@@ -15,6 +19,8 @@ public class EnemyController : MonoBehaviour, IColliderListener {
     
     void Start()
     {
+        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
+
         // Set collider events for Head and Body children
         Collider[] colliders = GetComponentsInChildren<Collider>();
         foreach (Collider collider in colliders)
@@ -40,8 +46,12 @@ public class EnemyController : MonoBehaviour, IColliderListener {
          _lifes--;
         if(_lifes <= 0)
         {
-            Destroy(gameObject);
+            _events.onEnemyDeath();
             StopAllCoroutines();
+            Destroy(gameObject);
+        } else
+        {
+            _events.onAttack();
         }
     }
 
@@ -54,8 +64,9 @@ public class EnemyController : MonoBehaviour, IColliderListener {
         nDirection.z *= Mathf.Sign(direction.z);
         
         astronaut.Push(_pushSpeed, _ySpeed, new Vector3(direction.x, 1, direction.z));
-
         // Damage astronaut
+
+        _events.onPlayerPushed(gameObject);
     }
 
     public void OnColliderEnter(GameObject source, Collider collider)

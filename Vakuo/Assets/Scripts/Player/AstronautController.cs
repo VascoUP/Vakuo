@@ -3,8 +3,8 @@ using UnityEngine;
 
 // Controller for the player's game object
 public class AstronautController : MonoBehaviour {
-    // Instance of game manager
-    private GameManager _gameManager;
+    // Instance of event manager
+    private EventManager _events;
     
     // Delegate funtion that calls right update function according to the current state
     private UpdateMonoBehavior onUpdate;
@@ -78,9 +78,9 @@ public class AstronautController : MonoBehaviour {
     private Vector3 _ridingOffset;
 
     void Start () {
-        _gameManager = Utils.GetComponentOnGameObject<GameManager>("Game Manager");
-        _gameManager.onEnterState += OnEnterState;
-        _gameManager.onExitState += OnExitState;
+        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
+        _events.onEnterState += OnEnterState;
+        _events.onExitState += OnExitState;
 
         _cc = GetComponent<CharacterController>();
 	}
@@ -256,7 +256,6 @@ public class AstronautController : MonoBehaviour {
 
     private void UpdateRunning()
     {
-        Debug.Log("Update running");
         CheckPlatform();
         UpdateYVelocity();
         Aim();
@@ -266,7 +265,6 @@ public class AstronautController : MonoBehaviour {
 
     private void OnEnterState(GameStatus state)
     {
-        Debug.Log("Enter " + state);
         switch (state)
         {
             case GameStatus.RUNNING:
@@ -277,7 +275,6 @@ public class AstronautController : MonoBehaviour {
 
     private void OnExitState(GameStatus state)
     {
-        Debug.Log("Exit " + state);
         switch (state)
         {
             case GameStatus.RUNNING:
@@ -288,8 +285,8 @@ public class AstronautController : MonoBehaviour {
 
     private void OnDestroy()
     {
-        _gameManager.onEnterState -= OnEnterState;
-        _gameManager.onExitState -= OnExitState;
+        _events.onEnterState -= OnEnterState;
+        _events.onExitState -= OnExitState;
 
         StopAllCoroutines();
     }
