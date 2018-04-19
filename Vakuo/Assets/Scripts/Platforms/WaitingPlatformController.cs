@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class WaitingPlatformController : MonoBehaviour
@@ -18,6 +21,7 @@ public class WaitingPlatformController : MonoBehaviour
     private float _lengthInTime;
     private float _totalTime;
     private float _fracMoveTime;
+    private float _saveTime;
 
     void Start()
     {
@@ -26,6 +30,10 @@ public class WaitingPlatformController : MonoBehaviour
         _lengthInTime = _length / _speed;
         _totalTime = _wait + _lengthInTime;
         _fracMoveTime = _lengthInTime / _totalTime;
+        _saveTime = 0;
+
+        GlobalControl.SaveEvent += Save;
+        GlobalControl.LoadEvent += Load;
     }
 
     private void LoopMovement()
@@ -33,7 +41,7 @@ public class WaitingPlatformController : MonoBehaviour
         if (_lengthInTime == 0)
             return;
 
-        float timeSpent = (Time.time - _startTime);
+        float timeSpent = (Time.time - _saveTime - _startTime);
         float fracJourney = timeSpent / _totalTime;
 
         float floor = Mathf.Floor(fracJourney);
@@ -65,5 +73,36 @@ public class WaitingPlatformController : MonoBehaviour
     {
         LoopMovement();
     }
+
+    private void Save(object sender, EventArgs args)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/waitingPlatformInfo.dat");
+
+        WaitingPlatformData data = new WaitingPlatformData();
+        data.time = Time.time;
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    private void Load(object sender, EventArgs args)
+    {
+        if(File.Exists(Application.persistentDataPath + "/waitingPlatformInfo.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/waitingPlatformInfo.dat", FileMode.Open);
+            WaitingPlatformData data = (WaitingPlatformData)bf.Deserialize(file);
+            file.Close();
+
+            _saveTime = data.time;
+        }
+    }
+}
+
+[Serializable]
+class WaitingPlatformData
+{
+    public float time;
 }
 
