@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 // Controller for the player's game object
@@ -83,6 +86,9 @@ public class AstronautController : MonoBehaviour {
         _events.onExitState += OnExitState;
 
         _cc = GetComponent<CharacterController>();
+
+        GlobalControl.SaveEvent += Save;
+        GlobalControl.LoadEvent += Load;
 	}
 
     private bool IsEndPushed()
@@ -290,4 +296,39 @@ public class AstronautController : MonoBehaviour {
 
         StopAllCoroutines();
     }
+
+    private void Save(object sender, EventArgs args)
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+
+        PlayerData data = new PlayerData();
+        data.positionX = gameObject.transform.position.x;
+        data.positionY = gameObject.transform.position.y;
+        data.positionZ = gameObject.transform.position.z;
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    private void Load(object sender, EventArgs args)
+    {
+        if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+            PlayerData data = (PlayerData)bf.Deserialize(file);
+            file.Close();
+
+            gameObject.transform.position = new Vector3(data.positionX, data.positionY, data.positionZ);
+        }
+    }
+}
+
+[Serializable]
+public class PlayerData
+{
+    public float positionX;
+    public float positionY;
+    public float positionZ;
 }
