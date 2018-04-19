@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private float _cameraSequenceDuration;
     [SerializeField]
+    [Range(0,1)]
+    private float _cameraSequenceSlowScale;
+    [SerializeField]
+    private float _returnToTimeDuration;
+    [SerializeField]
     private GameObject _pauseMenu;
 
     private void Start()
@@ -30,7 +35,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update () {
-        onUpdate();
+        if(onUpdate != null)
+            onUpdate();
 	}
 
     private void FirstFrame()
@@ -58,6 +64,16 @@ public class GameManager : MonoBehaviour {
     IEnumerator WaitEndCameraSequence()
     {
         yield return new WaitForSecondsRealtime(_cameraSequenceDuration);
+        float startScale = Time.timeScale;
+        float duration = 0f;
+        float lerpScale = 1f / _returnToTimeDuration;
+        while (Time.timeScale < 1f)
+        {
+            duration += Time.unscaledDeltaTime;
+            float nextTimeScale = Mathf.Lerp(startScale, 1f, duration * lerpScale);
+            SetTimeScale(nextTimeScale);
+            yield return null;
+        }
         ChangeState(GameStatus.RUNNING);
     }
 
@@ -65,6 +81,12 @@ public class GameManager : MonoBehaviour {
     {
         ChangeState(GameStatus.CAMERA_SEQUENCE);
         StartCoroutine(WaitEndCameraSequence());
+    }
+
+    private void SetTimeScale(float timeScale)
+    {
+        Time.timeScale = timeScale;
+        Time.fixedDeltaTime = 0.02F * Time.timeScale;
     }
 
     private void OnEnterState(GameStatus state)
@@ -85,7 +107,8 @@ public class GameManager : MonoBehaviour {
                 Cursor.visible = false;
                 break;
             case GameStatus.CAMERA_SEQUENCE:
-                Time.timeScale = 0.5f;
+                onUpdate += UpdateRunning;
+                SetTimeScale(_cameraSequenceSlowScale);
                 break;
         }
     }
@@ -104,7 +127,8 @@ public class GameManager : MonoBehaviour {
                 onUpdate -= UpdateRunning;
                 break;
             case GameStatus.CAMERA_SEQUENCE:
-                Time.timeScale = 1f;
+                onUpdate -= UpdateRunning;
+                SetTimeScale(1f);
                 break;
         }
     }

@@ -2223,16 +2223,23 @@ MonoBehaviour:
   _rotation: 2
   _minHeight: 1
   _maxHeight: 4
-  _damping: 10
+  _damping: 5
   _targetLookOffset: {x: 0.5, y: 1}
   _bumperDistanceCheck: 8
   _bumperCameraHeight: 4
   _bumperRayOffset: {x: 0, y: 0, z: 0}
-  _shakeDuration: 0.1
-  _shakeForceGrounded: 0.05
-  _shakeForcePush: 0.15
-  _shakeForceAttack: 0.1
-  _shakeForceEnemyDeath: 0.15
+  _shakeDurationGrounded: 0.2
+  _shakeForceGrounded: 0.1
+  _shakeDurationPush: 0.5
+  _shakeForcePush: 1
+  _shakeDurationAttack: 0.2
+  _shakeForceAttack: 0.2
+  _shakeDurationEnemyDeath: 0.5
+  _shakeForceEnemyDeath: 0.2
+  shakeAmount: 0
+  shakeDuration: 0
+  smooth: 1
+  smoothAmount: 2
 --- !u!81 &672845088
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2265,7 +2272,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 74.5
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -3099,7 +3106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04fc20dd552a5a4c9061dcaeb42e34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraSequenceDuration: 0
+  _cameraSequenceDuration: 0.5
+  _cameraSequenceSlowScale: 0.02
   _pauseMenu: {fileID: 634637577}
 --- !u!4 &968737865
 Transform:
