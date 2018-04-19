@@ -60,14 +60,7 @@ public class AstronautController : MonoBehaviour {
 
     // Speed at which the astronaut turns 
     [SerializeField]
-    [Range(0, 1)]
     private float _aimSpeed;
-    // Max rotation in a frame
-    [SerializeField]
-    private float _aimMaxRotation;
-    [SerializeField]
-    // Lower boudry of rotation in a frame 
-    private float _aimMinRotation;
     // Max rotation of the head
     public float headMaxRotation;
     // Lower boudry of rotation of the head in a frame 
@@ -188,17 +181,16 @@ public class AstronautController : MonoBehaviour {
     // Rotates the player according to mouse input
     private void Aim()
     {
-        Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        Vector2 mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         mouseInput *= _aimSpeed;
-
-        mouseInput.x = Mathf.Clamp(mouseInput.x, _aimMinRotation, _aimMaxRotation);
-        transform.Rotate(0, mouseInput.x, 0);
+        
+        transform.Rotate(Vector3.up * mouseInput.x * Time.deltaTime);
 
         currentHeadRotation =
-            Mathf.Clamp(currentHeadRotation - mouseInput.y, headMinRotation, headMaxRotation);
+            Mathf.Clamp(currentHeadRotation - (mouseInput.y * Time.deltaTime), headMinRotation, headMaxRotation);
 
         _head.localRotation = Quaternion.identity;
-        _head.Rotate(Vector3.right, currentHeadRotation);
+        _head.Rotate(Vector3.right * currentHeadRotation);
     }
 
     // Checks for input and isGrounded and decides if character should jump or not
@@ -274,6 +266,7 @@ public class AstronautController : MonoBehaviour {
         switch (state)
         {
             case GameStatus.RUNNING:
+            case GameStatus.CAMERA_SEQUENCE:
                 onUpdate += UpdateRunning;
                 break;
         }
@@ -284,6 +277,7 @@ public class AstronautController : MonoBehaviour {
         switch (state)
         {
             case GameStatus.RUNNING:
+            case GameStatus.CAMERA_SEQUENCE:
                 onUpdate -= UpdateRunning;
                 break;
         }
