@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class FollowPlayerCamera : MonoBehaviour
 {    
     // Instance of event manager
     private EventManager _events;
@@ -34,23 +34,6 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 _bumperRayOffset;
 
-    [SerializeField]
-    private float _shakeDurationGrounded;
-    [SerializeField]
-    private float _shakeForceGrounded;
-    [SerializeField]
-    private float _shakeDurationPush;
-    [SerializeField]
-    private float _shakeForcePush;
-    [SerializeField]
-    private float _shakeDurationAttack;
-    [SerializeField]
-    private float _shakeForceAttack;
-    [SerializeField]
-    private float _shakeDurationEnemyDeath;
-    [SerializeField]
-    private float _shakeForceEnemyDeath;
-
     private bool _isShaking = false;
 
     public float shakeAmount;//The amount to shake this frame.
@@ -65,58 +48,12 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
-        //_events.onEnterState += OnEnterState;
-        //_events.onExitState += OnExitState;
-        _events.onPlayerGrounded += OnPlayerGrounded;
-        _events.onPlayerPushed += OnPush;
-        _events.onAttack += OnAttack;
-        _events.onEnemyDeath += OnEnemyDeath;
-
         _astronautController = _target.GetComponent<AstronautController>();
         if(_astronautController != null)
         {
             float maxDeltaHead = _astronautController.headMaxRotation - _astronautController.headMinRotation;
             float maxDeltaCam = _maxHeight - _minHeight;
             __headToCamRatio = maxDeltaCam / maxDeltaHead;
-        }
-    }
-
-    private void OnPlayerGrounded()
-    {
-        CameraShake(_shakeForceGrounded, _shakeDurationGrounded);
-    }
-
-    private void OnPush(GameObject enemy)
-    {
-        //CameraShake(_shakeForcePush, _shakeDurationPush);
-    }
-
-    private void OnAttack()
-    {
-        CameraShake(_shakeForceAttack, _shakeDurationAttack);
-    }
-
-    private void OnEnemyDeath()
-    {
-        CameraShake(_shakeForceEnemyDeath, _shakeDurationEnemyDeath);
-    }
-
-    private void OnEnterState(GameStatus state)
-    {
-        switch (state)
-        {
-            case GameStatus.CAMERA_SEQUENCE:
-                break;
-        }
-    }
-
-    private void OnExitState(GameStatus state)
-    {
-        switch (state)
-        {
-            case GameStatus.CAMERA_SEQUENCE:
-                break;
         }
     }
 
@@ -162,12 +99,13 @@ public class CameraController : MonoBehaviour
 
     private void FollowPlayer()
     {
-        if(_astronautController != null)
+        if (_astronautController != null)
         {
-            _rotation = -_astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
+            _rotation = _astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
         }
 
         Vector3 wantedPosition = _target.TransformPoint(0, _rotation, -_distance);
+        Vector3 lookAtPosition = _target.transform.position;
 
         // check to see if there is anything behind the target
         RaycastHit hit;
@@ -187,7 +125,7 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * _damping);
         //transform.position = wantedPosition;
         
-        transform.LookAt(_target.transform);
+        transform.LookAt(lookAtPosition);
         transform.Translate(_targetLookOffset.x, _targetLookOffset.y, 0);
         transform.Rotate(Vector3.up, _rotation);
     }

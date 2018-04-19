@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour, IColliderListener
         astronaut.Push(_pushSpeed, _ySpeed, new Vector3(direction.x, 1, direction.z));
         // Damage astronaut
 
-        _events.onPlayerPushed(gameObject);
+        _events.onPlayerPushed(astronaut.gameObject, gameObject);
     }
 
     public void OnColliderEnter(GameObject source, Collider collider)

@@ -11,13 +11,13 @@ public delegate void UpdateMonoBehavior();
 
 public delegate void GameEvent();
 
-public delegate void ObjectEvent(GameObject gameObject);
+public delegate void ObjectsEvent(GameObject gameObject1, GameObject gameObject2);
 
 public class EventManager : MonoBehaviour {
     public StateEnter onEnterState;
     public StateExit onExitState;
     public GameEvent onPlayerGrounded;
-    public ObjectEvent onPlayerPushed;
+    public ObjectsEvent onPlayerPushed;
     public GameEvent onAttack;
     public GameEvent onEnemyDeath;
 }

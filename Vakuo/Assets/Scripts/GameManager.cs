@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
         ChangeState(GameStatus.RUNNING);
     }
 
-    private void OnPlayerPushed(GameObject enemy)
+    private void OnPlayerPushed(GameObject player, GameObject enemy)
     {
         ChangeState(GameStatus.CAMERA_SEQUENCE);
         StartCoroutine(WaitEndCameraSequence());
