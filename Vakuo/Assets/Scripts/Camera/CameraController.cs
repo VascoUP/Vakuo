@@ -35,17 +35,33 @@ public class CameraController : MonoBehaviour
     private Vector3 _bumperRayOffset;
 
     [SerializeField]
-    private float _shakeDuration;
+    private float _shakeDurationGrounded;
     [SerializeField]
     private float _shakeForceGrounded;
     [SerializeField]
+    private float _shakeDurationPush;
+    [SerializeField]
     private float _shakeForcePush;
+    [SerializeField]
+    private float _shakeDurationAttack;
     [SerializeField]
     private float _shakeForceAttack;
     [SerializeField]
+    private float _shakeDurationEnemyDeath;
+    [SerializeField]
     private float _shakeForceEnemyDeath;
-    private float _shakeForce;
+
     private bool _isShaking = false;
+
+    public float shakeAmount;//The amount to shake this frame.
+    public float shakeDuration;//The duration this frame.
+
+    private float _shakePercentage;//A percentage (0-1) representing the amount of shake to be applied when setting rotation.
+    private float _startAmount;//The initial shake amount (to determine percentage), set when ShakeCamera is called.
+    private float _startDuration;//The initial shake duration, set when ShakeCamera is called.
+    
+    public bool smooth;//Smooth rotation?
+    public float smoothAmount = 5f;//Amount to smooth
 
     private void Start()
     {
@@ -66,31 +82,24 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    IEnumerator WaitCameraShake()
-    {
-        _isShaking = true;
-        yield return new WaitForSeconds(_shakeDuration);
-        _isShaking = false;
-    }
-
     private void OnPlayerGrounded()
     {
-        CameraShake(_shakeForceGrounded);
+        CameraShake(_shakeForceGrounded, _shakeDurationGrounded);
     }
 
     private void OnPush(GameObject enemy)
     {
-        CameraShake(_shakeForcePush);
+        //CameraShake(_shakeForcePush, _shakeDurationPush);
     }
 
     private void OnAttack()
     {
-        CameraShake(_shakeForceAttack);
+        CameraShake(_shakeForceAttack, _shakeDurationAttack);
     }
 
     private void OnEnemyDeath()
     {
-        CameraShake(_shakeForceEnemyDeath);
+        CameraShake(_shakeForceEnemyDeath, _shakeDurationEnemyDeath);
     }
 
     private void OnEnterState(GameStatus state)
@@ -111,14 +120,44 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void CameraShake(float force)
+    IEnumerator Shake()
     {
-        if(_isShaking)
+        _isShaking = true;
+
+        Vector2 startOffset = new Vector3(_targetLookOffset.x, _targetLookOffset.y);
+
+        while (shakeDuration > 0.01f)
         {
-            StopAllCoroutines();
+            _targetLookOffset = startOffset;
+
+            Vector2 rotationAmount = Random.insideUnitCircle * shakeAmount;//A Vector3 to add to the Local Rotation
+
+            _shakePercentage = shakeDuration / _startDuration;//Used to set the amount of shake (% * startAmount).
+
+            shakeAmount = _startAmount * _shakePercentage;//Set the amount of shake (% * startAmount).
+            shakeDuration -= Time.deltaTime;
+
+            if (smooth)
+                _targetLookOffset = Vector3.Lerp(_targetLookOffset, rotationAmount, Time.deltaTime * smoothAmount);
+            else
+                _targetLookOffset += rotationAmount;//Set the local rotation the be the rotation amount.
+
+            yield return null;
         }
-        _shakeForce = force;
-        StartCoroutine(WaitCameraShake());
+        //transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
+        _targetLookOffset = startOffset;
+
+        _isShaking = false;
+    }
+
+    public void CameraShake(float force, float duration)
+    {
+        shakeAmount += force;//Add to the current amount.
+        _startAmount = shakeAmount;//Reset the start amount, to determine percentage.
+        shakeDuration += duration;//Add to the current time.
+        _startDuration = shakeDuration;//Reset the start time.
+
+        if (!_isShaking) StartCoroutine(Shake());//Only call the coroutine if it isn't currently running. Otherwise, just set the variables.
     }
 
     private void FollowPlayer()
@@ -144,26 +183,19 @@ public class CameraController : MonoBehaviour
             wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, Time.deltaTime * _damping);
         }
 
-        //transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.fixedDeltaTime * _damping);
-        transform.position = wantedPosition;
+        transform.Translate(-_targetLookOffset.x, -_targetLookOffset.y, 0);
+        transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * _damping);
+        //transform.position = wantedPosition;
         
         transform.LookAt(_target.transform);
         transform.Translate(_targetLookOffset.x, _targetLookOffset.y, 0);
         transform.Rotate(Vector3.up, _rotation);
     }
-
-    private void ShakeCamera()
-    {
-        transform.localPosition += Random.insideUnitSphere * _shakeForce;
-    }
+    
 
     private void LateUpdate()
     {
         FollowPlayer();
-        if(_isShaking)
-        {
-            ShakeCamera();
-        }
     }
 
     private void OnDestroy()
