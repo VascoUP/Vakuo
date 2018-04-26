@@ -33,7 +33,10 @@ public class AudioManager : MonoBehaviour {
 
     private void PlayerPushed(GameObject obj1, GameObject obj2)
     {
-        AudioSource audioSource = obj2.AddComponent<AudioSource>();
+        AudioSource audioSource = null;
+        if((audioSource = obj2.GetComponent<AudioSource>()) == null)
+            audioSource = obj2.AddComponent<AudioSource>();
+            
         audioSource.clip = playerPushedSound;
         audioSource.Play();
     }
