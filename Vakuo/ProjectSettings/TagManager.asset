@@ -8,6 +8,7 @@ TagManager:
   - Obstructable
   - Platform
   - Interactable
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - Player
   - Platform
-  - 
+  - Trigger
   - 
   - 
   - 

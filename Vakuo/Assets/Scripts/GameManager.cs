@@ -5,10 +5,14 @@ using UnityEngine;
 // States of the game
 public enum GameStatus { RUNNING, PAUSED, MIMIC, CAMERA_SEQUENCE };
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     private GameStatus _state = GameStatus.RUNNING;
 
+    [SerializeField]
     private EventManager _events;
+    [SerializeField]
+    private MimicController _mimic;
 
     // Delegate funtion that calls right update function according to the current state
     private UpdateMonoBehavior onUpdate;
@@ -16,7 +20,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private float _cameraSequenceDuration;
     [SerializeField]
-    [Range(0,1)]
+    [Range(0, 1)]
     private float _cameraSequenceSlowScale;
     [SerializeField]
     private float _returnToTimeDuration;
@@ -25,25 +29,35 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
-        _events = GetComponent<EventManager>();
-
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
         _events.onPlayerPushed += OnPlayerPushed;
 
+        _mimic.enabled = false;
+
         onUpdate += FirstFrame;
     }
 
-    private void Update () {
-        if(onUpdate != null)
+    private void Update()
+    {
+        if (onUpdate != null)
             onUpdate();
-	}
+    }
+
 
     private void FirstFrame()
     {
         _events.onEnterState(GameStatus.RUNNING);
         onUpdate -= FirstFrame;
     }
+
+    private void SetTimeScale(float timeScale)
+    {
+        Time.timeScale = timeScale;
+        Time.fixedDeltaTime = 0.02F * Time.timeScale;
+    }
+
+    #region UpdateMethods
 
     private void UpdateRunning()
     {
@@ -61,6 +75,10 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    #endregion
+
+    #region Camera
+
     IEnumerator WaitEndCameraSequence()
     {
         yield return new WaitForSecondsRealtime(_cameraSequenceDuration);
@@ -77,21 +95,23 @@ public class GameManager : MonoBehaviour {
         ChangeState(GameStatus.RUNNING);
     }
 
+    #endregion
+
+    #region Events
+
     private void OnPlayerPushed(GameObject player, GameObject enemy)
     {
         ChangeState(GameStatus.CAMERA_SEQUENCE);
         StartCoroutine(WaitEndCameraSequence());
     }
 
-    private void SetTimeScale(float timeScale)
-    {
-        Time.timeScale = timeScale;
-        Time.fixedDeltaTime = 0.02F * Time.timeScale;
-    }
+    #endregion
+    
+    #region State
 
     private void OnEnterState(GameStatus state)
     {
-        switch(state)
+        switch (state)
         {
             case GameStatus.PAUSED:
                 onUpdate += UpdatePaused;
@@ -109,6 +129,9 @@ public class GameManager : MonoBehaviour {
             case GameStatus.CAMERA_SEQUENCE:
                 onUpdate += UpdateRunning;
                 SetTimeScale(_cameraSequenceSlowScale);
+                break;
+            case GameStatus.MIMIC:
+                _mimic.enabled = true;
                 break;
         }
     }
@@ -130,6 +153,9 @@ public class GameManager : MonoBehaviour {
                 onUpdate -= UpdateRunning;
                 SetTimeScale(1f);
                 break;
+            case GameStatus.MIMIC:
+                _mimic.enabled = false;
+                break;
         }
     }
 
@@ -139,6 +165,16 @@ public class GameManager : MonoBehaviour {
         _events.onEnterState(nSate);
         _state = nSate;
     }
+
+    public void StartMimic(Transform mimicEmitter)
+    {
+        _mimic._mimicEmitter = mimicEmitter;
+        ChangeState(GameStatus.MIMIC);
+    }
+
+    #endregion
+
+    #region Quit
 
     public void Quit()
     {
@@ -150,4 +186,6 @@ public class GameManager : MonoBehaviour {
     {
         StopAllCoroutines();
     }
+
+    #endregion
 }

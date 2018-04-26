@@ -6,78 +6,55 @@ public class InteractionController : MonoBehaviour
     private KeyStateMachine _keyState;
 
     [SerializeField]
-    private Transform _feet;
+    private float _channelingTime;
     [SerializeField]
-    private float _feetToGround;
-    [SerializeField]
-    private float _frontDistance;
-
-    private Transform _interactableObject;
-    private bool _isOnTop = true;
+    private InteractionAction _action;
 
     private IEnumerator _channelingCoroutine;
     private bool _channelingRunning = false;
+
+    private Transform _target;
 
     [SerializeField]
     private TextMesh _text;
     private bool _isActive = false;
 
+    private bool _isFacingMe = false;
+
     private void Start () {
         _keyState = new KeyStateMachine("Interact");
 	}
-
-    private void FixedUpdate () {
-        if (CheckInteractable())
+    
+    private void Update () {
+        if (_target != null && IsTargetFacingMe())
         {
-            _isOnTop = true;
-            OnArea();
+            _isFacingMe = true;
+            IsTargetInteracting();
         }
-        else if(_isOnTop)
+        else if(_isFacingMe)
         {
-            _isOnTop = false;
-            OnExitArea();
+            _isFacingMe = false;
+            StopChanneling();
         }
     }
 
-    private bool CheckInteractable()
+    private bool IsTargetFacingMe()
     {
-        RaycastHit feetHit;
-        bool feetHasHit = Physics.Raycast(_feet.position, Vector3.down, out feetHit, _feetToGround);
-        RaycastHit frontHit;
-        bool frontHasHit = Physics.Raycast(transform.position, transform.forward, out frontHit, _frontDistance);
-        
-        if (feetHasHit)
+        Ray ray = new Ray(_target.position, _target.TransformDirection(Vector3.forward));
+        RaycastHit[] frontHits = Physics.RaycastAll(ray, 6f);
+        foreach (RaycastHit hit in frontHits)
         {
-            if(feetHit.transform.gameObject.tag == "Interactable")
+            if(hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() || 
+                (hit.transform.parent != null && 
+                hit.transform.parent.gameObject.GetInstanceID() == gameObject.GetInstanceID()))
             {
-                if(_interactableObject != null && 
-                    feetHit.transform.GetInstanceID() != _interactableObject.GetInstanceID() && 
-                    ((frontHasHit && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID()) || !frontHasHit))
-                {
-                    StopChanneling();
-                }
-                _interactableObject = feetHit.transform;
                 return true;
             }
         }
-
-        if (frontHasHit)
-        {
-            if (frontHit.transform.gameObject.tag == "Interactable" )
-            {
-                if (_interactableObject != null && frontHit.transform.GetInstanceID() != _interactableObject.GetInstanceID())
-                {
-                    StopChanneling();
-                }
-                _interactableObject = frontHit.transform;
-                return true;
-            }
-        }
-
         return false;
     }
 
-    private void OnExitArea()
+    private void TargetStoppedInteracting()
     {
         // Reset state machine if not on top
         _keyState.status = KeyStateMachine.InputStatus.IGNORE;
@@ -85,20 +62,13 @@ public class InteractionController : MonoBehaviour
         StopChanneling();
     }
 
-    private void OnArea()
+    private void IsTargetInteracting()
     {
         _keyState.Update();
 
         if(_keyState.status == KeyStateMachine.InputStatus.PRESSING && !_channelingRunning)
         {
-            InteractionAction action = _interactableObject.gameObject.GetComponent<InteractionAction>();
-            if(action == null)
-            {
-                _interactableObject = null;
-                return;
-            }
-
-            _channelingCoroutine = WaitChanneling(action.channelingTime);
+            _channelingCoroutine = WaitChanneling(_channelingTime);
             StartCoroutine(_channelingCoroutine);
             return;
         }
@@ -108,7 +78,7 @@ public class InteractionController : MonoBehaviour
             // Activate text
             if(!_isActive)
             {
-                ActivateText("Interact");
+                ActivateText("E");
             }
 
             // Stop coroutine
@@ -122,21 +92,13 @@ public class InteractionController : MonoBehaviour
     private void OnEndChanneling()
     {
         DeactivateText();
-        InteractionAction action = _interactableObject.gameObject.GetComponent<InteractionAction>();
-        if(action != null)
-        {
-            action.OnInteraction();
-        }
-        else
-        {
-            Debug.Log("Action is null");
-        }
+        _action.OnInteraction();
     }
 
     private IEnumerator WaitChanneling(float channelingTime)
     {
         _channelingRunning = true;
-        _text.text = "Channeling";
+        _text.text = "Pressing";
         yield return new WaitForSeconds(channelingTime);
         _channelingRunning = false;
         OnEndChanneling();
@@ -165,6 +127,26 @@ public class InteractionController : MonoBehaviour
     {
         _isActive = true;
         _text.gameObject.SetActive(true);
-        _text.text = "Interact";
+        _text.text = text;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && 
+            (_target == null || 
+            _target.GetInstanceID() != other.transform.GetInstanceID()))
+        {
+            _target = other.transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.gameObject.tag == "Player")
+        {
+            StopChanneling();
+            TargetStoppedInteracting();
+            _target = null;
+        }
     }
 }
