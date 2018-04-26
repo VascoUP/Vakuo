@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class AIController : MonoBehaviour
+public class AttackPlayer : MonoBehaviour
 {
     public Transform Player;
-    int MoveSpeed = 4;
-    int MaxDist = 10;
-    int MinDist = 5;
+    public int MoveSpeed = 4;
+    public int MaxDist = 10;
+    public int MinDist = 5;
+    public float waitTime = 0.5f;
 
     void Start()
     {
@@ -24,8 +25,16 @@ public class AIController : MonoBehaviour
 
             if (Vector3.Distance(transform.position, Player.position) <= MaxDist)
             {
-                //Here Call any function U want Like Shoot at here or something
+                //TODO write attack thingy here
+
+                //waitToAttack() mas vou ter de fazer uma maquina de estados ANDAR ESPERAR ATACAR
+
             }
         }
+    }
+
+    public IEnumerator WaitToAttack()
+    {
+        yield return new WaitForSeconds(waitTime);
     }
 }
