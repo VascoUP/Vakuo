@@ -42,7 +42,7 @@ public class CameraManager : MonoBehaviour {
     [SerializeField]
     private float _shakeForceEnemyDeath;
 
-    void Start () {
+    private void Start () {
         _followPlayer = GetComponent<FollowPlayerCamera>();
         _cinematicCamera = GetComponent<CinematicCamera>();
 
@@ -59,6 +59,14 @@ public class CameraManager : MonoBehaviour {
 
         _cinematicCamera.enabled = false;
         _followPlayer.enabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        if(_emptyDesiredPosition != null)
+            Destroy(_emptyDesiredPosition);
+        if (_emptyLookAtObj != null)
+            Destroy(_emptyLookAtObj);
     }
 
     private IEnumerator WaitEndCameraSequence()

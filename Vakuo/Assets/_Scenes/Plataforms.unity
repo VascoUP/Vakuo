@@ -3706,7 +3706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f680e884f11ddec49880bee23d08dc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _channelingTime: 2
+  _channelingTime: 1
   _action: {fileID: 1068630851}
   _text: {fileID: 62246099}
 --- !u!4 &1068630850
