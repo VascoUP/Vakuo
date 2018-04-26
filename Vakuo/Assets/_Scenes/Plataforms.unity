@@ -2290,6 +2290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resumeButton: {fileID: 1572924368}
   exitButton: {fileID: 358267823}
+  saveButton: {fileID: 0}
+  loadButton: {fileID: 0}
 --- !u!1 &642644074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,7 +4964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1498908499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5001,6 +5003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48152b21cb73dc4199fb7f7d52f74ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityInventory: {fileID: 0}
+  slotPanel: {fileID: 0}
+  slotPrefab: {fileID: 1830638234780960, guid: 4c0d84b721c843a45aa34eec9fb1d3c9, type: 2}
 --- !u!114 &1498908501
 MonoBehaviour:
   m_ObjectHideFlags: 0
