@@ -258,7 +258,7 @@ public class MimicController : MonoBehaviour {
     private void SpawnVisualClue(int index)
     {
         GameObject spawnedObj = Instantiate(_visualSoundPrefabs[index], _mimicEmitter);
-        spawnedObj.transform.Translate(Vector3.right * 2f + Vector3.up);
+        spawnedObj.transform.Translate(Vector3.left * 2f + Vector3.up);
     }
 
 
