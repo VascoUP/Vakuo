@@ -6,26 +6,23 @@ public class FollowPlayerCamera : MonoBehaviour
 {    
     // Instance of event manager
     private EventManager _events;
-
-    [SerializeField]
-    private Transform _target;
+    
+    public Transform target;
     private AstronautController _astronautController;
 
     [SerializeField]
     private float _distance;
-    // Used if no astronaut controller is found
-    [SerializeField]
-    private float _rotation; 
     [SerializeField]
     private float _minHeight;
     [SerializeField]
     private float _maxHeight;
     private float __headToCamRatio;
     [SerializeField]
-    private float _damping;
+    private float _positionDamping;
+    
+    public float rotation;
 
-    [SerializeField]
-    private Vector2 _targetLookOffset;
+    public Vector2 targetLookOffset;
 
     [SerializeField]
     private float _bumperDistanceCheck;
@@ -48,7 +45,7 @@ public class FollowPlayerCamera : MonoBehaviour
 
     private void Start()
     {
-        _astronautController = _target.GetComponent<AstronautController>();
+        _astronautController = target.GetComponent<AstronautController>();
         if(_astronautController != null)
         {
             float maxDeltaHead = _astronautController.headMaxRotation - _astronautController.headMinRotation;
@@ -61,11 +58,11 @@ public class FollowPlayerCamera : MonoBehaviour
     {
         _isShaking = true;
 
-        Vector2 startOffset = new Vector3(_targetLookOffset.x, _targetLookOffset.y);
+        Vector2 startOffset = new Vector3(targetLookOffset.x, targetLookOffset.y);
 
         while (shakeDuration > 0.01f)
         {
-            _targetLookOffset = startOffset;
+            targetLookOffset = startOffset;
 
             Vector2 rotationAmount = Random.insideUnitCircle * shakeAmount;//A Vector3 to add to the Local Rotation
 
@@ -75,14 +72,14 @@ public class FollowPlayerCamera : MonoBehaviour
             shakeDuration -= Time.deltaTime;
 
             if (smooth)
-                _targetLookOffset = Vector3.Lerp(_targetLookOffset, rotationAmount, Time.deltaTime * smoothAmount);
+                targetLookOffset = Vector3.Lerp(targetLookOffset, rotationAmount, Time.deltaTime * smoothAmount);
             else
-                _targetLookOffset += rotationAmount;//Set the local rotation the be the rotation amount.
+                targetLookOffset += rotationAmount;//Set the local rotation the be the rotation amount.
 
             yield return null;
         }
         //transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
-        _targetLookOffset = startOffset;
+        targetLookOffset = startOffset;
 
         _isShaking = false;
     }
@@ -101,33 +98,33 @@ public class FollowPlayerCamera : MonoBehaviour
     {
         if (_astronautController != null)
         {
-            _rotation = _astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
+            rotation = _astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
         }
 
-        Vector3 wantedPosition = _target.TransformPoint(0, _rotation, -_distance);
-        Vector3 lookAtPosition = _target.transform.position;
+        Vector3 wantedPosition = target.TransformPoint(0, rotation, -_distance);
+        Vector3 lookAtPosition = target.transform.position;
 
         // check to see if there is anything behind the target
         RaycastHit hit;
-        Vector3 back = _target.transform.TransformDirection(-1 * Vector3.forward);
+        Vector3 back = target.transform.TransformDirection(-1 * Vector3.forward);
 
         // cast the bumper ray out from rear and check to see if there is anything behind
-        if (Physics.Raycast(_target.TransformPoint(_bumperRayOffset), back, out hit, _bumperDistanceCheck)
-            && hit.transform != _target) // ignore ray-casts that hit the user. DR
+        if (Physics.Raycast(target.TransformPoint(_bumperRayOffset), back, out hit, _bumperDistanceCheck, LayerMask.NameToLayer("Trigger"))
+            && hit.transform != target) // ignore ray-casts that hit the user. DR
         {
             // clamp wanted position to hit position
             wantedPosition.x = hit.point.x;
             wantedPosition.z = hit.point.z;
-            wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, Time.deltaTime * _damping);
+            wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, _positionDamping * Time.deltaTime);
         }
 
-        transform.Translate(-_targetLookOffset.x, -_targetLookOffset.y, 0);
-        transform.position = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * _damping);
-        //transform.position = wantedPosition;
-        
+        transform.Translate(-targetLookOffset.x, -targetLookOffset.y, 0);
+        transform.position = Vector3.Lerp(transform.position, wantedPosition, _positionDamping * Time.deltaTime);
+
         transform.LookAt(lookAtPosition);
-        transform.Translate(_targetLookOffset.x, _targetLookOffset.y, 0);
-        transform.Rotate(Vector3.up, _rotation);
+        
+        transform.Translate(targetLookOffset.x, targetLookOffset.y, 0);
+        transform.Rotate(Vector3.up, rotation);
     }
     
 

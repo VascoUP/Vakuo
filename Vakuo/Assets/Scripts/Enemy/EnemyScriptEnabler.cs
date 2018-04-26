@@ -11,10 +11,6 @@
     public void GetItems()
     {
         _enemyControllers = GetComponentsInChildren<EnemyController>();
-        foreach(EnemyController controller in _enemyControllers)
-        {
-
-        }
     }
 
     public override void EnableItems(bool isEnable)
@@ -23,7 +19,8 @@
             GetItems();
         foreach(EnemyController controller in _enemyControllers)
         {
-            controller.enabled = isEnable;
+            if(controller != null)
+                controller.enabled = isEnable;
         }
     }
 }
