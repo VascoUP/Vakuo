@@ -35,22 +35,6 @@ public class InventoryController : MonoBehaviour {
             Debug.Log("Double clicked: " + itemSlot.inventoryItemReference.Name);
         }
     }
-    // Method for handling dragging events of the ItemSlot component
-    private void OnMoveItemBetweenSlots(ItemSlot from, ItemSlot to)
-    {
-        int fromSlot = from.slotNumber;
-        int toSlot = to.slotNumber;
-        // Calling the basic container static method to handle the movement
-        BasicContainer.MoveItemsBetweenSlots(fromSlot, toSlot, from.inventoryReference.mainContainer, to.inventoryReference.mainContainer);
-    }
-    // Method for handling dropping item outside the inventory
-    private void OnDropItemOutside(ItemSlot itemSlot)
-    {
-        if (itemSlot.inventoryReference != null && itemSlot.inventoryItemReference != null)
-        {
-            Debug.Log("Drop item outside inventory: " + itemSlot.inventoryItemReference.Name);
-        }
-    }
     // This method applies a BasicItem entry from a container to an ItemSlot element of the ContainerWindow
     // Setting up all the game objects, texts, icons, etc, and its events.
     private void ApplyInventoryItemToSlot(ItemSlot itemSlot, BasicItem inventoryItem)
@@ -76,8 +60,6 @@ public class InventoryController : MonoBehaviour {
         }
         // Add listeners to slot events
         itemSlot.OnDoubleClickItem.AddListener(OnDoubleClickItem);
-        itemSlot.OnDropFromSlotToSlot.AddListener(OnMoveItemBetweenSlots);
-        itemSlot.OnDropItemOutside.AddListener(OnDropItemOutside);
     }
     // This method empties the slot of all references, events, and hides its unneeded game objects like amount text, icon etc.
     private void EmptySlot(ItemSlot itemSlot)
@@ -141,26 +123,31 @@ public class InventoryController : MonoBehaviour {
     void AddSlots()
     {
         Vector3 lastVector = new Vector3();
-        lastVector.x = -400;
-        lastVector.y = 100;
+        lastVector.x = -150;
+        lastVector.y = 50;
         lastVector.z = 0;
 
         for (int i = 0; i < entityInventory.mainContainer.slotAmount; i++)
         {
             Vector3 vector = new Vector3();
-            if(i == 4)
+            if (i == 0)
             {
-                vector.x = -230;
-                vector.y = lastVector.y - 200;
+                vector.x = lastVector.x;
+                vector.y = lastVector.y;
+            }
+            else if(i != 4)
+            {
+                vector.x = lastVector.x + 100;
+                vector.y = lastVector.y;
             }
             else
             {
-                vector.x = lastVector.x + 170;
-                vector.y = lastVector.y;
+                vector.x = -150;
+                vector.y = lastVector.y - 100;
             }
             vector.z = 0;
 
-            Debug.Log(vector);
+            Debug.Log(i + " " + vector);
             // Instantiate all the slots and set their slot number inside the ItemSlot class
             RectTransform rt = slotPrefab.GetComponent<RectTransform>();
             rt.anchoredPosition3D = vector;

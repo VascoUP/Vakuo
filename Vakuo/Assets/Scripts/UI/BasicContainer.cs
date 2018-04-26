@@ -72,33 +72,6 @@ namespace Assets.Scripts.UI
             item.OnNameChange.AddListener(delegate { OnInventoryChange.Invoke(); });
             item.OnGraphicChange.AddListener(delegate { OnInventoryChange.Invoke(); });
         }
-        // A method to move item between two slots of two containers
-        public static void MoveItemsBetweenSlots(int fromSlot, int toSlot, BasicContainer fromInventory, BasicContainer toInventory)
-        {
-            if (fromSlot >= fromInventory.slotAmount || toSlot >= toInventory.slotAmount || fromSlot < 0 || toSlot < 0) return; // make sure the slot number is ok
-            BasicItem fromItem = fromInventory.GetItemOfSlotIndex(fromSlot); // get the references to the item being dragged
-            BasicItem toItem = toInventory.GetItemOfSlotIndex(toSlot); // get the reference to the item in the target slot
-            if (fromItem == null) return; // if there is no item in the start slot, do nothing
-            if (toItem == null) // if the movement is between an item and an empty slot
-            {
-                fromInventory.ClearItemOfSlot(fromSlot); // Clears the inventory slot the item was dragged from
-                if (toInventory.items.ContainsKey(toSlot)) // if the target container has an item in the target slot, overwrite the reference
-                {
-                    toInventory.items[toSlot] = fromItem;
-                }
-                else // if it doesnt have an item in the target slot, add a new dictionary entry
-                {
-                    toInventory.items.Add(toSlot, fromItem);
-                }
-                toInventory.OnInventoryChange.Invoke(); // invoke the event in the target inventory, as it changed
-                toInventory.HookUpItemEventsToContainer(fromItem); // clear the events and hook them up to the new inventory
-            }
-            else
-            {
-                // change places or join stacks
-                // will implement in the next part of the tutorial
-            }
-        }
         // Adds an item as a single stack, and returns true if it was successful
         public bool AddItemAsASingleStack(BasicItem item)
         {
