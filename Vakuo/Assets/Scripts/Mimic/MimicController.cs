@@ -266,10 +266,13 @@ public class MimicController : MonoBehaviour {
 
     private void SetActiveUI(bool active)
     {
-        _mimicPanel.SetActive(active);
-        if(active)
+        if (_mimicPanel != null)
         {
-            TurnsText();
+            _mimicPanel.SetActive(active);
+            if (active)
+            {
+                TurnsText();
+            }
         }
     }
 
