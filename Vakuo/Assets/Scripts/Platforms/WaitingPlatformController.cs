@@ -23,6 +23,9 @@ public class WaitingPlatformController : MonoBehaviour
     private float _fracMoveTime;
     private float _saveTime;
 
+    private Vector3 _posInit;
+    private Vector3 _posEnd;
+
     void Start()
     {
         _startTime = Time.time;
@@ -47,26 +50,26 @@ public class WaitingPlatformController : MonoBehaviour
         float floor = Mathf.Floor(fracJourney);
         float actualFrac = fracJourney - floor;
 
-        Vector3 posInit;
-        Vector3 posEnd;
+        // Vector3 posInit;
+        // Vector3 posEnd;
 
         if (floor % 2 == 0)
         {
-            posInit = _startPosition;
-            posEnd = _endPosition;
+            _posInit = _startPosition;
+            _posEnd = _endPosition;
         }
         else
         {
-            posInit = _endPosition;
-            posEnd = _startPosition;
+            _posInit = _endPosition;
+            _posEnd = _startPosition;
         }
 
         bool isWaitTime = actualFrac >= _fracMoveTime;
         if (isWaitTime)
-            transform.position = posEnd;
+            transform.position = _posEnd;
 
         float moveFrac = (timeSpent - (floor * _totalTime)) / _lengthInTime;
-        transform.position = Vector3.Lerp(posInit, posEnd, moveFrac);
+        transform.position = Vector3.Lerp(_posInit, _posEnd, moveFrac);
     }
 
     void Update()
@@ -81,6 +84,13 @@ public class WaitingPlatformController : MonoBehaviour
 
         WaitingPlatformData data = new WaitingPlatformData();
         data.time = Time.time;
+        data.posInitX = _posInit.x;
+        data.posInitY = _posInit.y;
+        data.posInitZ = _posInit.z;
+
+        data.posEndX = _posEnd.x;
+        data.posEndY = _posEnd.y;
+        data.posEndZ = _posEnd.z;
 
         bf.Serialize(file, data);
         file.Close();
@@ -96,6 +106,9 @@ public class WaitingPlatformController : MonoBehaviour
             file.Close();
 
             _saveTime = data.time;
+            _posEnd = new Vector3(data.posInitX, data.posInitY, data.posInitZ);
+            _posInit = new Vector3(data.posEndX, data.posEndY, data.posEndZ);
+
         }
     }
 }
@@ -104,5 +117,11 @@ public class WaitingPlatformController : MonoBehaviour
 class WaitingPlatformData
 {
     public float time;
+    public float posInitX;
+    public float posInitY;
+    public float posInitZ;
+    public float posEndX;
+    public float posEndY;
+    public float posEndZ;
 }
 
