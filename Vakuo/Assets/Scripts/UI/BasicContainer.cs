@@ -10,7 +10,7 @@ namespace Assets.Scripts.UI
         public UnityEvent OnInventoryChange = new UnityEvent(); // an event that is invoked whenever the container changes (added, deleted items, etc.)
         #endregion
         #region private
-        private Dictionary<int, BasicItem> items = new Dictionary<int, BasicItem>(); // collection of all items present in the container, the key being the slot index
+        public Dictionary<int, BasicItem> items = new Dictionary<int, BasicItem>(); // collection of all items present in the container, the key being the slot index
         public int slotAmount = 8; // total number of slots in the container
         #endregion
         #region helperfunctions
