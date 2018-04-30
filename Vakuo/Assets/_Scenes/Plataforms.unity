@@ -2514,7 +2514,7 @@ MonoBehaviour:
   _distance: 5
   _minHeight: 1
   _maxHeight: 4
-  _positionDamping: 5
+  _positionDamping: 10
   rotation: 0
   targetLookOffset: {x: 0.5, y: 1}
   _bumperDistanceCheck: 5
@@ -4661,6 +4661,7 @@ GameObject:
   - component: {fileID: 1285928210}
   - component: {fileID: 1285928216}
   - component: {fileID: 1285928215}
+  - component: {fileID: 1285928217}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -4691,7 +4692,7 @@ MonoBehaviour:
   _midAirControlRatio: 0.02
   _pushMinTime: 1
   _clampPushMagnitude: 20
-  _gravity: 30
+  gravity: 20
   _aimSpeed: 30
   headMaxRotation: 40
   headMinRotation: -40
@@ -4797,6 +4798,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minDistanceForEvent: 1
+--- !u!114 &1285928217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1285928209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3519c3f04ade2c54fafd1c02d0b8b7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _events: {fileID: 968737866}
+  _astronautController: {fileID: 1285928210}
+  _characterController: {fileID: 1285928211}
+  _fallForce: 120
 --- !u!1 &1299474717
 GameObject:
   m_ObjectHideFlags: 0
