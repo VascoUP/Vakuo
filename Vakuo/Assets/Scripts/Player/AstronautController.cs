@@ -55,8 +55,7 @@ public class AstronautController : MonoBehaviour {
     private float _clampPushMagnitude = 10f;
 
     // Acceleration downward of the astronaut while in the air
-    [SerializeField]
-    private float _gravity = 15.0f;
+    public float gravity = 15.0f;
 
     // Speed at which the astronaut turns 
     [SerializeField]
@@ -73,7 +72,7 @@ public class AstronautController : MonoBehaviour {
     // Offset from the astronaut to the platform
     private Vector3 _ridingOffset;
 
-    void Start () {
+    private void Start () {
         _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
@@ -144,7 +143,7 @@ public class AstronautController : MonoBehaviour {
             _ridingPlatform = null;
         }
     }
-
+    
     public void Push(float pushSpeed, float ySpeed, Vector3 direction)
     {
         _isJumpFrame = true;
@@ -175,7 +174,7 @@ public class AstronautController : MonoBehaviour {
             _velocity.y = 0f;
         }
         else
-            _velocity.y -= _gravity * Time.deltaTime;
+            _velocity.y -= gravity * Time.deltaTime;
     }
 
     // Rotates the player according to mouse input

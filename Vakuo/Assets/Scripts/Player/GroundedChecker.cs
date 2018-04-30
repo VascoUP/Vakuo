@@ -13,13 +13,13 @@ public class GroundedChecker : MonoBehaviour {
     [SerializeField]
     private float _minDistanceForEvent;
 
-	void Start ()
+	private void Start ()
     {
         _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _cc = GetComponent<CharacterController>();
     }
 
-	void Update ()
+	private void Update ()
     { 
 		if(_previousFrameGrounded)
         {
@@ -28,7 +28,8 @@ public class GroundedChecker : MonoBehaviour {
                 _previousFrameGrounded = false;
                 _highestPoint = transform.position.y;
             }
-        } else
+        }
+        else
         {
             if(_cc.isGrounded)
             {
