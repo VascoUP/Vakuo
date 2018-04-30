@@ -14,6 +14,11 @@ public class AudioManager : MonoBehaviour {
 	private void Start () {
         _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _source = GetComponent<AudioSource>();
+
+        _events.onPlayerGrounded += PlayerGrounded;
+        _events.onAttack += Attack;
+        _events.onEnemyDeath += EnemyDeath;
+        _events.onPlayerPushed += PlayerPushed;
     }
 
     private void PlayerGrounded()
