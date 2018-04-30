@@ -438,8 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 2088932279}
   MoveSpeed: 4
-  MaxDist: 10
-  MinDist: 5
+  AttackRange: 3
   waitTime: 0.5
 --- !u!4 &119119033
 Transform:
