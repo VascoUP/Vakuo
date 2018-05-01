@@ -3,5 +3,5 @@ metadata/
 Temp/
 Vakuo.sln
 Vakuo.csproj
-Library 
+Library/
 *.meta
