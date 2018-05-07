@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // States of the game
-public enum GameStatus { RUNNING, PAUSED, MIMIC, CAMERA_SEQUENCE };
+public enum GameStatus { RUNNING, PAUSED, MIMIC, CAMERA_SEQUENCE, INVENTORY_SELECTION };
 
 public class GameManager : MonoBehaviour
 {
@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _returnToTimeDuration;
     [SerializeField]
-    private GameObject _pauseMenu;
+    private GameObject _gameUI;
+    [SerializeField]
+    private GameObject _pauseUI;
+    [SerializeField]
+    private GameObject _inventoryUI;
 
     private void Start()
     {
@@ -67,7 +71,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdatePaused()
+    private void UpdateGenericMenu()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -114,10 +118,10 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameStatus.PAUSED:
-                onUpdate += UpdatePaused;
+                onUpdate += UpdateGenericMenu;
 
                 Time.timeScale = 0f;
-                _pauseMenu.SetActive(true);
+                _pauseUI.SetActive(true);
 
                 Cursor.visible = true;
                 break;
@@ -133,6 +137,14 @@ public class GameManager : MonoBehaviour
             case GameStatus.MIMIC:
                 _mimic.enabled = true;
                 break;
+            case GameStatus.INVENTORY_SELECTION:
+                onUpdate += UpdateGenericMenu;
+
+                Time.timeScale = 0f;
+                _inventoryUI.SetActive(true);
+
+                Cursor.visible = true;
+                break;
         }
     }
 
@@ -141,10 +153,10 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameStatus.PAUSED:
-                onUpdate -= UpdatePaused;
+                onUpdate -= UpdateGenericMenu;
 
                 Time.timeScale = 1f;
-                _pauseMenu.SetActive(false);
+                _pauseUI.SetActive(false);
                 break;
             case GameStatus.RUNNING:
                 onUpdate -= UpdateRunning;
@@ -155,6 +167,12 @@ public class GameManager : MonoBehaviour
                 break;
             case GameStatus.MIMIC:
                 _mimic.enabled = false;
+                break;
+            case GameStatus.INVENTORY_SELECTION:
+                onUpdate -= UpdateGenericMenu;
+
+                Time.timeScale = 1f;
+                _inventoryUI.SetActive(false);
                 break;
         }
     }

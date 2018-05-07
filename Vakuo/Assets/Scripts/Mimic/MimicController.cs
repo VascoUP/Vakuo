@@ -50,8 +50,7 @@ public class MimicController : MonoBehaviour {
         _state = MimicStatus.END;
         _gameManager = Utils.GetComponentOnGameObject<GameManager>("Game Manager");
     }
-
-
+    
     private void OnEnable()
     {
         _turn = 0;
@@ -72,8 +71,7 @@ public class MimicController : MonoBehaviour {
         SetActiveUI(false);
         StopAllCoroutines();
     }
-
-
+    
     private void FixedUpdate ()
     {
 		if(_state == MimicStatus.PLAYER_TURN)
@@ -81,8 +79,7 @@ public class MimicController : MonoBehaviour {
             CheckPlayerKeys();
         }
 	}
-
-
+    
     private void OnAnimalTurn()
     {
         _state = MimicStatus.ANIMAL_TURN;
@@ -117,7 +114,6 @@ public class MimicController : MonoBehaviour {
         _state = MimicStatus.PLAYER_TURN;
     }
     
-
     private IEnumerator EndMimic(bool success)
     {
         SetText(_announcerText, success ? "Success" : "Fail");
@@ -152,8 +148,7 @@ public class MimicController : MonoBehaviour {
 
         OnPlayerTurn();
     }
-
-
+    
     private void FailedTurn()
     {
         Debug.Log("Failure");
@@ -186,8 +181,7 @@ public class MimicController : MonoBehaviour {
             _gameManager.ChangeState(GameStatus.RUNNING);
         }
     }
-
-
+    
     private void CheckPlayerKeys()
     {
         int i = 0;
@@ -208,8 +202,7 @@ public class MimicController : MonoBehaviour {
             i++;
         }
     }
-
-
+    
     private void GenerateTurnSound(int numberOfKeys)
     {
         if (_mimicSounds == null)
@@ -248,8 +241,7 @@ public class MimicController : MonoBehaviour {
 
         FailedTurn();
     }
-
-
+    
     private int GetRandomSound()
     {
         return Random.Range(0, _buttonNames.Length);
@@ -260,8 +252,7 @@ public class MimicController : MonoBehaviour {
         GameObject spawnedObj = Instantiate(_visualSoundPrefabs[index], _mimicEmitter);
         spawnedObj.transform.Translate(Vector3.left * 2f + Vector3.up);
     }
-
-
+    
     #region UI
 
     private void SetActiveUI(bool active)

@@ -13,6 +13,8 @@ public delegate void GameEvent();
 
 public delegate void ObjectsEvent(GameObject gameObject1, GameObject gameObject2);
 
+public delegate void InventoryEvent(string name);
+
 public class EventManager : MonoBehaviour {
     public StateEnter onEnterState;
     public StateExit onExitState;
@@ -20,4 +22,7 @@ public class EventManager : MonoBehaviour {
     public ObjectsEvent onPlayerPushed;
     public GameEvent onAttack;
     public GameEvent onEnemyDeath;
+
+    public GameEvent onEnterInventoryEnabler;
+    public GameEvent onExitInventoryEnabler;
 }

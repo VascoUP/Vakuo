@@ -13,10 +13,16 @@ public class InventoryController : MonoBehaviour {
     [Header("Prefabs")]
     public GameObject slotPrefab; // a prefab of a slot
     #endregion
+
+    #region public
+    public InventoryEvent onItemSelected;
+    #endregion
+
     #region private 
     private bool updateInventory = false; // a flag that is set when the inventory needs refreshing that is reset each frame, we do this not to have more than 1 refresh each frame
     private List<ItemSlot> slots = new List<ItemSlot>(); // a list of all the slots in the container
     #endregion
+
     // Use this for initialization
     void Start()
     {
@@ -27,14 +33,20 @@ public class InventoryController : MonoBehaviour {
         // force refresh for the first time
         RefreshInventoryWindow();
     }
+
     // Method for handling double clicking the item
     private void OnDoubleClickItem(ItemSlot itemSlot)
     {
         if (itemSlot.inventoryReference != null && itemSlot.inventoryItemReference != null)
         {
             Debug.Log("Double clicked: " + itemSlot.inventoryItemReference.Name);
+            if(onItemSelected != null)
+            {
+                onItemSelected(itemSlot.inventoryItemReference.Name);
+            }
         }
     }
+
     // This method applies a BasicItem entry from a container to an ItemSlot element of the ContainerWindow
     // Setting up all the game objects, texts, icons, etc, and its events.
     private void ApplyInventoryItemToSlot(ItemSlot itemSlot, BasicItem inventoryItem)
@@ -61,6 +73,7 @@ public class InventoryController : MonoBehaviour {
         // Add listeners to slot events
         itemSlot.OnDoubleClickItem.AddListener(OnDoubleClickItem);
     }
+
     // This method empties the slot of all references, events, and hides its unneeded game objects like amount text, icon etc.
     private void EmptySlot(ItemSlot itemSlot)
     {
@@ -75,6 +88,7 @@ public class InventoryController : MonoBehaviour {
         itemSlot.nameText.gameObject.SetActive(false);
         itemSlot.imageIcon.gameObject.SetActive(false);
     }
+
     // This method refreshes the inventory window slots and sets them up with necessary references
     private void RefreshInventoryWindow()
     {
@@ -105,11 +119,13 @@ public class InventoryController : MonoBehaviour {
         AddSlots();
         UpdateInventory();
     }
+
     // A method called to set the updateInventory flag
     void UpdateInventory()
     {
         updateInventory = true;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -147,7 +163,6 @@ public class InventoryController : MonoBehaviour {
             }
             vector.z = 0;
 
-            Debug.Log(i + " " + vector);
             // Instantiate all the slots and set their slot number inside the ItemSlot class
             RectTransform rt = slotPrefab.GetComponent<RectTransform>();
             rt.anchoredPosition3D = vector;

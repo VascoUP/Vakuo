@@ -23,6 +23,7 @@ namespace Assets.Scripts.UI
             set { graphic = value; OnGraphicChange.Invoke(); }
         }
         #endregion
+
         #region constructors 
 
         // Basic constructor without parameters

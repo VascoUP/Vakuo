@@ -9,6 +9,9 @@ TagManager:
   - Platform
   - Interactable
   - Animal
+  - Plataform
+  - End World
+  - Animal Slot
   layers:
   - Default
   - TransparentFX
