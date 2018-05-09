@@ -2269,8 +2269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _channelingTime: 1
   _action: {fileID: 1068630851}
-  _maxRasycastLength: 3
+  _maxRasycastLength: 10
   _text: {fileID: 62246099}
+  drawLineRendered: 0
   laserLineRenderer: {fileID: 1068630853}
   laserWidth: 0.1
 --- !u!4 &1068630850
