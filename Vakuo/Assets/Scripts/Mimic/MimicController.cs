@@ -32,6 +32,11 @@ public class MimicController : MonoBehaviour {
     private List<int> _mimicSounds;
     private List<int> _playerSounds;
 
+    #region MimicEvents
+    public GameEvent onSuccess;
+    public GameEvent onFailure;
+    #endregion
+
     #region UIFields
 
     [SerializeField]
@@ -49,6 +54,8 @@ public class MimicController : MonoBehaviour {
     {
         _state = MimicStatus.END;
         _gameManager = Utils.GetComponentOnGameObject<GameManager>("Game Manager");
+        onSuccess += MimicSuccess;
+        onFailure += MimicFailure;
     }
     
     private void OnEnable()
@@ -87,7 +94,7 @@ public class MimicController : MonoBehaviour {
         _turn++;
         if(_turn > numberOfTurns)
         {
-            MimicSuccess();
+            onSuccess();
             return;
         }
 
@@ -148,40 +155,38 @@ public class MimicController : MonoBehaviour {
 
         OnPlayerTurn();
     }
-    
+
     private void FailedTurn()
     {
-        Debug.Log("Failure");
         if (--_lives <= 0)
         {
-            Debug.Log("End");
-            MimicFailure();
+            onFailure();
         }
     }
 
     private void MimicSuccess()
     {
+        _state = MimicStatus.END;
         StartCoroutine(EndMimic(true));
     }
 
     private void MimicFailure()
     {
+        _state = MimicStatus.END;
         InteractionController ic = _mimicEmitter.GetComponent<InteractionController>();
         if (ic != null)
             ic.enabled = true;
-
         StartCoroutine(EndMimic(false));
     }
 
     private void End()
     {
-        _state = MimicStatus.END;
         if (_gameManager != null)
         {
             _gameManager.ChangeState(GameStatus.RUNNING);
         }
     }
-    
+
     private void CheckPlayerKeys()
     {
         int i = 0;
@@ -202,7 +207,7 @@ public class MimicController : MonoBehaviour {
             i++;
         }
     }
-    
+
     private void GenerateTurnSound(int numberOfKeys)
     {
         if (_mimicSounds == null)
@@ -241,7 +246,7 @@ public class MimicController : MonoBehaviour {
 
         FailedTurn();
     }
-    
+
     private int GetRandomSound()
     {
         return Random.Range(0, _buttonNames.Length);

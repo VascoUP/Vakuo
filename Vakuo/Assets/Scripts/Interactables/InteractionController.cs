@@ -10,6 +10,9 @@ public class InteractionController : MonoBehaviour
     [SerializeField]
     private InteractionAction _action;
 
+    [SerializeField]
+    private float _maxRasycastLength = 5f;
+
     private IEnumerator _channelingCoroutine;
     private bool _channelingRunning = false;
 
@@ -21,9 +24,20 @@ public class InteractionController : MonoBehaviour
 
     private bool _isFacingMe = false;
 
+    public bool drawLineRendered = false;
+    public LineRenderer laserLineRenderer;
+    public float laserWidth = 0.1f;
+
     private void Start () {
         _keyState = new KeyStateMachine("Interact");
-	}
+
+        // Draw line
+        Debug.Log(laserLineRenderer);
+        Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
+        laserLineRenderer.SetPositions(initLaserPositions);
+        laserLineRenderer.startWidth = laserWidth;
+        laserLineRenderer.endWidth = laserWidth;
+    }
     
     private void Update () {
         if (_target != null && IsTargetFacingMe())
@@ -36,12 +50,24 @@ public class InteractionController : MonoBehaviour
             _isFacingMe = false;
             StopChanneling();
         }
+
+        // Draw line
+        if (_target != null && drawLineRendered)
+        {
+            ShootLaserFromTargetPosition(_target.position, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
+            laserLineRenderer.enabled = true;
+        }
+        else
+        {
+            laserLineRenderer.enabled = false;
+        }
     }
 
     private bool IsTargetFacingMe()
     {
         Ray ray = new Ray(_target.position, _target.TransformDirection(Vector3.forward));
-        RaycastHit[] frontHits = Physics.RaycastAll(ray, 6f);
+        RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
+        Debug.Log(frontHits.Length);
         foreach (RaycastHit hit in frontHits)
         {
             if(hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() || 
@@ -149,4 +175,15 @@ public class InteractionController : MonoBehaviour
             _target = null;
         }
     }
+
+    #region DrawLine
+
+    void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction, float length)
+    {
+        Vector3 endPosition = targetPosition + (length * direction);
+        laserLineRenderer.SetPosition(0, targetPosition);
+        laserLineRenderer.SetPosition(1, endPosition);
+    }
+    
+    #endregion
 }
