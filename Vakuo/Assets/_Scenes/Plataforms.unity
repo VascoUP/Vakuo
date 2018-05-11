@@ -613,9 +613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48152b21cb73dc4199fb7f7d52f74ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 968737864}
   entityInventory: {fileID: 1685389719}
   slotPanel: {fileID: 2079301831}
   slotPrefab: {fileID: 1191735674057746, guid: 4c0d84b721c843a45aa34eec9fb1d3c9, type: 2}
+  _backButton: {fileID: 208058666}
 --- !u!114 &167182492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,17 +1532,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2088932279}
-  _distance: 5
-  _minHeight: 1
-  _maxHeight: 4
-  _positionDamping: 10
-  rotation: 0
-  targetLookOffset: {x: 0.5, y: 1}
+  _distance: 7
+  _minHeight: 4
+  _maxHeight: 8
+  _positionDamping: 500
+  rotation: 3.2725422
+  targetLookOffset: {x: 0, y: 1}
   _bumperDistanceCheck: 5
   _bumperCameraHeight: 4
   _bumperRayOffset: {x: 0, y: 0, z: 0}
-  shakeAmount: 0
-  shakeDuration: 0
+  shakeAmount: 0.018405033
+  shakeDuration: -0.0015464444
   smooth: 1
   smoothAmount: 2
 --- !u!114 &672845087
@@ -2145,6 +2147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c46f0fe97a640a4c956d7159b6871e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 968737864}
+  _entityInventory: {fileID: 1685389719}
   _buttonNames:
   - Sound 1
   - Sound 2
@@ -2303,6 +2307,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 968737864}
   _mimicController: {fileID: 968737867}
+  _animalName: Elephant
+  _animalIconName: Elephant
 --- !u!136 &1068630852
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2577,7 +2583,7 @@ MonoBehaviour:
   _walkSpeed: 6
   _jumpSpeed: 12
   _jumpMaxSpeed: 10
-  _midAirControlRatio: 0.02
+  _midAirControlRatio: 0.1
   _pushMinTime: 1
   _clampPushMagnitude: 20
   gravity: 20

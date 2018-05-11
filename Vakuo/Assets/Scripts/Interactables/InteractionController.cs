@@ -67,7 +67,6 @@ public class InteractionController : MonoBehaviour
     {
         Ray ray = new Ray(_target.position, _target.TransformDirection(Vector3.forward));
         RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
-        Debug.Log(frontHits.Length);
         foreach (RaycastHit hit in frontHits)
         {
             if(hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() || 
