@@ -54,7 +54,7 @@ public class FollowPlayerCamera : MonoBehaviour
         }
     }
 
-    IEnumerator Shake()
+    private IEnumerator Shake()
     {
         _isShaking = true;
 
