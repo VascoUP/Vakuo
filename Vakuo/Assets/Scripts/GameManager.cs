@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
         _state = nSate;
     }
 
-    public void StartMimic(Transform mimicEmitter)
+    public void StartMimic(AnimalAction mimicEmitter)
     {
         _mimic._mimicEmitter = mimicEmitter;
         ChangeState(GameStatus.MIMIC);

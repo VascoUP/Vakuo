@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MimicController : MonoBehaviour {
-
     private enum MimicStatus { ANIMAL_TURN, PLAYER_TURN, END };
     private MimicStatus _state;
 
+    [SerializeField]
     private GameManager _gameManager;
+    [SerializeField]
+    private EntityInventory _entityInventory;
 
     [SerializeField]
     private string[]  _buttonNames;
@@ -17,7 +19,7 @@ public class MimicController : MonoBehaviour {
     [SerializeField]
     private float _timeBetweenSounds;
 
-    public Transform _mimicEmitter;
+    public AnimalAction _mimicEmitter;
 
     [Range(1,5)]
     public int numberOfLives;
@@ -31,11 +33,6 @@ public class MimicController : MonoBehaviour {
 
     private List<int> _mimicSounds;
     private List<int> _playerSounds;
-
-    #region MimicEvents
-    public GameEvent onSuccess;
-    public GameEvent onFailure;
-    #endregion
 
     #region UIFields
 
@@ -53,9 +50,6 @@ public class MimicController : MonoBehaviour {
     private void Start()
     {
         _state = MimicStatus.END;
-        _gameManager = Utils.GetComponentOnGameObject<GameManager>("Game Manager");
-        onSuccess += MimicSuccess;
-        onFailure += MimicFailure;
     }
     
     private void OnEnable()
@@ -94,7 +88,7 @@ public class MimicController : MonoBehaviour {
         _turn++;
         if(_turn > numberOfTurns)
         {
-            onSuccess();
+            MimicSuccess();
             return;
         }
 
@@ -160,18 +154,21 @@ public class MimicController : MonoBehaviour {
     {
         if (--_lives <= 0)
         {
-            onFailure();
+            MimicFailure();
         }
     }
 
     private void MimicSuccess()
     {
+        _entityInventory.AddAnimal(_mimicEmitter.GetAnimalBasicItem());
+        _mimicEmitter.MimicSuccess();
         _state = MimicStatus.END;
         StartCoroutine(EndMimic(true));
     }
 
     private void MimicFailure()
     {
+        _mimicEmitter.MimicFailure();
         _state = MimicStatus.END;
         InteractionController ic = _mimicEmitter.GetComponent<InteractionController>();
         if (ic != null)
@@ -254,7 +251,7 @@ public class MimicController : MonoBehaviour {
 
     private void SpawnVisualClue(int index)
     {
-        GameObject spawnedObj = Instantiate(_visualSoundPrefabs[index], _mimicEmitter);
+        GameObject spawnedObj = Instantiate(_visualSoundPrefabs[index], _mimicEmitter.transform);
         spawnedObj.transform.Translate(Vector3.left * 2f + Vector3.up);
     }
     

@@ -7,7 +7,22 @@ public class EntityInventory : MonoBehaviour
 {
     public BasicContainer mainContainer = new BasicContainer();
 
-    void AddAnimalsToContainer(List<int>animals)
+    private void Start()
+    {
+        mainContainer.OnInventoryChange.AddListener(delegate { Debug.Log("Inventory changed!"); });
+    }
+
+    private void OnGUI()
+    {
+        // TODO: Load animals from save file
+    }
+
+    public void AddAnimal(BasicItem item)
+    {
+        mainContainer.AddItemAsASingleStack(item);
+    }
+
+    private void AddAnimalsToContainer(List<int>animals)
     {
         string animalName = "";
         List<string>animalsNames = new List<string>();
@@ -31,38 +46,4 @@ public class EntityInventory : MonoBehaviour
 
         //OnGUI(animalsNames);
     }
-
-    void OnGUI(/*List<string>animals*/)
-    {
-        for(int i=0; i < mainContainer.slotAmount; i++) {
-            BasicItem item = null;
-            if (i == 0)
-                item = new BasicItem("Elephant", "Elephant");
-            else if (i == 1)
-                item = new BasicItem("Turtle", "Turtle");
-            else
-                item = new BasicItem("Blocked", "Question");
-   
-            mainContainer.AddItemAsASingleStack(item);
-        }
-
-        /*foreach(string name in animals)
-        {
-            BasicItem item = new BasicItem(name, name);
-            mainContainer.AddItemAsASingleStack(item);
-        }*/
-
-
-    }
-    private void Start()
-    {
-        mainContainer.OnInventoryChange.AddListener(delegate { Debug.Log("Inventory changed!"); });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

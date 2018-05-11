@@ -6,12 +6,17 @@ using System.Collections.Generic;
 public class InventoryController : MonoBehaviour {
 
     #region references
+    [SerializeField]
+    private GameManager _gameManager;
     [Header("Inventory References")]
-    public EntityInventory entityInventory; // reference to the inventory displayed in the window
+    // reference to the inventory displayed in the window
+    public EntityInventory entityInventory;
     [Header("UI References")]
-    public GameObject slotPanel; // a panel that holds all the slots
+    // a panel that holds all the slots
+    public GameObject slotPanel;
     [Header("Prefabs")]
-    public GameObject slotPrefab; // a prefab of a slot
+    // a prefab of a slot
+    public GameObject slotPrefab; 
     #endregion
 
     #region public
@@ -19,12 +24,16 @@ public class InventoryController : MonoBehaviour {
     #endregion
 
     #region private 
-    private bool updateInventory = false; // a flag that is set when the inventory needs refreshing that is reset each frame, we do this not to have more than 1 refresh each frame
-    private List<ItemSlot> slots = new List<ItemSlot>(); // a list of all the slots in the container
+    [SerializeField]
+    private Button _backButton;
+    // a flag that is set when the inventory needs refreshing that is reset each frame, we do this not to have more than 1 refresh each frame
+    private bool updateInventory = false;
+    // a list of all the slots in the container
+    private List<ItemSlot> slots = new List<ItemSlot>(); 
     #endregion
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         // populate the slots
         UpdateSlots();
@@ -32,6 +41,10 @@ public class InventoryController : MonoBehaviour {
         entityInventory.mainContainer.OnInventoryChange.AddListener(delegate { UpdateInventory(); });
         // force refresh for the first time
         RefreshInventoryWindow();
+
+        _backButton.onClick.AddListener(delegate {
+            _gameManager.ChangeState(GameStatus.RUNNING);
+        });
     }
 
     // Method for handling double clicking the item

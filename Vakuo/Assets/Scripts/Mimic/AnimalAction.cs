@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.UI;
+using UnityEngine;
 
 public class AnimalAction : InteractionAction
 {
@@ -6,33 +7,27 @@ public class AnimalAction : InteractionAction
     private GameManager _gameManager;
     [SerializeField]
     private MimicController _mimicController;
+    [SerializeField]
+    private string _animalName;
+    [SerializeField]
+    private string _animalIconName;
 
     public override void OnInteraction()
     {
-        SubscribeMimicEvents();
-        _gameManager.StartMimic(transform);
+        _gameManager.StartMimic(this);
     }
 
-    private void SubscribeMimicEvents()
+    public BasicItem GetAnimalBasicItem()
     {
-        _mimicController.onSuccess += MimicSuccess;
-        _mimicController.onFailure += MimicFailure;
+        return new BasicItem(_animalName ,_animalIconName);
     }
 
-    private void UnsubscribeMimicEvents()
+    public void MimicSuccess()
     {
-        _mimicController.onSuccess -= MimicSuccess;
-        _mimicController.onFailure -= MimicFailure;
-    }
-
-    private void MimicSuccess()
-    {
-        UnsubscribeMimicEvents();
         Destroy(gameObject);
     }
 
-    private void MimicFailure()
+    public void MimicFailure()
     {
-        UnsubscribeMimicEvents();
     }
 }
