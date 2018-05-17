@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventorySelectionController : MonoBehaviour {
+public class SelectInventoryItem : MonoBehaviour {
     private UpdateMonoBehavior onUpdate;
 
     [SerializeField]
@@ -20,6 +20,8 @@ public class InventorySelectionController : MonoBehaviour {
     private string _animalName;
 
     private KeyStateMachine _keySM;
+    private GameObject _spawnedAnimal;
+    private bool _animalSpawned = false;
 
     private void Start()
     {
@@ -29,23 +31,39 @@ public class InventorySelectionController : MonoBehaviour {
         _keySM = new KeyStateMachine("Inventory");
     }
 
+	private void EnableSelection(bool enable) {
+		if (enable) {
+			// Start checking for input
+			onUpdate += CheckInput;
+		} else {
+			// Start checking for input
+			onUpdate -= CheckInput;
+		}
+	}
+		
+
     private void EnteredInventoryEnabler()
     {
         if (_iEnabler.isPlayerInside) 
         {
-            // Start checking for input
-            onUpdate += CheckInput;
+			// Enable inventory selection
+			EnableSelection (true);
         }
     }
 
     private void AnimalSelected(string animal)
     {
         if(animal == _animalName)
-        {
+		{
             // Spawn player on the spot
-            Instantiate(_prefab, transform);
+            _spawnedAnimal = Instantiate(_prefab, transform);
+			Debug.Log ("New spawned animal " + _spawnedAnimal);
             // Disable inventory enabler for now
             _iEnabler.Disable();
+            // Enable animal spawned
+            _animalSpawned = true;
+			// Disable inventory selection
+			ExitedInventoryEnabler ();
         } else
         {
             // TODO Damage player
@@ -58,9 +76,9 @@ public class InventorySelectionController : MonoBehaviour {
     }
 
     private void ExitedInventoryEnabler()
-    {
-        // Stop check for input
-        onUpdate -= CheckInput;
+	{
+		// Disable inventory selection
+		EnableSelection (false);
     }
 
     private void CheckInput()
@@ -85,4 +103,18 @@ public class InventorySelectionController : MonoBehaviour {
             onUpdate();
         }
 	}
+
+    public void Remove()
+    {
+		Debug.Log ("Remove animal " + _animalSpawned);
+        if(_animalSpawned)
+		{
+			// Animal is no longer spawned
+			_animalSpawned = false;
+			// Destroy object
+			Destroy(_spawnedAnimal);
+			// Disable inventory enabler for now
+			_iEnabler.Enable();
+        }
+    }
 }

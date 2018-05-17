@@ -74,7 +74,8 @@
      <Compile Include="Assets\Scripts\Interactables\InteractionAction.cs" />
      <Compile Include="Assets\Scripts\Interactables\InteractionController.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryEnabler.cs" />
-     <Compile Include="Assets\Scripts\Inventory\InventorySelectionController.cs" />
+     <Compile Include="Assets\Scripts\Inventory\RemoveInventoryItem.cs" />
+     <Compile Include="Assets\Scripts\Inventory\SelectInventoryItem.cs" />
      <Compile Include="Assets\Scripts\Mimic\AnimalAction.cs" />
      <Compile Include="Assets\Scripts\Mimic\MimicController.cs" />
      <Compile Include="Assets\Scripts\Mimic\SoundPrefabController.cs" />

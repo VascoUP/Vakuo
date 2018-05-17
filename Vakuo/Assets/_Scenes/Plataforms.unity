@@ -323,7 +323,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d64e0210488f314e83e80e6b753585b, type: 2}
+  - {fileID: 2100000, guid: 99215d3d4c9ee9d408dec50360854ebd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1806,6 +1806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736198757}
   - component: {fileID: 736198758}
+  - component: {fileID: 736198759}
   m_Layer: 0
   m_Name: Test Remove Animal
   m_TagString: Untagged
@@ -1838,6 +1839,34 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &736198759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736198756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a656570bd0b80b449bfe0bbff8a0cd93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isc: {fileID: 1047927448}
+  onExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1047927448}
+        m_MethodName: Remove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &821405480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,7 +2606,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1047927444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612a6dd2bec496441bf200f9896eed96, type: 3}
+  m_Script: {fileID: 11500000, guid: 269bd8a41d4bb8c4e887517786fe17ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _eventManager: {fileID: 2130232787}
@@ -4800,7 +4829,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7de24c380322b4f46bc6a12008fa8fd6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5140,7 +5169,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285928209}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.15, y: 0.5, z: 14.4}
+  m_LocalPosition: {x: -78, y: 7.8, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 703635947}
