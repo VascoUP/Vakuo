@@ -15,6 +15,8 @@ public class WaitingPlatformController : MonoBehaviour
     private Vector3 _startPosition;
     [SerializeField]
     private Vector3 _endPosition;
+    [SerializeField]
+    private Rigidbody _rigidbody;
     
     private float _startTime;
     private float _length;
@@ -26,7 +28,7 @@ public class WaitingPlatformController : MonoBehaviour
     private Vector3 _posInit;
     private Vector3 _posEnd;
 
-    void Start()
+    private void Start()
     {
         _startTime = Time.time;
         _length = Vector3.Distance(_startPosition, _endPosition);
@@ -39,6 +41,24 @@ public class WaitingPlatformController : MonoBehaviour
         GlobalControl.LoadEvent += Load;
     }
 
+    private void MovePosition(Vector3 localPosition)
+    {
+        Vector3 worldPos;
+        // Calculate world poistion if object has parent
+        if (transform.parent != null)
+            // Transform local position to world position
+            worldPos = transform.parent.TransformPoint(localPosition);
+        else
+            // World position is the same as local position
+            worldPos = localPosition;
+
+        // Use rigidbody if possible
+        if (_rigidbody != null)
+            _rigidbody.MovePosition(worldPos);
+        else
+            transform.position = worldPos;
+    }
+
     private void LoopMovement()
     {
         if (_lengthInTime == 0)
@@ -49,9 +69,6 @@ public class WaitingPlatformController : MonoBehaviour
 
         float floor = Mathf.Floor(fracJourney);
         float actualFrac = fracJourney - floor;
-
-        // Vector3 posInit;
-        // Vector3 posEnd;
 
         if (floor % 2 == 0)
         {
@@ -69,10 +86,11 @@ public class WaitingPlatformController : MonoBehaviour
             transform.position = _posEnd;
 
         float moveFrac = (timeSpent - (floor * _totalTime)) / _lengthInTime;
-        transform.position = Vector3.Lerp(_posInit, _posEnd, moveFrac);
+
+        MovePosition(Vector3.Lerp(_posInit, _posEnd, moveFrac));
     }
 
-    void Update()
+    private void Update()
     {
         LoopMovement();
     }

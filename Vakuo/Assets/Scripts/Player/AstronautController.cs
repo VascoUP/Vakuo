@@ -6,7 +6,8 @@ using UnityEngine;
 
 // Controller for the player's game object
 public class AstronautController : MonoBehaviour {
-    // Instance of event manager
+	// Instance of event manager
+	[SerializeField]
     private EventManager _events;
     
     // Delegate funtion that calls right update function according to the current state
@@ -73,7 +74,6 @@ public class AstronautController : MonoBehaviour {
     private Vector3 _ridingOffset;
 
     private void Start () {
-        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
 
@@ -217,6 +217,7 @@ public class AstronautController : MonoBehaviour {
             {
                 // Player will be able to change his velocity mid air but on a smaller scale
                 moveVelocity = transform.TransformDirection(input * _walkSpeed * _midAirControlRatio) + new Vector3(_velocity.x, 0, _velocity.z);
+                moveVelocity = Vector3.ClampMagnitude(moveVelocity, _jumpMaxSpeed);
             }
 
             _velocity = moveVelocity + Vector3.up * _velocity.y;

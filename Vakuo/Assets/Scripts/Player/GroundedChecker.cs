@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundedChecker : MonoBehaviour {
 
+	[SerializeField]
     private EventManager _events;
     private CharacterController _cc;
 
@@ -15,7 +16,6 @@ public class GroundedChecker : MonoBehaviour {
 
 	private void Start ()
     {
-        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _cc = GetComponent<CharacterController>();
     }
 

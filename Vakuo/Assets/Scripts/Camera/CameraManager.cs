@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
 
-    // Instance of event manager
+	// Instance of event manager
+	[SerializeField]
     private EventManager _events;
     private FollowPlayerCamera _followPlayer;
     private CinematicCamera _cinematicCamera;
@@ -46,7 +47,6 @@ public class CameraManager : MonoBehaviour {
         _followPlayer = GetComponent<FollowPlayerCamera>();
         _cinematicCamera = GetComponent<CinematicCamera>();
 
-        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
         _events.onPlayerGrounded += OnPlayerGrounded;
