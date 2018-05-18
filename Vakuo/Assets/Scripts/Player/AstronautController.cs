@@ -16,10 +16,7 @@ public class AstronautController : MonoBehaviour {
     // Character controller component of the astronaut game object
     private CharacterController _cc;
     
-    // Head of the astronaut
-    [SerializeField]
-    private Transform _head;
-    // Feet of the astronaut
+	// Feet of the astronaut
     [SerializeField]
     private Transform _feet;
     // Check distance
@@ -187,9 +184,10 @@ public class AstronautController : MonoBehaviour {
 
         currentHeadRotation =
             Mathf.Clamp(currentHeadRotation - (mouseInput.y * Time.deltaTime), headMinRotation, headMaxRotation);
-
+		/*
         _head.localRotation = Quaternion.identity;
         _head.Rotate(Vector3.right * currentHeadRotation);
+        */
     }
 
     // Checks for input and isGrounded and decides if character should jump or not

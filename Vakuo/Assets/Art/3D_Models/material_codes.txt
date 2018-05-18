@@ -1,18 +1,31 @@
-TOMMY 
+﻿TOMMY
 preto fato >>> #373837
+
 branco_fato >>> #EAEBEA
+
 amarelo_fato >>> #FECE77
+
 vermelho_fato >>> #FC545D
+
 cinza_fato >>> #797a79
+
+
 
 ELEFANTE
 
+
 blue_elephant >>> #7B94DC
+
+
 
 TARTARUGA
 
+
 Tartaruga (cabeça e patas) >>> #A2E774
+
 Carapaça >>> #00686B
+
 Olho esfera >>> #00686B
+
 Olho á volta >>> #E7E7E7
 Nariz >>> #00686B
