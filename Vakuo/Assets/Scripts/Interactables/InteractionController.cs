@@ -1,32 +1,28 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionController : MonoBehaviour
 {
-    private KeyStateMachine _keyState;
-
-    [SerializeField]
-    private float _channelingTime;
-    [SerializeField]
-    private InteractionAction _action;
-
+    public UnityEvent onEnter;
+    
     [SerializeField]
     private float _maxRasycastLength = 5f;
 
-    private IEnumerator _channelingCoroutine;
-    private bool _channelingRunning = false;
 
+    private KeyStateMachine _keyState;
     private Transform _target;
+    private bool _isFacingMe = false;
 
     [SerializeField]
     private TextMesh _text;
-    private bool _isActive = false;
+    private bool _isTextActive = false;
 
-    private bool _isFacingMe = false;
-
+    
     public bool drawLineRendered = false;
     public LineRenderer laserLineRenderer;
     public float laserWidth = 0.1f;
+
 
     private void Start () {
         _keyState = new KeyStateMachine("Interact");
@@ -38,17 +34,24 @@ public class InteractionController : MonoBehaviour
         laserLineRenderer.startWidth = laserWidth;
         laserLineRenderer.endWidth = laserWidth;
     }
-    
-    private void Update () {
-        if (_target != null && IsTargetFacingMe())
+
+    private void Update()
+    {
+        if (_target != null &&
+            IsTargetFacingMe())
         {
             _isFacingMe = true;
             IsTargetInteracting();
+
+            if(!_isTextActive)
+            {
+                ActivateText("E");
+            }
         }
-        else if(_isFacingMe)
+        else
         {
+            DeactivateText();
             _isFacingMe = false;
-            StopChanneling();
         }
 
         // Draw line
@@ -69,8 +72,8 @@ public class InteractionController : MonoBehaviour
         RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
         foreach (RaycastHit hit in frontHits)
         {
-            if(hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() || 
-                (hit.transform.parent != null && 
+            if (hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() ||
+                (hit.transform.parent != null &&
                 hit.transform.parent.gameObject.GetInstanceID() == gameObject.GetInstanceID()))
             {
                 return true;
@@ -79,78 +82,23 @@ public class InteractionController : MonoBehaviour
         return false;
     }
 
-    private void TargetStoppedInteracting()
-    {
-        // Reset state machine if not on top
-        _keyState.status = KeyStateMachine.InputStatus.IGNORE;
-        // Stop channeling coroutine
-        StopChanneling();
-    }
-
     private void IsTargetInteracting()
     {
-        _keyState.Update();
-
-        if(_keyState.status == KeyStateMachine.InputStatus.PRESSING && !_channelingRunning)
+        if (Input.GetButton("Interact"))
         {
-            _channelingCoroutine = WaitChanneling(_channelingTime);
-            StartCoroutine(_channelingCoroutine);
-            return;
+            onEnter.Invoke();
         }
-
-        if (_keyState.status != KeyStateMachine.InputStatus.PRESSING)
-        {
-            // Activate text
-            if(!_isActive)
-            {
-                ActivateText("E");
-            }
-
-            // Stop coroutine
-            if(_channelingRunning)
-            {
-                StopChanneling();
-            }
-        }
-    }
-
-    private void OnEndChanneling()
-    {
-        DeactivateText();
-        _action.OnInteraction();
-    }
-
-    private IEnumerator WaitChanneling(float channelingTime)
-    {
-        _channelingRunning = true;
-        _text.text = "Pressing";
-        yield return new WaitForSeconds(channelingTime);
-        _channelingRunning = false;
-        OnEndChanneling();
-    }
-
-    private void StopChanneling()
-    {
-        if (_channelingRunning)
-        {
-            // Stop channeling coroutine
-            StopCoroutine(_channelingCoroutine);
-            _channelingRunning = false;
-        }
-
-        // Hide text
-        DeactivateText();
     }
 
     private void DeactivateText()
     {
         _text.gameObject.SetActive(false);
-        _isActive = false;
+        _isTextActive = false;
     }
 
     private void ActivateText(string text)
     {
-        _isActive = true;
+        _isTextActive = true;
         _text.gameObject.SetActive(true);
         _text.text = text;
     }
@@ -164,15 +112,10 @@ public class InteractionController : MonoBehaviour
             _target = other.transform;
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.gameObject.tag == "Player")
-        {
-            StopChanneling();
-            TargetStoppedInteracting();
-            _target = null;
-        }
+        _target = null;
     }
 
     #region DrawLine
