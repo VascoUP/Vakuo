@@ -6,7 +6,7 @@ public delegate void EnemyDead(GameObject enemy);
 public class EnemyController : MonoBehaviour, IColliderListener
 {
     // Instance of event manager
-    private EventManager _events;
+    public EventManager _events;
 
     [SerializeField]
     private float _ySpeed;
@@ -16,11 +16,10 @@ public class EnemyController : MonoBehaviour, IColliderListener
     private int _lifes = 1;
 
     private bool _onCooldown = false;
+    private CharacterController _characterController;
     
     void Start()
     {
-        _events = Utils.GetComponentOnGameObject<EventManager>("Game Manager");
-
         // Set collider events for Head and Body children
         Collider[] colliders = GetComponentsInChildren<Collider>();
         foreach (Collider collider in colliders)
@@ -65,6 +64,10 @@ public class EnemyController : MonoBehaviour, IColliderListener
         
         astronaut.Push(_pushSpeed, _ySpeed, new Vector3(direction.x, 1, direction.z));
         // Damage astronaut
+
+        Debug.Log(astronaut.gameObject);
+        Debug.Log(gameObject);
+        Debug.Log(_events);
 
         _events.onPlayerPushed(astronaut.gameObject, gameObject);
     }
