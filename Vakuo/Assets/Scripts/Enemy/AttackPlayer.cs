@@ -1,54 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 public class AttackPlayer : MonoBehaviour
 {
     public Transform Player;
-    public int MoveSpeed = 4;
-    public float jumpSpeed = 3;
-    public int AttackRange = 3;
-    public float waitTime = 1.5f;
+    public float MoveSpeed = 4;
+    public float JumpSpeed = 3;
+    public float AttackRange = 0.1f;
+    public float WaitTime = 0.5f;
 
+    private CharacterController characterController;
 
     private enum States
     {
-        TURNING,
         MOVING,
         WAITING,
         ATTACKING,
     }
 
-    private States state = States.TURNING;
+    private States state = States.MOVING;
     private float counter;
 
     void Start()
     {
-
+        characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
+        Vector3 targetPosition = new Vector3(Player.position.x,
+            characterController.transform.position.y,
+            Player.position.z);
+        characterController.transform.LookAt(targetPosition);
+
         switch (state)
         {
-            case States.TURNING:
-                transform.LookAt(Player);
-                state = States.MOVING;
-                break;
             case States.MOVING:
-                if (Vector3.Distance(transform.position, Player.position) <= AttackRange)
+                if (Vector3.Distance(characterController.transform.position, Player.position) <= 0)
                 {
                     counter = 0;
                     state = States.WAITING;
                 }
                 else
                 {
-                    transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+                    transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed * Time.deltaTime);
                 }
                 break;
             case States.WAITING:
-                if (counter >= waitTime)
+                if (counter >= WaitTime)
                 {
+                    counter = 0;
                     state = States.ATTACKING;
                 }
                 else
@@ -57,15 +56,8 @@ public class AttackPlayer : MonoBehaviour
                 }
                 break;
             case States.ATTACKING:
-                //TODO write attack thingy here, for now it's jumping but in the wrong way ;)
-                transform.position += transform.up * jumpSpeed * Time.deltaTime;
-                state = States.TURNING;
+                state = States.MOVING;
                 break;
         }
-    }
-
-    public IEnumerator WaitToAttack()
-    {
-        yield return new WaitForSeconds(waitTime);
     }
 }
