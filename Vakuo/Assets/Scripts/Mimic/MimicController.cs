@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MimicController : MonoBehaviour {
     private enum MimicStatus { ANIMAL_TURN, PLAYER_TURN, END };
     private MimicStatus _state;
+
+    public UnityEvent onStart;
+    public UnityEvent onEnd;
 
     [SerializeField]
     private GameManager _gameManager;
@@ -28,6 +32,11 @@ public class MimicController : MonoBehaviour {
 
     [Range(1, 10)]
     public int numberOfTurns;
+    [Range(1, 10)]
+    public int initialNumberOfSounds;
+    [Range(1, 10)]
+    public int numberOfSoundsIncreaseAmount;
+    private int _numberOfSounds;
 
     private int _turn;
 
@@ -57,6 +66,7 @@ public class MimicController : MonoBehaviour {
         _turn = 0;
         _lives = numberOfLives;
         _state = MimicStatus.ANIMAL_TURN;
+        _numberOfSounds = initialNumberOfSounds;
 
         InteractionController ic = _mimicEmitter.GetComponent<InteractionController>();
         if (ic != null)
@@ -64,6 +74,8 @@ public class MimicController : MonoBehaviour {
 
         SetActiveUI(true);
 
+        Debug.Log("Start mimic");
+        onStart.Invoke();
         OnAnimalTurn();
     }
 
@@ -73,7 +85,7 @@ public class MimicController : MonoBehaviour {
         StopAllCoroutines();
     }
     
-    private void FixedUpdate ()
+    private void Update ()
     {
 		if(_state == MimicStatus.PLAYER_TURN)
         {
@@ -86,6 +98,10 @@ public class MimicController : MonoBehaviour {
         _state = MimicStatus.ANIMAL_TURN;
 
         _turn++;
+        if (_turn > 1)
+        {
+            _numberOfSounds += numberOfSoundsIncreaseAmount;
+        }
         if(_turn > numberOfTurns)
         {
             MimicSuccess();
@@ -101,11 +117,7 @@ public class MimicController : MonoBehaviour {
             _playerSounds.Clear();
         }
 
-        GenerateTurnSound(4);
-        foreach(int n in _mimicSounds)
-        {
-            Debug.Log("Sound:" + n);
-        }
+        GenerateTurnSound(_numberOfSounds);
 
         StartCoroutine(PlayAnimalSounds());
     }
@@ -124,6 +136,17 @@ public class MimicController : MonoBehaviour {
         AnnounceActive(false);
 
         End();
+    }
+
+    private IEnumerator WarningTurnFailure()
+    {
+        SetText(_announcerText, "Turn failed");
+        AnnounceActive(true);
+
+        yield return new WaitForSeconds(2f);
+        AnnounceActive(false);
+
+        OnAnimalTurn();
     }
 
     private IEnumerator PlayAnimalSounds()
@@ -156,6 +179,14 @@ public class MimicController : MonoBehaviour {
         {
             MimicFailure();
         }
+        else
+        {
+            _turn = 0;
+            _state = MimicStatus.ANIMAL_TURN;
+            _numberOfSounds = initialNumberOfSounds;
+
+            StartCoroutine(WarningTurnFailure());
+        }
     }
 
     private void MimicSuccess()
@@ -180,6 +211,8 @@ public class MimicController : MonoBehaviour {
     {
         if (_gameManager != null)
         {
+            Debug.Log("End mimic");
+            onEnd.Invoke();
             _gameManager.ChangeState(GameStatus.RUNNING);
         }
     }
@@ -226,14 +259,6 @@ public class MimicController : MonoBehaviour {
     {
         int addedIndex = _playerSounds.Count;
         _playerSounds.Add(sound);
-
-        Debug.Log(addedIndex + ": " + sound);
-        string str = "Mimic: ";
-        foreach(int s in _mimicSounds)
-        {
-            str += s + " ";
-        }
-        Debug.Log(str);
 
         SpawnVisualClue(sound);
         if (addedIndex < _mimicSounds.Count && _playerSounds[addedIndex] == _mimicSounds[addedIndex])

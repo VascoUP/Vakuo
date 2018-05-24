@@ -43,6 +43,9 @@ public class FollowPlayerCamera : MonoBehaviour
     public bool smooth;//Smooth rotation?
     public float smoothAmount = 5f;//Amount to smooth
 
+
+    private IEnumerator zoomEffect;
+
     private void Start()
     {
         _astronautController = target.GetComponent<AstronautController>();
@@ -125,7 +128,57 @@ public class FollowPlayerCamera : MonoBehaviour
         
         transform.Translate(targetLookOffset.x, targetLookOffset.y, 0);
     }
-    
+
+
+    #region Effects
+    private bool EndZoomEffect(float value, float target)
+    {
+        return Mathf.Approximately(value, target);
+    }
+
+    private IEnumerator ZoomEffect(float deltaDistance, float deltaHeight, float clamp)
+    {
+        float targetDistance = _distance + deltaDistance;
+        float targetMinHeight = _minHeight + deltaHeight;
+        float targetMaxHeight = _maxHeight + deltaHeight;
+
+        while(!EndZoomEffect(targetDistance, _distance) ||
+            !EndZoomEffect(targetMinHeight, _minHeight) ||
+            !EndZoomEffect(targetMaxHeight, _maxHeight))
+        {
+            _distance = Mathf.Lerp(_distance, targetDistance, clamp * Time.unscaledDeltaTime);
+            _minHeight = Mathf.Lerp(_minHeight, targetMinHeight, clamp * Time.unscaledDeltaTime);
+            _maxHeight = Mathf.Lerp(_maxHeight, targetMaxHeight, clamp * Time.unscaledDeltaTime);
+            yield return null;
+        }
+
+        _distance = targetDistance;
+        _minHeight = targetMinHeight;
+        _maxHeight = targetMaxHeight;
+    }
+
+    public void ZoomIn(/*float deltaDistance, float deltaHeight*/)
+    {
+        if(zoomEffect != null)
+        {
+            StopCoroutine(zoomEffect);
+        }
+
+        zoomEffect = ZoomEffect(-2f, -2f, 2f);
+        StartCoroutine(zoomEffect);
+    }
+
+    public void ZoomOut(/*float deltaDistance, float deltaHeight*/)
+    {
+        if (zoomEffect != null)
+        {
+            StopCoroutine(zoomEffect);
+        }
+
+        zoomEffect = ZoomEffect(2f, 2f, 2f);
+        StartCoroutine(zoomEffect);
+    }
+    #endregion
 
     private void LateUpdate()
     {
