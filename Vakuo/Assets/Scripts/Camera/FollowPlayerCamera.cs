@@ -44,10 +44,14 @@ public class FollowPlayerCamera : MonoBehaviour
     public float smoothAmount = 5f;//Amount to smooth
 
 
-    private IEnumerator zoomEffect;
+    private IEnumerator _zoomEffect;
+    // (x: Distance, y: Min Height, z: Max Height)
+    private Vector3 _targetZoom;
 
     private void Start()
     {
+        _targetZoom = new Vector3(_distance, _minHeight, _maxHeight);
+
         _astronautController = target.GetComponent<AstronautController>();
         if(_astronautController != null)
         {
@@ -138,45 +142,68 @@ public class FollowPlayerCamera : MonoBehaviour
 
     private IEnumerator ZoomEffect(float deltaDistance, float deltaHeight, float clamp)
     {
-        float targetDistance = _distance + deltaDistance;
-        float targetMinHeight = _minHeight + deltaHeight;
-        float targetMaxHeight = _maxHeight + deltaHeight;
+        _targetZoom = new Vector3(
+            _targetZoom.x + deltaDistance,
+            _targetZoom.y + deltaHeight,
+            _targetZoom.z + deltaHeight);
 
-        while(!EndZoomEffect(targetDistance, _distance) ||
-            !EndZoomEffect(targetMinHeight, _minHeight) ||
-            !EndZoomEffect(targetMaxHeight, _maxHeight))
+        while (!EndZoomEffect(_targetZoom.x, _distance) ||
+            !EndZoomEffect(_targetZoom.y, _minHeight) ||
+            !EndZoomEffect(_targetZoom.z, _maxHeight))
         {
-            _distance = Mathf.Lerp(_distance, targetDistance, clamp * Time.unscaledDeltaTime);
-            _minHeight = Mathf.Lerp(_minHeight, targetMinHeight, clamp * Time.unscaledDeltaTime);
-            _maxHeight = Mathf.Lerp(_maxHeight, targetMaxHeight, clamp * Time.unscaledDeltaTime);
+            _distance = Mathf.Lerp(_distance, _targetZoom.x, clamp * Time.unscaledDeltaTime);
+            _minHeight = Mathf.Lerp(_minHeight, _targetZoom.y, clamp * Time.unscaledDeltaTime);
+            _maxHeight = Mathf.Lerp(_maxHeight, _targetZoom.z, clamp * Time.unscaledDeltaTime);
             yield return null;
         }
 
-        _distance = targetDistance;
-        _minHeight = targetMinHeight;
-        _maxHeight = targetMaxHeight;
+        _distance = _targetZoom.x;
+        _minHeight = _targetZoom.y;
+        _maxHeight = _targetZoom.z;
     }
 
-    public void ZoomIn(/*float deltaDistance, float deltaHeight*/)
+    public void MimicZoomIn()
     {
-        if(zoomEffect != null)
+        if(_zoomEffect != null)
         {
-            StopCoroutine(zoomEffect);
+            StopCoroutine(_zoomEffect);
         }
 
-        zoomEffect = ZoomEffect(-2f, -2f, 2f);
-        StartCoroutine(zoomEffect);
+        _zoomEffect = ZoomEffect(-2f, -2f, 2f);
+        StartCoroutine(_zoomEffect);
     }
 
-    public void ZoomOut(/*float deltaDistance, float deltaHeight*/)
+    public void MimicZoomOut()
     {
-        if (zoomEffect != null)
+        if (_zoomEffect != null)
         {
-            StopCoroutine(zoomEffect);
+            StopCoroutine(_zoomEffect);
         }
 
-        zoomEffect = ZoomEffect(2f, 2f, 2f);
-        StartCoroutine(zoomEffect);
+        _zoomEffect = ZoomEffect(2f, 2f, 2f);
+        StartCoroutine(_zoomEffect);
+    }
+
+    public void CaveZoomIn()
+    {
+        if (_zoomEffect != null)
+        {
+            StopCoroutine(_zoomEffect);
+        }
+
+        _zoomEffect = ZoomEffect(-4f, -4f, 2f);
+        StartCoroutine(_zoomEffect);
+    }
+
+    public void CaveZoomOut()
+    {
+        if (_zoomEffect != null)
+        {
+            StopCoroutine(_zoomEffect);
+        }
+
+        _zoomEffect = ZoomEffect(4f, 4f, 2f);
+        StartCoroutine(_zoomEffect);
     }
     #endregion
 
