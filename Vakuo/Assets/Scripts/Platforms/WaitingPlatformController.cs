@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class WaitingPlatformController : MonoBehaviour
+public class WaitingPlatformController : ScriptActivator
 {
     [SerializeField]
     private float _speed;
@@ -90,10 +88,11 @@ public class WaitingPlatformController : MonoBehaviour
         MovePosition(Vector3.Lerp(_posInit, _posEnd, moveFrac));
     }
 
-    private void Update()
+    protected override void Run()
     {
         LoopMovement();
     }
+    
 
     private void Save(object sender, EventArgs args)
     {
@@ -129,6 +128,7 @@ public class WaitingPlatformController : MonoBehaviour
 
         }
     }
+
 }
 
 [Serializable]

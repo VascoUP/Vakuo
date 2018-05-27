@@ -62,6 +62,8 @@
      <Compile Include="Assets\Scripts\Collider\ColliderEvent.cs" />
      <Compile Include="Assets\Scripts\Collider\IColliderListener.cs" />
      <Compile Include="Assets\Scripts\Enabler\ItemsEnabler.cs" />
+     <Compile Include="Assets\Scripts\Enabler\TriggerOnEnter.cs" />
+     <Compile Include="Assets\Scripts\Enabler\TriggerOnExit.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyScriptEnabler.cs" />
@@ -81,6 +83,7 @@
      <Compile Include="Assets\Scripts\Mimic\SoundPrefabController.cs" />
      <Compile Include="Assets\Scripts\Modifiers\JumperController.cs" />
      <Compile Include="Assets\Scripts\Platforms\LinearPlatformController.cs" />
+     <Compile Include="Assets\Scripts\Platforms\ScriptActivator.cs" />
      <Compile Include="Assets\Scripts\Platforms\WaitingPlatformController.cs" />
      <Compile Include="Assets\Scripts\Player\AstronautController.cs" />
      <Compile Include="Assets\Scripts\Player\FallAbility.cs" />
@@ -94,8 +97,6 @@
      <Compile Include="Assets\Scripts\UI\ItemSlot.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenuController.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
-     <Compile Include="Assets\TriggerOnEnter.cs" />
-     <Compile Include="Assets\TriggerOnExit.cs" />
      <None Include="Assets\Art\3D_Models\material_codes.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

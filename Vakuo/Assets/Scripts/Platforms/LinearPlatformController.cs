@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class LinearPlatformController : MonoBehaviour {
+public class LinearPlatformController : ScriptActivator
+{
     private enum MovementType { Invert, Repeat, Destroy };
     [SerializeField]
     private MovementType _type;
@@ -53,7 +52,6 @@ public class LinearPlatformController : MonoBehaviour {
         MovePosition(localPosition);
     }
 
-
     private void RepeatMovement()
     {
         float distanceCovered = (Time.time - _startTime) * _speed;
@@ -85,9 +83,10 @@ public class LinearPlatformController : MonoBehaviour {
         MovePosition(Vector3.Lerp(_startPosition, _endPosition, fracJourney));
     }
 
-    // Update is called once per frame
-    private void FixedUpdate () {
-        switch(_type) {
+    protected override void Run()
+    {
+        switch (_type)
+        {
             case MovementType.Invert:
                 InvertMovement();
                 break;
