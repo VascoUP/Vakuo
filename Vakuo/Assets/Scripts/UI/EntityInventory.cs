@@ -9,7 +9,7 @@ public class EntityInventory : MonoBehaviour
 
     private void Start()
     {
-        mainContainer.OnInventoryChange.AddListener(delegate { Debug.Log("Inventory changed!"); });
+        mainContainer.OnInventoryChange.AddListener(delegate { });
     }
 
     private void OnGUI()

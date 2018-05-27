@@ -1,8 +1,12 @@
 ﻿using Assets.Scripts.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AnimalAction : InteractionAction
 {
+    public UnityEvent onSuccess;
+    public UnityEvent onFailure;
+
     [SerializeField]
     private GameManager _gameManager;
     [SerializeField]
@@ -24,10 +28,11 @@ public class AnimalAction : InteractionAction
 
     public void MimicSuccess()
     {
-        Destroy(gameObject);
+        onSuccess.Invoke();
     }
 
     public void MimicFailure()
     {
+        onFailure.Invoke();
     }
 }

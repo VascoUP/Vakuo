@@ -4,11 +4,13 @@ using UnityEngine.Events;
 
 public class InteractionController : MonoBehaviour
 {
-    public UnityEvent onEnter;
+    [SerializeField]
+    private GameObject _interactObject;
+
+    public UnityEvent onInteract;
     
     [SerializeField]
     private float _maxRasycastLength = 5f;
-
 
     private KeyStateMachine _keyState;
     private Transform _target;
@@ -28,7 +30,6 @@ public class InteractionController : MonoBehaviour
         _keyState = new KeyStateMachine("Interact");
 
         // Draw line
-        Debug.Log(laserLineRenderer);
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth = laserWidth;
@@ -72,9 +73,7 @@ public class InteractionController : MonoBehaviour
         RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
         foreach (RaycastHit hit in frontHits)
         {
-            if (hit.transform.gameObject.GetInstanceID() == gameObject.GetInstanceID() ||
-                (hit.transform.parent != null &&
-                hit.transform.parent.gameObject.GetInstanceID() == gameObject.GetInstanceID()))
+            if (hit.transform.gameObject.GetInstanceID() == _interactObject.GetInstanceID())
             {
                 return true;
             }
@@ -86,7 +85,7 @@ public class InteractionController : MonoBehaviour
     {
         if (Input.GetButton("Interact"))
         {
-            onEnter.Invoke();
+            onInteract.Invoke();
         }
     }
 

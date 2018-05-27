@@ -16,7 +16,7 @@ public class FollowPlayerCamera : MonoBehaviour
     private float _minHeight;
     [SerializeField]
     private float _maxHeight;
-    private float __headToCamRatio;
+    private float _headToCamRatio;
     [SerializeField]
     private float _positionDamping;
     
@@ -43,6 +43,9 @@ public class FollowPlayerCamera : MonoBehaviour
     public bool smooth;//Smooth rotation?
     public float smoothAmount = 5f;//Amount to smooth
 
+    public bool drawLineRendered = false;
+    public LineRenderer laserLineRenderer;
+    public float laserWidth = 0.1f;
 
     private IEnumerator _zoomEffect;
     // (x: Distance, y: Min Height, z: Max Height)
@@ -57,7 +60,7 @@ public class FollowPlayerCamera : MonoBehaviour
         {
             float maxDeltaHead = _astronautController.headMaxRotation - _astronautController.headMinRotation;
             float maxDeltaCam = _maxHeight - _minHeight;
-            __headToCamRatio = maxDeltaCam / maxDeltaHead;
+            _headToCamRatio = maxDeltaCam / maxDeltaHead;
         }
     }
 
@@ -105,24 +108,33 @@ public class FollowPlayerCamera : MonoBehaviour
     {
         if (_astronautController != null)
         {
-            rotation = _astronautController.currentHeadRotation * __headToCamRatio + __headToCamRatio + _minHeight;
+            rotation = _astronautController.currentHeadRotation * _headToCamRatio + _headToCamRatio + _minHeight;
         }
 
         Vector3 wantedPosition = target.TransformPoint(0, rotation, -_distance);
         Vector3 lookAtPosition = target.transform.position;
 
         // check to see if there is anything behind the target
+        Vector3 direction = wantedPosition - target.TransformPoint(_bumperRayOffset);
         RaycastHit hit;
-        Vector3 back = target.transform.TransformDirection(-1 * Vector3.forward);
 
         // cast the bumper ray out from rear and check to see if there is anything behind
-        if (Physics.Raycast(target.TransformPoint(_bumperRayOffset), back, out hit, _bumperDistanceCheck, LayerMask.NameToLayer("Trigger"))
+        if (Physics.Raycast(
+            target.TransformPoint(_bumperRayOffset), direction, out hit, 
+            _bumperDistanceCheck, ~(1 << LayerMask.NameToLayer("Trigger")))
             && hit.transform != target) // ignore ray-casts that hit the user. DR
         {
-            // clamp wanted position to hit position
-            wantedPosition.x = hit.point.x;
-            wantedPosition.z = hit.point.z;
-            wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, _positionDamping * Time.deltaTime);
+            float dist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), hit.point);
+            float wantedDist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), wantedPosition);
+            if (dist < wantedDist)
+            {
+                // clamp wanted position to hit position
+                wantedPosition.x = hit.point.x;
+                wantedPosition.z = hit.point.z;
+                //wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, _positionDamping * Time.deltaTime);
+                //wantedPosition = target.TransformPoint(0, rotation, -dist);
+            }
+
         }
 
         transform.Translate(-targetLookOffset.x, -targetLookOffset.y, 0);
@@ -207,9 +219,32 @@ public class FollowPlayerCamera : MonoBehaviour
     }
     #endregion
 
+    #region DrawLine
+
+    void ShootLaserFromTargetPosition()
+    {
+        Vector3 direction = Vector3.Normalize(transform.position - target.transform.position);
+        Vector3 endPosition = target.transform.position + (_bumperDistanceCheck * direction);
+        laserLineRenderer.SetPosition(0, target.TransformPoint(_bumperRayOffset));
+        laserLineRenderer.SetPosition(1, endPosition);
+    }
+
+    #endregion
+
     private void LateUpdate()
     {
-        FollowPlayer();
+        FollowPlayer();        
+        
+        // Draw line
+        if (drawLineRendered)
+        {
+            ShootLaserFromTargetPosition();
+            laserLineRenderer.enabled = true;
+        }
+        else
+        {
+            laserLineRenderer.enabled = false;
+        }
     }
 
     private void OnDestroy()

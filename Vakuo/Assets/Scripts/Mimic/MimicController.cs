@@ -74,7 +74,6 @@ public class MimicController : MonoBehaviour {
 
         SetActiveUI(true);
 
-        Debug.Log("Start mimic");
         onStart.Invoke();
         OnAnimalTurn();
     }
@@ -211,7 +210,6 @@ public class MimicController : MonoBehaviour {
     {
         if (_gameManager != null)
         {
-            Debug.Log("End mimic");
             onEnd.Invoke();
             _gameManager.ChangeState(GameStatus.RUNNING);
         }

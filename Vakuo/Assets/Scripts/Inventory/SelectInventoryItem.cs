@@ -57,7 +57,6 @@ public class SelectInventoryItem : MonoBehaviour {
 		{
             // Spawn player on the spot
             _spawnedAnimal = Instantiate(_prefab, transform);
-			Debug.Log ("New spawned animal " + _spawnedAnimal);
             // Disable inventory enabler for now
             _iEnabler.Disable();
             // Enable animal spawned
@@ -106,7 +105,6 @@ public class SelectInventoryItem : MonoBehaviour {
 
     public void Remove()
     {
-		Debug.Log ("Remove animal " + _animalSpawned);
         if(_animalSpawned)
 		{
 			// Animal is no longer spawned

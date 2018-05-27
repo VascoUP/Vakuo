@@ -52,7 +52,6 @@ public class InventoryController : MonoBehaviour {
     {
         if (itemSlot.inventoryReference != null && itemSlot.inventoryItemReference != null)
         {
-            Debug.Log("Double clicked: " + itemSlot.inventoryItemReference.Name);
             if(onItemSelected != null)
             {
                 onItemSelected(itemSlot.inventoryItemReference.Name);
@@ -81,7 +80,6 @@ public class InventoryController : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Cannot find the sprite for: " + inventoryItem.Graphic);
         }
         // Add listeners to slot events
         itemSlot.OnDoubleClickItem.AddListener(OnDoubleClickItem);
