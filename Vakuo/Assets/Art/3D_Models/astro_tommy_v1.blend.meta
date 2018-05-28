@@ -1,10 +1,95 @@
 fileFormatVersion: 2
 guid: 9dfeb4e9d47887445818bc524cf16a2d
-timeCreated: 1526559902
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: arm1_L
+    100002: arm2_L
+    100004: Armature
+    100006: //RootNode
+    100008: backpack
+    100010: body
+    100012: Bone
+    100014: finger1_1_L
+    100016: finger1_2_L
+    100018: finger2_1_L
+    100020: finger2_2_L
+    100022: finger3_1_L
+    100024: finger3_2_L
+    100026: foot_L
+    100028: hand_L
+    100030: hand_L_0
+    100032: hand_R
+    100034: head
+    100036: head_0
+    100038: leg1_L
+    100040: leg2_L
+    100042: spine
+    100044: straight_arm_L
+    100046: straight_arm_R
+    100048: thumb1_L
+    100050: thumb2_L
+    100052: toe_L
+    100054: torso
+    400000: arm1_L
+    400002: arm2_L
+    400004: Armature
+    400006: //RootNode
+    400008: backpack
+    400010: body
+    400012: Bone
+    400014: finger1_1_L
+    400016: finger1_2_L
+    400018: finger2_1_L
+    400020: finger2_2_L
+    400022: finger3_1_L
+    400024: finger3_2_L
+    400026: foot_L
+    400028: hand_L
+    400030: hand_L_0
+    400032: hand_R
+    400034: head
+    400036: head_0
+    400038: leg1_L
+    400040: leg2_L
+    400042: spine
+    400044: straight_arm_L
+    400046: straight_arm_R
+    400048: thumb1_L
+    400050: thumb2_L
+    400052: toe_L
+    400054: torso
+    2100000: branco-fato
+    2100002: amarelo-fato
+    2100004: preto-fato
+    2100006: arm_texture_right
+    2100008: cinza-fato
+    2100010: arm_texture_left
+    2100012: unnamed
+    2100014: vermelho-fato
+    2300000: backpack
+    2300002: body
+    2300004: hand_L
+    2300006: hand_R
+    2300008: head
+    2300010: straight_arm_L
+    2300012: straight_arm_R
+    3300000: backpack
+    3300002: body
+    3300004: hand_L
+    3300006: hand_R
+    3300008: head
+    3300010: straight_arm_L
+    3300012: straight_arm_R
+    4300000: body
+    4300002: straight_arm_R
+    4300004: hand_R
+    4300006: straight_arm_L
+    4300008: hand_L
+    4300010: backpack
+    4300012: head
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -24,6 +109,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
