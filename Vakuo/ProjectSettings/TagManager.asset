@@ -12,6 +12,8 @@ TagManager:
   - Plataform
   - End World
   - Animal Slot
+  - Enemy
+  - EnemyCamp
   layers:
   - Default
   - TransparentFX

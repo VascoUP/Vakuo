@@ -20,7 +20,8 @@ public class AstronautController : MonoBehaviour {
     [SerializeField]
     private Transform _feet;
     // Check distance
-    private float _feetRadius = 0.2f;
+    [SerializeField]
+    private float _feetRadius = 0.05f;
     // Layer for the platforms
     [SerializeField]
     private LayerMask _platformLayer;
@@ -48,7 +49,7 @@ public class AstronautController : MonoBehaviour {
     // Indicates if a push effect is taking place
     private bool _isPushed = false;
     [SerializeField]
-    private float _pushMinTime = 2f;
+    private float _pushMinTime = 0.5f;
     [SerializeField]
     private float _clampPushMagnitude = 10f;
 
@@ -90,7 +91,7 @@ public class AstronautController : MonoBehaviour {
         _isPushed = true;
         // Wait for minimim cooldown
         yield return new WaitForSeconds(pushTime);
-        // Wait for push to be over
+        // Wait for player to be grounded
         yield return new WaitUntil(IsEndPushed);
 
         Vector2 clampVector = new Vector2(_velocity.x, _velocity.z);
@@ -113,11 +114,22 @@ public class AstronautController : MonoBehaviour {
         _isPushed = false;
     }
 
+    private float DistanceToGround() {
+        RaycastHit hit;
+        if(Physics.Raycast(_feet.position, Vector3.down, out hit, 2f, ~(1 << gameObject.layer))) {
+            Vector3 diff = _feet.position - hit.point;
+            return diff.magnitude;
+        }
+        return float.PositiveInfinity;
+    }
+
+
     // Checks if the astronaut is touching a platform or not using Raycast
     private void CheckPlatform()
     {
+        float sphereRadius = 0.4f;
         RaycastHit hit;
-        if (Physics.Raycast(_feet.position, Vector3.down, out hit, _feetRadius, _platformLayer))
+        if (Physics.SphereCast(_feet.position + Vector3.up * sphereRadius, sphereRadius, Vector3.down, out hit, _feetRadius, _platformLayer))
         {
             if (_ridingPlatform == null || hit.collider.transform.GetInstanceID() != _ridingPlatform.GetInstanceID())
             {
@@ -125,17 +137,14 @@ public class AstronautController : MonoBehaviour {
                 _ridingOffset = transform.position - _ridingPlatform.position;
             }
         }
-        else
+        else if(_ridingPlatform != null)
         {
-            if(_ridingPlatform != null)
-            {
-                // Let the player continue with the momentum from the platform
-                Vector3 desiredPosition = _ridingOffset + _ridingPlatform.position;
-                Vector3 delta = desiredPosition - transform.position;
-                
-                delta = delta / Time.deltaTime;
-                _velocity += delta;
-            }
+            // Let the player continue with the momentum from the platform
+            Vector3 desiredPosition = _ridingOffset + _ridingPlatform.position;
+            Vector3 delta = desiredPosition - transform.position;
+            
+            delta = delta / Time.deltaTime;
+            _velocity += delta;
 
             _ridingPlatform = null;
         }

@@ -12,7 +12,6 @@ public class InteractionController : MonoBehaviour
     [SerializeField]
     private float _maxRasycastLength = 5f;
 
-    private KeyStateMachine _keyState;
     private Transform _target;
     private bool _isFacingMe = false;
 
@@ -26,10 +25,7 @@ public class InteractionController : MonoBehaviour
     public float laserWidth = 0.1f;
 
 
-    private void Start () {
-        _keyState = new KeyStateMachine("Interact");
-
-        // Draw line
+    private void Start () {        // Draw line
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth = laserWidth;
@@ -49,7 +45,7 @@ public class InteractionController : MonoBehaviour
                 ActivateText("E");
             }
         }
-        else
+        else if(_isFacingMe)
         {
             DeactivateText();
             _isFacingMe = false;

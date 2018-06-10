@@ -1,4 +1,6 @@
-﻿public class EnemyScriptEnabler : ItemsEnabler
+﻿using UnityEngine;
+
+public class EnemyScriptEnabler : ItemsEnabler
 {
     private EnemyController[] _enemyControllers;
     private AttackPlayer[] _enemyAttacks;
@@ -15,19 +17,19 @@
         _enemyAttacks = GetComponentsInChildren<AttackPlayer>();
     }
 
-    public override void EnableItems(bool isEnable)
+    public override void EnableItems(Transform target, bool isEnable)
     {
+        if(!isEnable)
+            return;
         if (_enemyControllers == null)
             GetItems();
+        target = isEnable ? target : null;
         foreach(EnemyController controller in _enemyControllers)
         {
-            if(controller != null)
+            if(controller != null) {
+                controller.SetTarget(target);
                 controller.enabled = isEnable;
-        }
-        foreach (AttackPlayer attack in _enemyAttacks)
-        {
-            if (attack != null)
-                attack.enabled = isEnable;
+            }
         }
     }
 }

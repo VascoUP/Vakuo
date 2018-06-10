@@ -2,13 +2,13 @@
 
 public abstract class ItemsEnabler : MonoBehaviour {
 
-    public abstract void EnableItems(bool isEnable);
+    public abstract void EnableItems(Transform target, bool isEnable);
 
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.tag == "Player")
         {
-            EnableItems(true);
+            EnableItems(collider.transform, true);
         }
     }
 
@@ -16,7 +16,7 @@ public abstract class ItemsEnabler : MonoBehaviour {
     {
         if (collider.gameObject.tag == "Player")
         {
-            EnableItems(false);
+            EnableItems(collider.transform, false);
         }
     }
 }
