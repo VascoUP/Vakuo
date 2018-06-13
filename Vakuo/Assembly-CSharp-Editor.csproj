@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bezier\Scripts\Editor\BezierEditor.cs" />
+     <Compile Include="Assets\Packages\Bezier\Scripts\Editor\BezierEditor.cs" />
+     <Compile Include="Assets\Packages\BezierCurves\Editor\BezierCurveEditor.cs" />
+     <Compile Include="Assets\Packages\BezierCurves\Editor\BezierPointEditor.cs" />
      <Compile Include="Assets\Packages\FMOD\Editor\FMODMigrationUtil.cs" />
      <Compile Include="Assets\Packages\FMOD\GoogleVR\Editor\FmodGvrAudioRoomEditor.cs" />
      <Compile Include="Assets\Packages\FMOD\Plugins\Editor\FMOD\BankRefDrawer.cs" />
@@ -75,6 +77,7 @@
      <Compile Include="Assets\Packages\FMOD\Plugins\Editor\FMOD\StudioListenerEditor.cs" />
      <Compile Include="Assets\Packages\FMOD\Plugins\Editor\FMOD\StudioParameterTriggerEditor.cs" />
      <Compile Include="Assets\Packages\FMOD\ResonanceAudio\Editor\FmodResonanceAudioRoomEditor.cs" />
+     <Compile Include="Assets\Packages\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />

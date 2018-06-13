@@ -71,6 +71,12 @@ public class AstronautController : MonoBehaviour {
     // Offset from the astronaut to the platform
     private Vector3 _ridingOffset;
 
+    private bool _isGrounded = false;
+
+    private Vector3 _hitNormal;
+
+    public bool showStatus = false;
+
     private void Start () {
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
@@ -83,7 +89,7 @@ public class AstronautController : MonoBehaviour {
 
     private bool IsEndPushed()
     {
-        return (_cc.isGrounded || _ridingPlatform != null);
+        return (_isGrounded || _ridingPlatform != null);
     }
 
     private IEnumerator WaitEndPush(float pushTime)
@@ -123,6 +129,11 @@ public class AstronautController : MonoBehaviour {
         return float.PositiveInfinity;
     }
 
+
+    private void UpdateGrounded()
+    {
+        _isGrounded = (Vector3.Angle(Vector3.up, _hitNormal) <= _cc.slopeLimit && _cc.isGrounded) || _ridingPlatform != null;
+    }
 
     // Checks if the astronaut is touching a platform or not using Raycast
     private void CheckPlatform()
@@ -175,12 +186,20 @@ public class AstronautController : MonoBehaviour {
     // Updates the boolean isGrounded by checking if the feet are colliding with an object that is ground
     private void UpdateYVelocity()
     {
-        if (!_isJumpFrame && (_cc.isGrounded || _ridingPlatform != null))
+        if (!_isJumpFrame && _isGrounded)
         {
             _velocity.y = 0f;
         }
         else
+        {
+            _velocity.x += (1f - _hitNormal.y) * _hitNormal.x * (_walkSpeed - 0f);
+            _velocity.z += (1f - _hitNormal.y) * _hitNormal.z * (_walkSpeed - 0f);
             _velocity.y -= gravity * Time.deltaTime;
+            if(showStatus)
+            {
+                Debug.Log("Update Y Velocity:" + _velocity);
+            }
+        }
     }
 
     // Rotates the player according to mouse input
@@ -202,7 +221,7 @@ public class AstronautController : MonoBehaviour {
     // Checks for input and isGrounded and decides if character should jump or not
     private void Jump()
     {
-        if (Input.GetButton("Jump") && (_cc.isGrounded || _ridingPlatform != null) && !_isJumpFrame)
+        if (Input.GetButton("Jump") && (_isGrounded || _ridingPlatform != null) && !_isJumpFrame)
         {
             Jump(_jumpSpeed);
         }
@@ -216,15 +235,24 @@ public class AstronautController : MonoBehaviour {
         
         if(!_isPushed)
         {
-            if (_cc.isGrounded || _ridingPlatform != null)
+            if (_isGrounded || _ridingPlatform != null)
             {
                 moveVelocity = transform.TransformDirection(input * _walkSpeed);
             }
             else if(_ridingPlatform == null)
             {
-                // Player will be able to change his velocity mid air but on a smaller scale
-                moveVelocity = transform.TransformDirection(input * _walkSpeed * _midAirControlRatio) + new Vector3(_velocity.x, 0, _velocity.z);
-                moveVelocity = Vector3.ClampMagnitude(moveVelocity, _jumpMaxSpeed);
+                if(!_cc.isGrounded)
+                {
+                    // Player will be able to change his velocity mid air but on a smaller scale
+                    moveVelocity = 
+                        transform.TransformDirection(input * _walkSpeed * _midAirControlRatio) + 
+                        new Vector3(_velocity.x, 0, _velocity.z);
+                    moveVelocity = Vector3.ClampMagnitude(moveVelocity, _jumpMaxSpeed);
+                }
+                else
+                {
+                    moveVelocity = new Vector3(_velocity.x, 0f, _velocity.z);
+                }
             }
 
             _velocity = moveVelocity + Vector3.up * _velocity.y;
@@ -262,10 +290,22 @@ public class AstronautController : MonoBehaviour {
     private void UpdateRunning()
     {
         CheckPlatform();
+        UpdateGrounded();
         UpdateYVelocity();
         Aim();
         Jump();
         Move();
+        if (showStatus)
+        {
+            Debug.Log("NORAML:" + _hitNormal);
+            Debug.Log("IS GROUNDED:" + _cc.isGrounded);
+            Debug.Log("VELOCITY:" + _velocity);
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        _hitNormal = hit.normal;
     }
 
     private void OnEnterState(GameStatus state)

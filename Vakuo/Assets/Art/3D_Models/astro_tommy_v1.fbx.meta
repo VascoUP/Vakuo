@@ -1,134 +1,128 @@
 fileFormatVersion: 2
-guid: fe45893d43443d74b8e6ced7bb297c93
-timeCreated: 1526560269
-licenseType: Free
+guid: 0f020f88eafd3a24ba5fa1f646260e1b
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: arm1.L
-    100002: arm2.L
-    100004: Armature
-    100006: //RootNode
-    100008: backpack
-    100010: body
-    100012: Bone
-    100014: Camera
-    100016: finger1.1.L
-    100018: finger1.2.L
-    100020: finger1.2.L_end
-    100022: finger2.1.L
-    100024: finger2.2.L
-    100026: finger2.2.L_end
-    100028: finger3.1.L
-    100030: finger3.2.L
-    100032: finger3.2.L_end
-    100034: foot.L
-    100036: foot_roll.L
-    100038: foot_roll.L_end
-    100040: hand.L
-    100042: hand.L 1
-    100044: hand.R
-    100046: head
-    100048: head 1
-    100050: head_end
-    100052: leg1.L
-    100054: leg2.L
-    100056: leg2.L_end
-    100058: leg_IK.L
-    100060: leg_IK.L_end
-    100062: leg_pole_target.L
-    100064: leg_pole_target.L_end
-    100066: spine
-    100068: Spot
-    100070: straight_arm.L
-    100072: straight_arm.R
-    100074: Sun
-    100076: thumb1.L
-    100078: thumb2.L
-    100080: thumb2.L_end
-    100082: toe.L
-    100084: toe.L_end
-    100086: toes_control.L
-    100088: toes_control.L_end
-    100090: torso
-    400000: arm1.L
-    400002: arm2.L
-    400004: Armature
-    400006: //RootNode
-    400008: backpack
-    400010: body
-    400012: Bone
-    400014: Camera
-    400016: finger1.1.L
-    400018: finger1.2.L
-    400020: finger1.2.L_end
-    400022: finger2.1.L
-    400024: finger2.2.L
-    400026: finger2.2.L_end
-    400028: finger3.1.L
-    400030: finger3.2.L
-    400032: finger3.2.L_end
-    400034: foot.L
-    400036: foot_roll.L
-    400038: foot_roll.L_end
-    400040: hand.L
-    400042: hand.L 1
-    400044: hand.R
-    400046: head
-    400048: head 1
-    400050: head_end
-    400052: leg1.L
-    400054: leg2.L
-    400056: leg2.L_end
-    400058: leg_IK.L
-    400060: leg_IK.L_end
-    400062: leg_pole_target.L
-    400064: leg_pole_target.L_end
-    400066: spine
-    400068: Spot
-    400070: straight_arm.L
-    400072: straight_arm.R
-    400074: Sun
-    400076: thumb1.L
-    400078: thumb2.L
-    400080: thumb2.L_end
-    400082: toe.L
-    400084: toe.L_end
-    400086: toes_control.L
-    400088: toes_control.L_end
-    400090: torso
-    2000000: Camera
+    100000: arm_1.L
+    100002: arm_1.R
+    100004: arm_2.L
+    100006: arm_2.R
+    100008: Armature
+    100010: //RootNode
+    100012: backpack
+    100014: body
+    100016: body 1
+    100018: body.001
+    100020: body.001_end
+    100022: chest
+    100024: foot.L
+    100026: foot.R
+    100028: hand.L
+    100030: hand.L 1
+    100032: hand.L_end
+    100034: hand.R
+    100036: hand.R.001
+    100038: hand.R.001_end
+    100040: head
+    100042: head 1
+    100044: head_end
+    100046: leg1.L
+    100048: leg1.R
+    100050: leg2.L
+    100052: leg2.L_end
+    100054: leg2.R
+    100056: leg2.R_end
+    100058: leg_control.L
+    100060: leg_control.R
+    100062: leg_IK.L
+    100064: leg_IK.L_end
+    100066: leg_IK.R
+    100068: leg_IK.R_end
+    100070: leg_poletarget.L
+    100072: leg_poletarget.L_end
+    100074: leg_poletarget.R
+    100076: leg_poletarget.R_end
+    100078: neck
+    100080: straight_arm.L
+    100082: straight_arm.R
+    100084: Sun
+    100086: toes.L
+    100088: toes.L_end
+    100090: toes.R
+    100092: toes.R_end
+    400000: arm_1.L
+    400002: arm_1.R
+    400004: arm_2.L
+    400006: arm_2.R
+    400008: Armature
+    400010: //RootNode
+    400012: backpack
+    400014: body
+    400016: body 1
+    400018: body.001
+    400020: body.001_end
+    400022: chest
+    400024: foot.L
+    400026: foot.R
+    400028: hand.L
+    400030: hand.L 1
+    400032: hand.L_end
+    400034: hand.R
+    400036: hand.R.001
+    400038: hand.R.001_end
+    400040: head
+    400042: head 1
+    400044: head_end
+    400046: leg1.L
+    400048: leg1.R
+    400050: leg2.L
+    400052: leg2.L_end
+    400054: leg2.R
+    400056: leg2.R_end
+    400058: leg_control.L
+    400060: leg_control.R
+    400062: leg_IK.L
+    400064: leg_IK.L_end
+    400066: leg_IK.R
+    400068: leg_IK.R_end
+    400070: leg_poletarget.L
+    400072: leg_poletarget.L_end
+    400074: leg_poletarget.R
+    400076: leg_poletarget.R_end
+    400078: neck
+    400080: straight_arm.L
+    400082: straight_arm.R
+    400084: Sun
+    400086: toes.L
+    400088: toes.L_end
+    400090: toes.R
+    400092: toes.R_end
     2100000: branco-fato
     2100002: amarelo-fato
     2100004: preto-fato
-    2100006: arm_texture_right
-    2100008: cinza-fato
-    2100010: arm_texture_left
-    2100012: No Name
+    2100006: No Name
+    2100008: arm_texture_left
+    2100010: cinza-fato
+    2100012: arm_texture_right
     2100014: vermelho-fato
-    2300000: backpack
-    2300002: body
-    2300004: hand.L
-    2300006: hand.R
-    2300008: head
-    2300010: straight_arm.L
-    2300012: straight_arm.R
-    3300000: backpack
-    3300002: body
-    3300004: hand.L
-    3300006: hand.R
-    3300008: head
-    3300010: straight_arm.L
-    3300012: straight_arm.R
     4300000: body
-    4300002: straight_arm.R
-    4300004: hand.R
-    4300006: straight_arm.L
-    4300008: hand.L
-    4300010: backpack
+    4300002: backpack
+    4300004: straight_arm.L
+    4300006: hand.L
+    4300008: straight_arm.R
+    4300010: hand.R
     4300012: head
-    10800000: Spot
-    10800002: Sun
+    7400000: Armature|walk
+    7400002: Armature|Walking_blocking
+    9500000: //RootNode
+    10800000: Sun
+    13700000: backpack
+    13700002: body
+    13700004: hand.L
+    13700006: hand.R
+    13700008: head
+    13700010: straight_arm.L
+    13700012: straight_arm.R
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -148,6 +142,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -203,7 +198,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

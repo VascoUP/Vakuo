@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bezier\Scripts\BezierGenerator.cs" />
+     <Compile Include="Assets\Packages\Bezier\Scripts\BezierGenerator.cs" />
+     <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierCurve.cs" />
+     <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierPoint.cs" />
      <Compile Include="Assets\Packages\FMOD\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
      <Compile Include="Assets\Packages\FMOD\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
      <Compile Include="Assets\Packages\FMOD\Plugins\FMOD\BankRefAttribute.cs" />
@@ -74,6 +76,7 @@
      <Compile Include="Assets\Packages\FMOD\Plugins\FMOD\Wrapper\fmod_studio.cs" />
      <Compile Include="Assets\Packages\FMOD\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
      <Compile Include="Assets\Packages\FMOD\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
+     <Compile Include="Assets\Packages\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -130,6 +133,7 @@
      <Compile Include="Assets\Scripts\Enabler\TriggerOnEnter.cs" />
      <Compile Include="Assets\Scripts\Enabler\TriggerOnExit.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BezierPathing.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyScriptEnabler.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
@@ -153,6 +157,7 @@
      <Compile Include="Assets\Scripts\Player\FallAbility.cs" />
      <Compile Include="Assets\Scripts\Player\GroundedChecker.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMeshController.cs" />
+     <Compile Include="Assets\Scripts\Player\SwirlAttack.cs" />
      <Compile Include="Assets\Scripts\UI\BasicContainer.cs" />
      <Compile Include="Assets\Scripts\UI\BasicItem.cs" />
      <Compile Include="Assets\Scripts\UI\EntityInventory.cs" />
@@ -161,9 +166,8 @@
      <Compile Include="Assets\Scripts\UI\ItemSlot.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenuController.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
-     <Compile Include="Assets\Snow\Scripts\MoveRigidbody.cs" />
-     <Compile Include="Assets\Snow\Scripts\MoveSphere.cs" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\Packages\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Fog.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
@@ -174,19 +178,19 @@
      <None Include="Assets\Packages\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\ACES.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
-     <None Include="Assets\Art\3D_Models\material_codes.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Uber.shader" />
      <None Include="Assets\Shaders\FresnelEffectShader.shader" />
-     <None Include="Assets\Snow\Shaders\SnowTessShader.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Blit.shader" />
+     <None Include="Assets\Packages\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\FXAA3.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\MotionBlur.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+     <None Include="Assets\Packages\BezierCurves\readme.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Common.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
@@ -202,12 +206,12 @@
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\Shaders\DisintegrateInOut.shader" />
      <None Include="Assets\Packages\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
-     <None Include="Assets\Snow\Shaders\TesselationShader.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
  <Reference Include="Cinemachine">
  <HintPath>C:/Users/vasco/Documents/Vakuo/Vakuo/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
