@@ -73,8 +73,6 @@ public class AstronautController : MonoBehaviour {
 
     private bool _isGrounded = false;
 
-    private Vector3 _hitNormal;
-
     public bool showStatus = false;
 
     private void Start () {
@@ -132,7 +130,7 @@ public class AstronautController : MonoBehaviour {
 
     private void UpdateGrounded()
     {
-        _isGrounded = (Vector3.Angle(Vector3.up, _hitNormal) <= _cc.slopeLimit && _cc.isGrounded) || _ridingPlatform != null;
+        _isGrounded = _cc.isGrounded || _ridingPlatform != null;
     }
 
     // Checks if the astronaut is touching a platform or not using Raycast
@@ -192,8 +190,6 @@ public class AstronautController : MonoBehaviour {
         }
         else
         {
-            _velocity.x += (1f - _hitNormal.y) * _hitNormal.x * (_walkSpeed - 0f);
-            _velocity.z += (1f - _hitNormal.y) * _hitNormal.z * (_walkSpeed - 0f);
             _velocity.y -= gravity * Time.deltaTime;
             if(showStatus)
             {
@@ -297,17 +293,11 @@ public class AstronautController : MonoBehaviour {
         Move();
         if (showStatus)
         {
-            Debug.Log("NORAML:" + _hitNormal);
             Debug.Log("IS GROUNDED:" + _cc.isGrounded);
             Debug.Log("VELOCITY:" + _velocity);
         }
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        _hitNormal = hit.normal;
-    }
-
+    
     private void OnEnterState(GameStatus state)
     {
         switch (state)
