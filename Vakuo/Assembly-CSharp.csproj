@@ -130,7 +130,6 @@
     <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\Packages\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
-    <Compile Include="Assets\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CinematicCamera.cs" />
@@ -165,6 +164,7 @@
     <Compile Include="Assets\Scripts\Player\AstronautController.cs" />
     <Compile Include="Assets\Scripts\Player\FallAbility.cs" />
     <Compile Include="Assets\Scripts\Player\GroundedChecker.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMeshController.cs" />
     <Compile Include="Assets\Scripts\Player\SwirlAttack.cs" />
     <Compile Include="Assets\Scripts\UI\BasicContainer.cs" />
