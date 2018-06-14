@@ -3040,6 +3040,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  _raycastOffset: {x: 0, y: 0.2, z: 0}
   _maxRasycastLength: 5
   _text: {fileID: 1355117186}
   drawLineRendered: 0
@@ -12957,6 +12958,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  _raycastOffset: {x: 0, y: 1, z: 0}
   _maxRasycastLength: 10
   _text: {fileID: 62246099}
   drawLineRendered: 0

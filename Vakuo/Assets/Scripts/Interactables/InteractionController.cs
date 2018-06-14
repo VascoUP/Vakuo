@@ -8,7 +8,9 @@ public class InteractionController : MonoBehaviour
     private GameObject _interactObject;
 
     public UnityEvent onInteract;
-    
+
+    [SerializeField]
+    private Vector3 _raycastOffset;
     [SerializeField]
     private float _maxRasycastLength = 5f;
 
@@ -54,7 +56,7 @@ public class InteractionController : MonoBehaviour
         // Draw line
         if (_target != null && drawLineRendered)
         {
-            ShootLaserFromTargetPosition(_target.position + Vector3.up, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
+            ShootLaserFromTargetPosition(_target.position + _raycastOffset, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
             laserLineRenderer.enabled = true;
         }
         else
@@ -65,7 +67,7 @@ public class InteractionController : MonoBehaviour
 
     private bool IsTargetFacingMe()
     {
-        Ray ray = new Ray(_target.position + Vector3.up, _target.TransformDirection(Vector3.forward));
+        Ray ray = new Ray(_target.position + _raycastOffset, _target.TransformDirection(Vector3.forward));
         RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
         foreach (RaycastHit hit in frontHits)
         {
