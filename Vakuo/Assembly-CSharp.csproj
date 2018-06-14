@@ -135,6 +135,7 @@
      <Compile Include="Assets\Scripts\Enemy\AttackPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\BezierPathing.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyPathing.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyScriptEnabler.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -225,9 +226,6 @@
  </Reference>
  <Reference Include="Cinemachine.Editor">
  <HintPath>C:/Users/vasco/Documents/Vakuo/Vakuo/Library/ScriptAssemblies/Cinemachine.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ShaderGraph.Editor">
- <HintPath>C:/Users/vasco/Documents/Vakuo/Vakuo/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -25,9 +25,9 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      excludeSkybox: 1
+      excludeSkybox: 0
   antialiasing:
     m_Enabled: 1
     m_Settings:
@@ -42,7 +42,7 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.3
+      intensity: 0.65
       radius: 0.3
       sampleCount: 16
       downsampling: 1
@@ -71,11 +71,11 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 10
+      focusDistance: 13.48
       aperture: 32
-      focalLength: 300
-      useCameraFov: 0
-      kernelSize: 1
+      focalLength: 156
+      useCameraFov: 1
+      kernelSize: 3
   motionBlur:
     m_Enabled: 0
     m_Settings:
@@ -85,7 +85,7 @@ MonoBehaviour:
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
-      lowPercent: 45
+      lowPercent: 45.341465
       highPercent: 95
       minLuminance: -5
       maxLuminance: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -8
+      logMin: -5
       logMax: 4
   bloom:
     m_Enabled: 1
@@ -121,11 +121,11 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: 0
+        temperature: -2.6
         tint: 0
         hueShift: 0
-        saturation: 1.5
-        contrast: 1.1
+        saturation: 1
+        contrast: 1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -313,16 +313,16 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       colored: 1
-      intensity: 0.5
-      size: 1
-      luminanceContribution: 0.8
+      intensity: 1
+      size: 3
+      luminanceContribution: 1
   vignette:
     m_Enabled: 0
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
+      intensity: 0.476
       smoothness: 0.2
       roundness: 1
       mask: {fileID: 0}
