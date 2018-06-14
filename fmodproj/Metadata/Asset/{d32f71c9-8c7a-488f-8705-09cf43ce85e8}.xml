@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="EncodableAsset" id="{d32f71c9-8c7a-488f-8705-09cf43ce85e8}">
+        <property name="assetPath">
+            <value>Game_Sound Design/Sections/Game Songs/Gameplay/</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e3ac76b4-0cdc-45d3-8225-de35519576fa}</destination>
+        </relationship>
+    </object>
+</objects>

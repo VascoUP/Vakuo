@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{520c2955-448d-4c87-9a21-aaa1c7d1e705}">
+        <property name="assetPath">
+            <value>Game_Sound Design/Sections/Game Songs/Gameplay/Bass_Bell_Transition.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>38.230104166666663</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e3ac76b4-0cdc-45d3-8225-de35519576fa}</destination>
+        </relationship>
+    </object>
+</objects>

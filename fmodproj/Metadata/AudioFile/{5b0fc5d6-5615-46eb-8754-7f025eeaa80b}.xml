@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{5b0fc5d6-5615-46eb-8754-7f025eeaa80b}">
+        <property name="assetPath">
+            <value>Game_Sound Design/Sections/Clicks Menu/Menu_Select_Click.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.57366666666666666</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e3ac76b4-0cdc-45d3-8225-de35519576fa}</destination>
+        </relationship>
+    </object>
+</objects>
