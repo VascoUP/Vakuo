@@ -17,9 +17,9 @@ public class PlayerLife : MonoBehaviour {
 	}
 
     void CreateLifePanel(){
-        float x = 100;
-        float y = 100;
-        float deltaX = 200;
+        float x = -350;
+        float y = 180;
+        float deltaX = 125;
         for (int i = 0; i < this.lifes; i++)
         {
             Debug.Log("New heart");
@@ -29,24 +29,23 @@ public class PlayerLife : MonoBehaviour {
             x += deltaX;
             Image myImage = instance.GetComponent<Image>();
             this.heartsImages.Add(myImage);
-
         }
     }
 	
-	void RemoveLifes() {
+	double RemoveLifes() {
         this.lifes -= 0.25;
 
-        if (Math.Abs(this.lifes % 1) <= (Double.Epsilon * 100))
-            this.heartsImages.RemoveAt(this.heartsImages.Count - 1);
-        else{
-            if (this.heartsImages[this.heartsImages.Count - 1].fillAmount > 0)
-                this.heartsImages[this.heartsImages.Count - 1].fillAmount -= 0.25f;
-                         
+        if(this.lifes > 0){
+            if (Math.Abs(this.lifes % 1) <= (Double.Epsilon * 100))
+                this.heartsImages.RemoveAt(this.heartsImages.Count - 1);
+            else
+                if (this.heartsImages[this.heartsImages.Count - 1].fillAmount > 0)
+                    this.heartsImages[this.heartsImages.Count - 1].fillAmount -= 0.25f;
         }
-        
+        return this.lifes; //Para depois ver se o player morre ou não      
 	}
 
-    void Addlifes(){
+    void AddLifes(){
         if (this.lifes < 5){
             if (Math.Abs(this.lifes % 1) <= (Double.Epsilon * 100))
                 this.lifes++;
