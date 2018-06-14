@@ -203,7 +203,7 @@ public class FollowPlayerCamera : MonoBehaviour
             StopCoroutine(_zoomEffect);
         }
 
-        _zoomEffect = ZoomEffect(-4f, -4f, 2f);
+        _zoomEffect = ZoomEffect(-4f, -2f, 2f);
         StartCoroutine(_zoomEffect);
     }
 
@@ -214,7 +214,7 @@ public class FollowPlayerCamera : MonoBehaviour
             StopCoroutine(_zoomEffect);
         }
 
-        _zoomEffect = ZoomEffect(4f, 4f, 2f);
+        _zoomEffect = ZoomEffect(4f, 2f, 2f);
         StartCoroutine(_zoomEffect);
     }
     #endregion

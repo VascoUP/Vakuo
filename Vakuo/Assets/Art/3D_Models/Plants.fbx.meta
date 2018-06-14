@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: cf6c7314a78e014429158722fc0c7611
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone 1
+    100004: Bone 2
+    100006: Bone 3
+    100008: Bone 4
+    100010: Bone 5
+    100012: Bone 6
+    100014: Bone 7
+    100016: Bone 8
+    100018: Bone.001
+    100020: Bone.001 1
+    100022: Bone.001 2
+    100024: Bone.001 3
+    100026: Bone.001 4
+    100028: Bone.001 5
+    100030: Bone.001 6
+    100032: Bone.001 7
+    100034: Bone.001 8
+    100036: Bone.001_end
+    100038: Bone.001_end 1
+    100040: Bone.002
+    100042: Bone.002 1
+    100044: Bone.002 2
+    100046: Bone.002 3
+    100048: Bone.002 4
+    100050: Bone.002 5
+    100052: Bone.002 6
+    100054: Bone.002 7
+    100056: Bone.002 8
+    100058: Bone.002_end
+    100060: Bone.002_end 1
+    100062: Bone.002_end 2
+    100064: Bone.002_end 3
+    100066: Bone.002_end 4
+    100068: Bone.002_end 5
+    100070: Bone.002_end 6
+    100072: Bone.002_end 7
+    100074: Bone.002_end 8
+    100076: Bone.003
+    100078: Bone.003 1
+    100080: Bone.003_end
+    100082: Bone.003_end 1
+    100084: Bone.004
+    100086: Bone.004 1
+    100088: Bone.004_end
+    100090: Bone.004_end 1
+    100092: Bone_end
+    100094: Bone_end 1
+    100096: Camera
+    100098: Lamp.001
+    100100: Plant1
+    100102: Plant1.001
+    100104: Plant1.002
+    100106: Plant1.003
+    100108: Plant1.004
+    100110: Plant1.005
+    100112: Plant1.006
+    100114: Plant1_Armature
+    100116: Plant1_bigger_Armature.001
+    100118: Plant2
+    100120: Plant2.002
+    100122: Plant2_Armature
+    100124: Plant2_Armature.002
+    100126: Plant3.000
+    100128: Plant3.001
+    100130: Plant3.bigger
+    100132: Plant3_bigger_Armature
+    100134: Plant4
+    100136: Plant4.001
+    100138: Plant4_Armature
+    100140: Plant4_Armature.001
+    100142: Plant_3_Armature
+    100144: Plant_3_Armature.001
+    100146: //RootNode
+    400000: Bone
+    400002: Bone 1
+    400004: Bone 2
+    400006: Bone 3
+    400008: Bone 4
+    400010: Bone 5
+    400012: Bone 6
+    400014: Bone 7
+    400016: Bone 8
+    400018: Bone.001
+    400020: Bone.001 1
+    400022: Bone.001 2
+    400024: Bone.001 3
+    400026: Bone.001 4
+    400028: Bone.001 5
+    400030: Bone.001 6
+    400032: Bone.001 7
+    400034: Bone.001 8
+    400036: Bone.001_end
+    400038: Bone.001_end 1
+    400040: Bone.002
+    400042: Bone.002 1
+    400044: Bone.002 2
+    400046: Bone.002 3
+    400048: Bone.002 4
+    400050: Bone.002 5
+    400052: Bone.002 6
+    400054: Bone.002 7
+    400056: Bone.002 8
+    400058: Bone.002_end
+    400060: Bone.002_end 1
+    400062: Bone.002_end 2
+    400064: Bone.002_end 3
+    400066: Bone.002_end 4
+    400068: Bone.002_end 5
+    400070: Bone.002_end 6
+    400072: Bone.002_end 7
+    400074: Bone.002_end 8
+    400076: Bone.003
+    400078: Bone.003 1
+    400080: Bone.003_end
+    400082: Bone.003_end 1
+    400084: Bone.004
+    400086: Bone.004 1
+    400088: Bone.004_end
+    400090: Bone.004_end 1
+    400092: Bone_end
+    400094: Bone_end 1
+    400096: Camera
+    400098: Lamp.001
+    400100: Plant1
+    400102: Plant1.001
+    400104: Plant1.002
+    400106: Plant1.003
+    400108: Plant1.004
+    400110: Plant1.005
+    400112: Plant1.006
+    400114: Plant1_Armature
+    400116: Plant1_bigger_Armature.001
+    400118: Plant2
+    400120: Plant2.002
+    400122: Plant2_Armature
+    400124: Plant2_Armature.002
+    400126: Plant3.000
+    400128: Plant3.001
+    400130: Plant3.bigger
+    400132: Plant3_bigger_Armature
+    400134: Plant4
+    400136: Plant4.001
+    400138: Plant4_Armature
+    400140: Plant4_Armature.001
+    400142: Plant_3_Armature
+    400144: Plant_3_Armature.001
+    400146: //RootNode
+    2000000: Camera
+    2100000: Plant_Color_Purple
+    2100002: Material.002
+    2100004: Plant_Color_Darkgreen
+    2100006: Material.003
+    4300000: Plant4.001
+    4300002: Plant2.002
+    4300004: Plant3.000
+    4300006: Plant1.006
+    4300008: Plant1.005
+    4300010: Plant1.004
+    4300012: Plant4
+    4300014: Plant1.003
+    4300016: Plant1.002
+    4300018: Plant1.001
+    4300020: Plant1
+    4300022: Plant3.bigger
+    4300024: Plant3.001
+    4300026: Plant2
+    9500000: //RootNode
+    10800000: Lamp.001
+    13700000: Plant1
+    13700002: Plant1.001
+    13700004: Plant1.002
+    13700006: Plant1.003
+    13700008: Plant1.004
+    13700010: Plant1.005
+    13700012: Plant1.006
+    13700014: Plant2
+    13700016: Plant2.002
+    13700018: Plant3.000
+    13700020: Plant3.001
+    13700022: Plant3.bigger
+    13700024: Plant4
+    13700026: Plant4.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

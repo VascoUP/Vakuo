@@ -16,13 +16,13 @@ public class SoundPrefabController : MonoBehaviour {
 
     private void Update ()
     {
-        transform.Translate(Vector3.up * _speed * Time.deltaTime);
+        transform.Translate(transform.worldToLocalMatrix * (Vector3.up * _speed * Time.deltaTime));
 	}
 
     private IEnumerator WaitForEndOfTime()
     {
         yield return new WaitForSeconds(_time);
-
+        
         Destroy(gameObject);
     }
 }

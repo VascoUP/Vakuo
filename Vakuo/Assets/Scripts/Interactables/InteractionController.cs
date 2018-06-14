@@ -8,7 +8,9 @@ public class InteractionController : MonoBehaviour
     private GameObject _interactObject;
 
     public UnityEvent onInteract;
-    
+
+    [SerializeField]
+    private Vector3 _raycastOffset;
     [SerializeField]
     private float _maxRasycastLength = 5f;
 
@@ -25,7 +27,7 @@ public class InteractionController : MonoBehaviour
     public float laserWidth = 0.1f;
 
 
-    private void Start () {        // Draw line
+    private void Start () {
         Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
         laserLineRenderer.SetPositions(initLaserPositions);
         laserLineRenderer.startWidth = laserWidth;
@@ -37,13 +39,13 @@ public class InteractionController : MonoBehaviour
         if (_target != null &&
             IsTargetFacingMe())
         {
-            _isFacingMe = true;
-            IsTargetInteracting();
-
             if(!_isTextActive)
             {
                 ActivateText("E");
             }
+
+            _isFacingMe = true;
+            IsTargetInteracting();
         }
         else if(_isFacingMe)
         {
@@ -54,7 +56,7 @@ public class InteractionController : MonoBehaviour
         // Draw line
         if (_target != null && drawLineRendered)
         {
-            ShootLaserFromTargetPosition(_target.position, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
+            ShootLaserFromTargetPosition(_target.position + _raycastOffset, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
             laserLineRenderer.enabled = true;
         }
         else
@@ -65,7 +67,7 @@ public class InteractionController : MonoBehaviour
 
     private bool IsTargetFacingMe()
     {
-        Ray ray = new Ray(_target.position, _target.TransformDirection(Vector3.forward));
+        Ray ray = new Ray(_target.position + _raycastOffset, _target.TransformDirection(Vector3.forward));
         RaycastHit[] frontHits = Physics.RaycastAll(ray, _maxRasycastLength);
         foreach (RaycastHit hit in frontHits)
         {

@@ -1,55 +1,47 @@
 fileFormatVersion: 2
-guid: d8277226dc6f74947854bbe92706907b
+guid: e5e8f925eba1f3944b7ac35129fa96e2
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: body
-    100002: Camera
-    100004: Lamp
-    100006: leg_1
-    100008: leg_2
-    100010: leg_3
-    100012: leg_4
-    100014: parafusos
-    100016: //RootNode
-    100018: window
-    400000: body
-    400002: Camera
-    400004: Lamp
-    400006: leg_1
-    400008: leg_2
-    400010: leg_3
-    400012: leg_4
-    400014: parafusos
-    400016: //RootNode
-    400018: window
-    2000000: Camera
-    2100000: vermelho_fato
-    2100002: azul_janela
-    2100004: No Name
-    2100006: amarelo_fato
-    2300000: body
-    2300002: leg_1
-    2300004: leg_2
-    2300006: leg_3
-    2300008: leg_4
-    2300010: parafusos
+    100000: leg_1
+    100002: leg_2
+    100004: leg_3
+    100006: leg_4
+    100008: parafusos
+    100010: //RootNode
+    100012: window
+    400000: leg_1
+    400002: leg_2
+    400004: leg_3
+    400006: leg_4
+    400008: parafusos
+    400010: //RootNode
+    400012: window
+    2100000: amarelo_fato
+    2100002: vermelho_fato
+    2100004: azul_janela
+    2100006: No Name
+    2300000: leg_1
+    2300002: leg_2
+    2300004: leg_3
+    2300006: leg_4
+    2300008: parafusos
+    2300010: //RootNode
     2300012: window
-    3300000: body
-    3300002: leg_1
-    3300004: leg_2
-    3300006: leg_3
-    3300008: leg_4
-    3300010: parafusos
+    3300000: leg_1
+    3300002: leg_2
+    3300004: leg_3
+    3300006: leg_4
+    3300008: parafusos
+    3300010: //RootNode
     3300012: window
-    4300000: window
-    4300002: parafusos
-    4300004: body
-    4300006: leg_4
-    4300008: leg_3
-    4300010: leg_2
-    4300012: leg_1
-    10800000: Lamp
+    4300000: body
+    4300002: window
+    4300004: parafusos
+    4300006: leg_1
+    4300008: leg_2
+    4300010: leg_3
+    4300012: leg_4
   externalObjects: {}
   materials:
     importMaterials: 1

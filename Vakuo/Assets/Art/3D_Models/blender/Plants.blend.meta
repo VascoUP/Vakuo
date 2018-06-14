@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 0cf2fdb2ca0834e478c9339d8bae40b1
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone_0
+    100004: Bone_001
+    100006: Bone_002
+    100008: Bone_003
+    100010: Bone_004
+    100012: Bone_1
+    100014: Bone_10
+    100016: Bone_11
+    100018: Bone_12
+    100020: Bone_13
+    100022: Bone_14
+    100024: Bone_15
+    100026: Bone_16
+    100028: Bone_17
+    100030: Bone_18
+    100032: Bone_19
+    100034: Bone_2
+    100036: Bone_20
+    100038: Bone_21
+    100040: Bone_22
+    100042: Bone_23
+    100044: Bone_24
+    100046: Bone_25
+    100048: Bone_3
+    100050: Bone_4
+    100052: Bone_5
+    100054: Bone_6
+    100056: Bone_7
+    100058: Bone_8
+    100060: Bone_9
+    100062: Plant1
+    100064: Plant1_001
+    100066: Plant1_002
+    100068: Plant1_003
+    100070: Plant1_004
+    100072: Plant1_005
+    100074: Plant1_006
+    100076: Plant1_Armature
+    100078: Plant1_bigger_Armature_001
+    100080: Plant2
+    100082: Plant2_002
+    100084: Plant2_Armature
+    100086: Plant2_Armature_002
+    100088: Plant3_000
+    100090: Plant3_001
+    100092: Plant3_bigger
+    100094: Plant3_bigger_Armature
+    100096: Plant4
+    100098: Plant4_001
+    100100: Plant4_Armature
+    100102: Plant4_Armature_001
+    100104: Plant_3_Armature
+    100106: Plant_3_Armature_001
+    100108: //RootNode
+    400000: Bone
+    400002: Bone_0
+    400004: Bone_001
+    400006: Bone_002
+    400008: Bone_003
+    400010: Bone_004
+    400012: Bone_1
+    400014: Bone_10
+    400016: Bone_11
+    400018: Bone_12
+    400020: Bone_13
+    400022: Bone_14
+    400024: Bone_15
+    400026: Bone_16
+    400028: Bone_17
+    400030: Bone_18
+    400032: Bone_19
+    400034: Bone_2
+    400036: Bone_20
+    400038: Bone_21
+    400040: Bone_22
+    400042: Bone_23
+    400044: Bone_24
+    400046: Bone_25
+    400048: Bone_3
+    400050: Bone_4
+    400052: Bone_5
+    400054: Bone_6
+    400056: Bone_7
+    400058: Bone_8
+    400060: Bone_9
+    400062: Plant1
+    400064: Plant1_001
+    400066: Plant1_002
+    400068: Plant1_003
+    400070: Plant1_004
+    400072: Plant1_005
+    400074: Plant1_006
+    400076: Plant1_Armature
+    400078: Plant1_bigger_Armature_001
+    400080: Plant2
+    400082: Plant2_002
+    400084: Plant2_Armature
+    400086: Plant2_Armature_002
+    400088: Plant3_000
+    400090: Plant3_001
+    400092: Plant3_bigger
+    400094: Plant3_bigger_Armature
+    400096: Plant4
+    400098: Plant4_001
+    400100: Plant4_Armature
+    400102: Plant4_Armature_001
+    400104: Plant_3_Armature
+    400106: Plant_3_Armature_001
+    400108: //RootNode
+    2100000: Plant_Color_Purple
+    2100002: Material_002
+    2100004: Plant_Color_Darkgreen
+    2100006: Material_003
+    4300000: Plant4_001
+    4300002: Plant2_002
+    4300004: Plant3_000
+    4300006: Plant1_006
+    4300008: Plant1_005
+    4300010: Plant1_004
+    4300012: Plant4
+    4300014: Plant1_003
+    4300016: Plant1_002
+    4300018: Plant1_001
+    4300020: Plant1
+    4300022: Plant3_bigger
+    4300024: Plant3_001
+    4300026: Plant2
+    7400000: Default Take
+    9500000: //RootNode
+    13700000: Plant1
+    13700002: Plant1_001
+    13700004: Plant1_002
+    13700006: Plant1_003
+    13700008: Plant1_004
+    13700010: Plant1_005
+    13700012: Plant1_006
+    13700014: Plant2
+    13700016: Plant2_002
+    13700018: Plant3_000
+    13700020: Plant3_001
+    13700022: Plant3_bigger
+    13700024: Plant4
+    13700026: Plant4_001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
