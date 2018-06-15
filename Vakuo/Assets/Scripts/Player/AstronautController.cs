@@ -182,6 +182,15 @@ public class AstronautController : MonoBehaviour {
         StartCoroutine(waitPush);
     }
 
+    // Checks for input and isGrounded and decides if character should jump or not
+    private void Jump()
+    {
+        if (Input.GetButton("Jump") && _isGrounded && !_isJumpFrame)
+        {
+            Jump(_jumpSpeed);
+        }
+    }
+
     // Jumps the astronaut up in the air with a given force.
     // Public so it can be called by other scripts
     public void Jump(float speed)
@@ -221,15 +230,6 @@ public class AstronautController : MonoBehaviour {
         _head.localRotation = Quaternion.identity;
         _head.Rotate(Vector3.right * currentHeadRotation);
         */
-    }
-
-    // Checks for input and isGrounded and decides if character should jump or not
-    private void Jump()
-    {
-        if (Input.GetButton("Jump") && _isGrounded && !_isJumpFrame)
-        {
-            Jump(_jumpSpeed);
-        }
     }
     
     // Moves the astronaut in the world according to input

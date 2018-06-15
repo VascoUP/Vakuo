@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 143029003590396394}
   - component: {fileID: 114141181865203978}
   - component: {fileID: 114390246748764492}
+  - component: {fileID: 114546876736411030}
   m_Layer: 12
   m_Name: Monster 1
   m_TagString: Enemy
@@ -827,7 +828,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231697466185128}
-  m_LocalRotation: {x: -0.6526994, y: -0.14518432, z: -0.17254166, w: 0.72328025}
+  m_LocalRotation: {x: 0.6526994, y: 0.14518432, z: 0.17254166, w: -0.72328025}
   m_LocalPosition: {x: 0.0074508474, y: 0.007956937, z: -0.017435418}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children:
@@ -897,8 +898,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874504222934460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -29.500002, y: 0, z: 31.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4212315810715420}
@@ -929,7 +930,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551445269975338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232796317285972}
@@ -1023,7 +1024,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617784197267128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232796317285972}
@@ -1325,7 +1326,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784701357375038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232796317285972}
@@ -1433,7 +1434,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246639483245920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4232796317285972}
@@ -1539,8 +1540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 114141181865203978}
   handleStyle: 0
-  _handle1: {x: 10, y: 0, z: 0}
-  _handle2: {x: -10, y: -0, z: -0}
+  _handle1: {x: 0, y: 0, z: -5}
+  _handle2: {x: -0, y: -0, z: 5}
 --- !u!114 &114141181865203978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1589,8 +1590,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 114141181865203978}
   handleStyle: 0
-  _handle1: {x: -5, y: 0, z: 0}
-  _handle2: {x: 5, y: -0, z: -0}
+  _handle1: {x: 0, y: 0, z: 10}
+  _handle2: {x: -0, y: -0, z: -10}
+--- !u!114 &114546876736411030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1874504222934460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561985605d0fc3c4a84b581890c4614b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 143029003590396394}
+  _meshObject: {fileID: 4212315810715420}
+  _pathing: {fileID: 114390246748764492}
+  _target: {fileID: 0}
+  _targetCC: {fileID: 0}
+  _events: {fileID: 0}
+  gravity: 15
+  walkSpeed: 4
+  jumpSpeed: 6
+  chargeSpeed: 10
+  prepareChargeDuration: 0.5
+  chargeDuration: 0.5
+  damagedDuration: 0
+  distToAttack: 12
+  distanceToCharge: 6
+  maxDistanceAwayFromPath: 20
+  maxRotation: 15
+  _pushYSpeed: 10
+  _pushHorizontalSpeed: 6
+  _lifes: 1
 --- !u!114 &114849044006809554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1604,8 +1636,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 114141181865203978}
   handleStyle: 0
-  _handle1: {x: 10, y: 0, z: 0}
-  _handle2: {x: -10, y: -0, z: -0}
+  _handle1: {x: 0, y: 0, z: -5}
+  _handle2: {x: -0, y: -0, z: 5}
 --- !u!114 &114970557766182144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1619,8 +1651,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _curve: {fileID: 114141181865203978}
   handleStyle: 0
-  _handle1: {x: -5, y: 0, z: 0}
-  _handle2: {x: 5, y: -0, z: -0}
+  _handle1: {x: 0, y: 0, z: 10}
+  _handle2: {x: -0, y: -0, z: -10}
 --- !u!137 &137054733028731122
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

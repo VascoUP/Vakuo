@@ -18,7 +18,6 @@ public class EnemyPathing : MonoBehaviour {
     
     [SerializeField]
     private BezierPathing _pathing;
-    private bool _walkedPath;
 
     [SerializeField]
     private Transform _target;
@@ -49,7 +48,7 @@ public class EnemyPathing : MonoBehaviour {
     public int _lifes = 1;
     private bool _dead = false;
 
-    private bool _onCooldown = false;
+    private bool _isJumpFrame = false;
     
     private void OnEnable()
     {
@@ -84,7 +83,7 @@ public class EnemyPathing : MonoBehaviour {
             });
         }
 
-        yVelocity = jumpSpeed;
+        Jump(jumpSpeed);
         yield return null;
 
         yield return new WaitWhile(() => {
@@ -159,7 +158,7 @@ public class EnemyPathing : MonoBehaviour {
 
     private IEnumerator Damaged(float jumpSpeed, float duration)
     {
-        yVelocity = jumpSpeed;
+        Jump(jumpSpeed);
         if (--_lifes <= 0)
         {
             _dead = true;
@@ -204,9 +203,15 @@ public class EnemyPathing : MonoBehaviour {
         _meshObject.Rotate(Vector3.up * rotation);
     }
 
+    private void Jump(float speed)
+    {
+        yVelocity = speed;
+        _isJumpFrame = true;
+    }
+
     private void UpdateYVelocity()
     {
-        if (_characterController.isGrounded && yVelocity != 0f)
+        if (_characterController.isGrounded && yVelocity != 0f && !_isJumpFrame)
         {
             yVelocity = 0f;
         }
@@ -214,7 +219,9 @@ public class EnemyPathing : MonoBehaviour {
         {
             yVelocity -= gravity * Time.deltaTime;
         }
-        _characterController.Move(Vector3.up * yVelocity);
+
+        _isJumpFrame = false;
+        _characterController.Move(Vector3.up * yVelocity * Time.deltaTime);
     }
 
     private float DistanceToPath()
@@ -227,7 +234,7 @@ public class EnemyPathing : MonoBehaviour {
     {
         if(_targetCC != null)
         {
-            return !(Mathf.Abs(_target.position.y - transform.position.y) > 1f && _targetCC.isGrounded);
+            return !(Mathf.Abs(_target.position.y - transform.position.y) > 2f && _targetCC.isGrounded);
         }
         else
         {
@@ -243,14 +250,9 @@ public class EnemyPathing : MonoBehaviour {
         }
     }
 
-    private void Update()
+    private void UpdateEnemy()
     {
-        if(_dead)
-        {
-            return;
-        }
-
-        if(_target != null && _state == EnemyStates.IDDLE)
+        if (_target != null && _state == EnemyStates.IDDLE)
         {
             float distToP = (_target.transform.position - transform.position).magnitude;
             if (distToP < distToAttack &&
@@ -259,7 +261,7 @@ public class EnemyPathing : MonoBehaviour {
                 _state = EnemyStates.PLAYER_ENTERED;
             }
         }
-        
+
         if (!runningState)
         {
             switch (_state)
@@ -296,7 +298,7 @@ public class EnemyPathing : MonoBehaviour {
 
             StartState();
         }
-        
+
         if ((DistanceToPath() > maxDistanceAwayFromPath || !PlayerIsReachable()) && _state != EnemyStates.IDDLE)
         {
             StopAllCoroutines();
@@ -306,9 +308,18 @@ public class EnemyPathing : MonoBehaviour {
         if (_state == EnemyStates.IDDLE)
         {
             WalkPath();
-        } else if(_state == EnemyStates.WAIT_CHARGE)
+        }
+        else if (_state == EnemyStates.WAIT_CHARGE)
         {
             RotateDirection(_target.position - transform.position);
+        }
+    }
+
+    private void Update()
+    {
+        if(!_dead)
+        {
+            UpdateEnemy();
         }
 
         UpdateYVelocity();
