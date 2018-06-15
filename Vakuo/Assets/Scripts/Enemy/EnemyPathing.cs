@@ -13,6 +13,8 @@ public class EnemyPathing : MonoBehaviour {
 
     [SerializeField]
     private CharacterController _characterController;
+    [SerializeField]
+    private Transform _meshObject;
     
     [SerializeField]
     private BezierPathing _pathing;
@@ -20,6 +22,8 @@ public class EnemyPathing : MonoBehaviour {
 
     [SerializeField]
     private Transform _target;
+    [SerializeField]
+    private CharacterController _targetCC;
 
     // Instance of event manager
     public EventManager _events;
@@ -37,16 +41,16 @@ public class EnemyPathing : MonoBehaviour {
     public float distToAttack;
     public float distanceToCharge;
     public float maxDistanceAwayFromPath;
+    public float maxRotation;
 
     public float _pushYSpeed;
     public float _pushHorizontalSpeed;
 
     public int _lifes = 1;
+    private bool _dead = false;
 
     private bool _onCooldown = false;
-
-    public bool isDebug = false;
-
+    
     private void OnEnable()
     {
         StopAllCoroutines();
@@ -97,7 +101,8 @@ public class EnemyPathing : MonoBehaviour {
         while (direction.magnitude > distance)
         {
             direction.Normalize();
-            _characterController.Move(direction * moveSpeed * Time.deltaTime);
+            Move(direction * moveSpeed * Time.deltaTime);
+            //_characterController.Move(direction * moveSpeed * Time.deltaTime);
 
             yield return null;
 
@@ -124,7 +129,8 @@ public class EnemyPathing : MonoBehaviour {
         {
             float deltaTime = Time.deltaTime;
             time += deltaTime;
-            _characterController.Move(direction * moveSpeed * deltaTime);
+            Move(direction * moveSpeed * deltaTime);
+            //_characterController.Move(direction * moveSpeed * deltaTime);
 
             yield return null;
         }
@@ -154,8 +160,15 @@ public class EnemyPathing : MonoBehaviour {
     private IEnumerator Damaged(float jumpSpeed, float duration)
     {
         yVelocity = jumpSpeed;
+        if (--_lifes <= 0)
+        {
+            _dead = true;
+        }
         yield return new WaitForSeconds(duration);
-        ChangeState(EnemyStates.DECIDE_TO_MOVE);
+        if (!_dead)
+            ChangeState(EnemyStates.DECIDE_TO_MOVE);
+        else
+            Destroy(gameObject);
     }
 
     private bool WillAttackPlayer()
@@ -171,6 +184,24 @@ public class EnemyPathing : MonoBehaviour {
             runningState = true;
             StartCoroutine(runningCoroutine);
         }
+    }
+
+    private void Move(Vector3 displacement)
+    {
+        _characterController.Move(displacement);
+        RotateDirection(displacement);
+    }
+
+    private void RotateDirection(Vector3 direction)
+    {
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+        float rotation = Vector3.Dot(_meshObject.right, direction);
+        rotation *= Mathf.Rad2Deg;
+        if (Mathf.Abs(rotation) > maxRotation)
+        {
+            rotation = Mathf.Sign(rotation) * maxRotation;
+        }
+        _meshObject.Rotate(Vector3.up * rotation);
     }
 
     private void UpdateYVelocity()
@@ -192,6 +223,18 @@ public class EnemyPathing : MonoBehaviour {
         return (transform.position - point).magnitude;
     }
 
+    private bool PlayerIsReachable()
+    {
+        if(_targetCC != null)
+        {
+            return !(Mathf.Abs(_target.position.y - transform.position.y) > 1f && _targetCC.isGrounded);
+        }
+        else
+        {
+            return !(Mathf.Abs(_target.position.y - transform.position.y) > 4f);
+        }
+    }
+
     private void WalkPath()
     {
         if(_pathing != null)
@@ -202,19 +245,16 @@ public class EnemyPathing : MonoBehaviour {
 
     private void Update()
     {
-        if(isDebug)
+        if(_dead)
         {
-            Debug.Log(_state);
-            Debug.Log(runningCoroutine != null);
-            Debug.Log(runningCoroutine != null ? runningCoroutine.ToString() : "null");
+            return;
         }
-        
-        if(_target != null && _state == EnemyStates.IDDLE && _walkedPath)
+
+        if(_target != null && _state == EnemyStates.IDDLE)
         {
-            Vector3 point = transform.InverseTransformPoint(_pathing.BezierCurve.GetPointAt(0));
-            float distToP = (_target.transform.position - point).magnitude;
-            Debug.Log("dist to p:" + distToP);
-            if ((_target.transform.position - point).magnitude > distToAttack)
+            float distToP = (_target.transform.position - transform.position).magnitude;
+            if (distToP < distToAttack &&
+                PlayerIsReachable())
             {
                 _state = EnemyStates.PLAYER_ENTERED;
             }
@@ -257,12 +297,8 @@ public class EnemyPathing : MonoBehaviour {
             StartState();
         }
         
-        float dist = DistanceToPath();
-        Debug.Log(dist);
-        Debug.Log(_state);
-        if (DistanceToPath() > maxDistanceAwayFromPath && _state != EnemyStates.IDDLE)
+        if ((DistanceToPath() > maxDistanceAwayFromPath || !PlayerIsReachable()) && _state != EnemyStates.IDDLE)
         {
-            Debug.Log("Stop corroutines: move to iddle");
             StopAllCoroutines();
             ChangeState(EnemyStates.IDDLE);
         }
@@ -270,6 +306,9 @@ public class EnemyPathing : MonoBehaviour {
         if (_state == EnemyStates.IDDLE)
         {
             WalkPath();
+        } else if(_state == EnemyStates.WAIT_CHARGE)
+        {
+            RotateDirection(_target.position - transform.position);
         }
 
         UpdateYVelocity();
@@ -278,6 +317,9 @@ public class EnemyPathing : MonoBehaviour {
 
     private void CollideWithPlayer(AstronautController astronaut)
     {
+        if (_dead)
+            return;
+
         Vector3 direction = astronaut.transform.position - transform.position;
         direction.y = 0;
         Vector3 nDirection = direction.normalized;

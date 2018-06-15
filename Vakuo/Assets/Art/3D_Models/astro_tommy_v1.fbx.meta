@@ -114,6 +114,10 @@ ModelImporter:
     4300012: head
     7400000: Armature|walk
     7400002: Armature|Walking_blocking
+    7400004: Armature|losing_life
+    7400006: Armature|standing
+    7400008: Armature|standing_still
+    7400010: Armature|Walking
     9500000: //RootNode
     10800000: Sun
     13700000: backpack

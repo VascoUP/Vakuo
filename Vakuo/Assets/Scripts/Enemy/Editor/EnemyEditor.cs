@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(EnemyController), true)]
+[CustomEditor(typeof(EnemyPathing), true)]
 public class EnemyEditor : Editor {
 
     private void OnSceneGUI() {        
-		var t = target as EnemyController;
+		var t = target as EnemyPathing;
 
         var distance = t.distanceToCharge;
 		Vector3 distPosition = t.transform.TransformPoint(Vector3.forward * distance);

@@ -51,11 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameObjectBrush\Scripts\Editor\AddObjectPopup.cs" />
-     <Compile Include="Assets\GameObjectBrush\Scripts\Editor\GameObjectBrush.cs" />
      <Compile Include="Assets\Packages\Bezier\Scripts\Editor\BezierEditor.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Editor\BezierCurveEditor.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Editor\BezierPointEditor.cs" />
+     <Compile Include="Assets\Packages\GameObjectBrush\Scripts\Editor\AddObjectPopup.cs" />
+     <Compile Include="Assets\Packages\GameObjectBrush\Scripts\Editor\GameObjectBrush.cs" />
      <Compile Include="Assets\Packages\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />

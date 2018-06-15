@@ -10,6 +10,8 @@ public class AstronautController : MonoBehaviour {
 	[SerializeField]
     private EventManager _events;
     
+    public Animator _animator;
+    
     // Delegate funtion that calls right update function according to the current state
     private UpdateMonoBehavior onUpdate;
 
@@ -136,13 +138,11 @@ public class AstronautController : MonoBehaviour {
     // Checks if the astronaut is touching a platform or not using Raycast
     private void CheckPlatform()
     {
-        float sphereRadius = 0.4f;
         float distance = _ridingPlatform != null ? _feetRadius + 0.2f : _feetRadius;
         RaycastHit hit;
 
-        if (Physics.SphereCast(_feet.position + Vector3.up * (1f + sphereRadius), sphereRadius, Vector3.down, out hit, (1f + distance), _platformLayer))
+        if (CheckGrounded(distance, out hit))
         {
-            Debug.Log("Platform");
             if (_ridingPlatform == null || hit.collider.transform.GetInstanceID() != _ridingPlatform.GetInstanceID())
             {
                 _ridingPlatform = hit.collider.transform;
@@ -151,7 +151,6 @@ public class AstronautController : MonoBehaviour {
         }
         else if(_ridingPlatform != null)
         {
-            Debug.Log("Not Platform");
             // Let the player continue with the momentum from the platform
             Vector3 desiredPosition = _ridingOffset + _ridingPlatform.position;
             Vector3 delta = desiredPosition - transform.position;
@@ -161,6 +160,12 @@ public class AstronautController : MonoBehaviour {
 
             _ridingPlatform = null;
         } 
+    }
+    
+    private bool CheckGrounded(float distance, out RaycastHit hit)
+    {
+        float sphereRadius = 0.4f;
+        return Physics.SphereCast(_feet.position + Vector3.up * (1f + sphereRadius), sphereRadius, Vector3.down, out hit, (1f + distance), _platformLayer);
     }
     
     public void Push(float pushSpeed, float ySpeed, Vector3 direction)
@@ -221,7 +226,7 @@ public class AstronautController : MonoBehaviour {
     // Checks for input and isGrounded and decides if character should jump or not
     private void Jump()
     {
-        if (Input.GetButton("Jump") && (_isGrounded || _ridingPlatform != null) && !_isJumpFrame)
+        if (Input.GetButton("Jump") && _isGrounded && !_isJumpFrame)
         {
             Jump(_jumpSpeed);
         }
@@ -281,6 +286,12 @@ public class AstronautController : MonoBehaviour {
         _isJumpFrame = false;
     }
 
+    private void Animate()
+    {
+        _animator.SetBool("damaged", _isPushed);
+        _animator.SetFloat("speed", (new Vector3(_velocity.x,0,_velocity.z) * Time.deltaTime).magnitude);
+    }
+
     private void Update()
     {
         if(onUpdate != null)
@@ -295,6 +306,7 @@ public class AstronautController : MonoBehaviour {
         Aim();
         Jump();
         Move();
+        Animate();
         if (showStatus)
         {
             Debug.Log("IS GROUNDED:" + _cc.isGrounded);

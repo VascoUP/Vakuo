@@ -5,9 +5,9 @@ using UnityEngine;
 public class SwirlAttack : MonoBehaviour {
 
     [SerializeField]
-    private GameObject _target;
+    private GameObject _meshObject;
     [SerializeField]
-    private float _swirlSpeed;
+    private Animator _animator;
     [SerializeField]
     private float _swirlTime;
     [SerializeField]
@@ -15,15 +15,16 @@ public class SwirlAttack : MonoBehaviour {
 
     private bool _isAttacking = false;
 
+    private HashSet<int> _enemiesHit = new HashSet<int>();
+    
     private IEnumerator Attack(int combo)
     {
         var time = 0f;
         Vector3 pos;
         RaycastHit[] raycastHits;
-
-        Debug.Log("Attacking");
-
+        
         _isAttacking = true;
+        _animator.SetBool("attack", true);
 
         yield return null;
 
@@ -35,20 +36,31 @@ public class SwirlAttack : MonoBehaviour {
             raycastHits = Physics.SphereCastAll(transform.position, _attackRange, Vector3.forward, 0.1f, 1 << LayerMask.NameToLayer("Enemy"));
             foreach (var hit in raycastHits)
             {
-                Vector3 vec = hit.transform.position;
-                Vector3 direction = vec - _target.transform.position;
-                
-                if (Vector3.Dot(direction, _target.transform.forward) > 0.7)
+                if(_enemiesHit.Contains(hit.transform.gameObject.GetInstanceID()))
                 {
-                    Debug.Log("Hit enemy: " + hit.transform.gameObject.name);
+                    break;
                 }
+                
+                Vector3 vec = hit.transform.position;
+                Vector3 direction = vec - _meshObject.transform.position;
+
+                if (Vector3.Dot(direction, _meshObject.transform.right) > 0.7 ||
+                    Vector3.Dot(direction, -_meshObject.transform.right) > 0.7)
+                {
+                    EnemyPathing enemy = hit.transform.gameObject.GetComponent<EnemyPathing>();
+                    if(enemy != null)
+                    {
+                        _enemiesHit.Add(hit.transform.gameObject.GetInstanceID());
+                        enemy.DamagedByPlayer();
+                    }
+                } 
             }
 
             yield return null;
         }
 
-        Debug.Log("End Attacking");
-
+        _enemiesHit.Clear();
+        _animator.SetBool("attack", false);
         _isAttacking = false;
     }
 

@@ -110,11 +110,8 @@
      <Compile Include="Assets\Scripts\Enabler\ItemsEnabler.cs" />
      <Compile Include="Assets\Scripts\Enabler\TriggerOnEnter.cs" />
      <Compile Include="Assets\Scripts\Enabler\TriggerOnExit.cs" />
-     <Compile Include="Assets\Scripts\Enemy\AttackPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\BezierPathing.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyPathing.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyScriptEnabler.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Global\GlobalControl.cs" />

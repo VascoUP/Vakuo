@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8fc411fe3db0e444b7d92be05f8afeb
+guid: 840a6eadbf4b93d40a612e8bc203d9d3
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -79,8 +79,10 @@ ModelImporter:
     4300010: hand_R
     4300012: head
     7400000: Default Take
-    7400002: walk
-    7400004: Walking_blocking
+    7400002: losing_life
+    7400004: standing_still
+    7400006: walk
+    7400008: Walking
     9500000: //RootNode
     13700000: backpack
     13700002: body
