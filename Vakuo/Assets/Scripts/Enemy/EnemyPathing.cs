@@ -246,7 +246,7 @@ public class EnemyPathing : MonoBehaviour {
     {
         if(_pathing != null)
         {
-            _walkedPath = _pathing.WalkPath();
+            _pathing.WalkPath();
         }
     }
 
