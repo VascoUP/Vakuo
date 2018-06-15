@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{77915973-0184-4717-981a-6f490eb7338b}">
+        <property name="assetPath">
+            <value>Game_Sound Design/EFX_Drones/Ambience_Music.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>64.06154166666667</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e3ac76b4-0cdc-45d3-8225-de35519576fa}</destination>
+        </relationship>
+    </object>
+</objects>

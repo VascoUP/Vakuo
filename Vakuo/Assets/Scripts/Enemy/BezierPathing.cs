@@ -27,16 +27,24 @@ public class BezierPathing : MonoBehaviour {
 
     private float _percentage = 0f;
 
-
+    /*
     private void Update ()
     {
+        WalkPath();
+    }
+    */
+
+    public bool WalkPath()
+    {
         float p = Percentage(1f);
-        if (Step(p, 1f))
+        bool stepped = Step(p, 1f);
+        if(stepped)
             _percentage = p;
+        return stepped;
     }
 
     // Returns true if step was completed
-    private bool Step(float percentage, float step)
+    public bool Step(float percentage, float step)
     {
         Vector3 point = transform.InverseTransformPoint(BezierCurve.GetPointAt(percentage));
         Vector3 direction = point - transform.position;

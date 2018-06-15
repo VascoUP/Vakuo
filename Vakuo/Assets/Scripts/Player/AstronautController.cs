@@ -137,9 +137,12 @@ public class AstronautController : MonoBehaviour {
     private void CheckPlatform()
     {
         float sphereRadius = 0.4f;
+        float distance = _ridingPlatform != null ? _feetRadius + 0.2f : _feetRadius;
         RaycastHit hit;
-        if (Physics.SphereCast(_feet.position + Vector3.up * sphereRadius, sphereRadius, Vector3.down, out hit, _feetRadius, _platformLayer))
+
+        if (Physics.SphereCast(_feet.position + Vector3.up * (1f + sphereRadius), sphereRadius, Vector3.down, out hit, (1f + distance), _platformLayer))
         {
+            Debug.Log("Platform");
             if (_ridingPlatform == null || hit.collider.transform.GetInstanceID() != _ridingPlatform.GetInstanceID())
             {
                 _ridingPlatform = hit.collider.transform;
@@ -148,6 +151,7 @@ public class AstronautController : MonoBehaviour {
         }
         else if(_ridingPlatform != null)
         {
+            Debug.Log("Not Platform");
             // Let the player continue with the momentum from the platform
             Vector3 desiredPosition = _ridingOffset + _ridingPlatform.position;
             Vector3 delta = desiredPosition - transform.position;
@@ -156,7 +160,7 @@ public class AstronautController : MonoBehaviour {
             _velocity += delta;
 
             _ridingPlatform = null;
-        }
+        } 
     }
     
     public void Push(float pushSpeed, float ySpeed, Vector3 direction)

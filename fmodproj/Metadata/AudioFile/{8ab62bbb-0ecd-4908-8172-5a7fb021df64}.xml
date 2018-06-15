@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8ab62bbb-0ecd-4908-8172-5a7fb021df64}">
+        <property name="assetPath">
+            <value>Game_Sound Design/Sections/Map/Map_music.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>89.203541666666666</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e3ac76b4-0cdc-45d3-8225-de35519576fa}</destination>
+        </relationship>
+    </object>
+</objects>
