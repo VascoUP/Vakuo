@@ -9,6 +9,8 @@ public class AstronautController : MonoBehaviour {
 	// Instance of event manager
 	[SerializeField]
     private EventManager _events;
+    [SerializeField]
+    private GameObject _jumpTrigger;
     
     public Animator _animator;
     
@@ -187,6 +189,8 @@ public class AstronautController : MonoBehaviour {
     {
         if (Input.GetButton("Jump") && _isGrounded && !_isJumpFrame)
         {
+            _jumpTrigger.SetActive(true);
+            _jumpTrigger.SetActive(false);
             Jump(_jumpSpeed);
         }
     }

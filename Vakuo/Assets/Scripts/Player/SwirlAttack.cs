@@ -9,6 +9,8 @@ public class SwirlAttack : MonoBehaviour {
     [SerializeField]
     private Animator _animator;
     [SerializeField]
+    private GameObject _attackTrigger;
+    [SerializeField]
     private float _swirlTime;
     [SerializeField]
     private float _attackRange;
@@ -69,6 +71,8 @@ public class SwirlAttack : MonoBehaviour {
     {
 		if(Input.GetKeyDown(KeyCode.Mouse0) && !_isAttacking)
         {
+            _attackTrigger.SetActive(true);
+            _attackTrigger.SetActive(false);
             StartCoroutine(Attack(0));
         }
 	}
