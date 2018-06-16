@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour {
 	public GameObject panel;
     public GameObject heartPrefab;
+    private float maxLifes;
 	public float lifes;
 
 	private List<Image> heartsImages;
-    private float initialLifes;
 
 	private void OnEnable () {
         this.heartsImages = new List<Image>();
         CreateLifePanel();
-        initialLifes = lifes;
+        maxLifes = lifes;
 	}
 
     void CreateLifePanel(){
@@ -66,6 +66,25 @@ public class PlayerLife : MonoBehaviour {
         }
     }
 
+    public void AddLife()
+    {
+        if (this.lifes <= maxLifes - 1)
+        {
+            int index = this.heartsImages.Count - 1;
+            this.heartsImages[index].fillAmount = 1f;
+            this.lifes++;
+            index++;
+            AddImage(index);
+            Debug.Log("ADDED IMAGE AT " + index + " lifes " + this.lifes + " " + ((this.lifes + 1f) - this.heartsImages.Count));
+            this.heartsImages[index].fillAmount = (this.lifes + 1f) - this.heartsImages.Count;
+        }
+        else
+        {
+            this.lifes = maxLifes;
+            this.heartsImages[this.heartsImages.Count - 1].fillAmount = 1f;
+        }
+    }
+
     public void Damage()
     {
         float livesRemaining = RemoveLifes();
@@ -73,7 +92,7 @@ public class PlayerLife : MonoBehaviour {
         {
             AstronautController controller = gameObject.GetComponent<AstronautController>();
             controller.Respawn();
-            AddLifes(initialLifes);
+            AddLifes(maxLifes);
         }
     }
 }

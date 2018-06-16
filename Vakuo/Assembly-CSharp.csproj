@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DestoryParticleSystem.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
      <Compile Include="Assets\Packages\Bezier\Scripts\BezierGenerator.cs" />
@@ -136,6 +137,8 @@
      <Compile Include="Assets\Scripts\Mimic\AnimalAction.cs" />
      <Compile Include="Assets\Scripts\Mimic\MimicController.cs" />
      <Compile Include="Assets\Scripts\Mimic\SoundPrefabController.cs" />
+     <Compile Include="Assets\Scripts\Modifiers\HealthpotController.cs" />
+     <Compile Include="Assets\Scripts\Modifiers\HealthpotSpawner.cs" />
      <Compile Include="Assets\Scripts\Modifiers\JumperController.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformTranslator.cs" />
      <Compile Include="Assets\Scripts\Platforms\ScriptActivator.cs" />
