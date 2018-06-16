@@ -369,13 +369,22 @@ public class EnemyPathing : MonoBehaviour {
         _events.onPlayerPushed(astronaut.gameObject, gameObject);
     }
 
+    private void DamagePlayer(PlayerLife astronautLives)
+    {
+        astronautLives.Damage();
+    }
+
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
         {
             AstronautController astronaut = collider.gameObject.GetComponent<AstronautController>();
+            PlayerLife astronautLifes = collider.gameObject.GetComponent<PlayerLife>();
             if (astronaut != null)
+            {
                 CollideWithPlayer(astronaut);
+                DamagePlayer(astronautLifes);
+            }
         }
 
         if (collider.tag != "Ground" &&
