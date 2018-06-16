@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
-     <Compile Include="Assets\IntroText.cs" />
      <Compile Include="Assets\Packages\Bezier\Scripts\BezierGenerator.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierCurve.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierPoint.cs" />
@@ -132,6 +131,8 @@
      <Compile Include="Assets\Scripts\MainMenu\LoadGameOnClick.cs" />
      <Compile Include="Assets\Scripts\MainMenu\QuitOnClick.cs" />
      <Compile Include="Assets\Scripts\MainMenu\SelectOnInput.cs" />
+     <Compile Include="Assets\Scripts\Materials\RunChildDisintegrate.cs" />
+     <Compile Include="Assets\Scripts\Materials\RunDisintegrate.cs" />
      <Compile Include="Assets\Scripts\Mimic\AnimalAction.cs" />
      <Compile Include="Assets\Scripts\Mimic\MimicController.cs" />
      <Compile Include="Assets\Scripts\Mimic\SoundPrefabController.cs" />
@@ -144,9 +145,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMeshController.cs" />
      <Compile Include="Assets\Scripts\Player\SwirlAttack.cs" />
-     <Compile Include="Assets\Scripts\RunChildDisintegrate.cs" />
-     <Compile Include="Assets\Scripts\RunDisintegrate.cs" />
      <Compile Include="Assets\Scripts\text\Intro.cs" />
+     <Compile Include="Assets\Scripts\text\IntroText.cs" />
      <Compile Include="Assets\Scripts\UI\BasicContainer.cs" />
      <Compile Include="Assets\Scripts\UI\BasicItem.cs" />
      <Compile Include="Assets\Scripts\UI\EntityInventory.cs" />
