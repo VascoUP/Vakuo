@@ -491,12 +491,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4647357374038314}
-  - component: {fileID: 136336823213560202}
   - component: {fileID: 143824919807800180}
   - component: {fileID: 114381803715729520}
   - component: {fileID: 114362868584590796}
   - component: {fileID: 114474440292642558}
   - component: {fileID: 114643289982881842}
+  - component: {fileID: 114495131878854492}
   m_Layer: 8
   m_Name: Tommy
   m_TagString: Player
@@ -1244,8 +1244,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712259184314730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.3, y: 4.8, z: 26.8}
+  m_LocalRotation: {x: -0, y: -0.99973774, z: -0, w: -0.02290318}
+  m_LocalPosition: {x: 12.569639, y: 0.70000005, z: 24.838528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4970138497150366}
@@ -1255,7 +1255,7 @@ Transform:
   - {fileID: 4776994246765876}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -182.62498, z: 0}
 --- !u!4 &4660619158575950
 Transform:
   m_ObjectHideFlags: 1
@@ -1632,8 +1632,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 1096887936114404}
-  _damping: 10
+  _damping: 5
   _maxInputError: 0.01
+--- !u!114 &114495131878854492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1712259184314730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2882e5fed93a547ec8f94b53fe297502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 0}
+  heartPrefab: {fileID: 1715247044648810, guid: baf5d81e7ba164ab3a9c6bed4aa37dd8,
+    type: 2}
+  lifes: 5
 --- !u!114 &114531303136865112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1694,19 +1709,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
---- !u!136 &136336823213560202
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1712259184314730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 2.34
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!137 &137296856084613230
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
