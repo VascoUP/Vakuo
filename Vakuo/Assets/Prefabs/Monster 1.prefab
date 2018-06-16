@@ -1615,7 +1615,7 @@ MonoBehaviour:
   chargeSpeed: 10
   prepareChargeDuration: 0.5
   chargeDuration: 0.5
-  damagedDuration: 0
+  damagedDuration: 2
   distToAttack: 12
   distanceToCharge: 6
   maxDistanceAwayFromPath: 20
