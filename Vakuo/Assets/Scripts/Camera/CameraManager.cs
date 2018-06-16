@@ -27,6 +27,8 @@ public class CameraManager : MonoBehaviour {
     private float _cinematicRotation;
 
     [SerializeField]
+    private ShakeCamera _shakeCamera;
+    [SerializeField]
     private float _shakeDurationGrounded;
     [SerializeField]
     private float _shakeForceGrounded;
@@ -116,7 +118,8 @@ public class CameraManager : MonoBehaviour {
 
     private void OnPlayerGrounded()
     {
-        _followPlayer.CameraShake(_shakeForceGrounded, _shakeDurationGrounded);
+        _shakeCamera.shakeDuration = _shakeDurationGrounded;
+        _shakeCamera.shakeAmount = _shakeForceGrounded;
     }
 
     private void OnPush(GameObject player, GameObject enemy)
@@ -126,14 +129,6 @@ public class CameraManager : MonoBehaviour {
 
         CalculateCinematicParams(player.transform, enemy.transform);
 
-        /*
-        _focusPoint.originObject = player.transform;
-        _focusPoint.destObject = enemy.transform;
-        _focusPoint.ignoreTimeScale = true;
-        _focusPoint.height = 2f;
-        _focusPoint.distance = 3f;
-        */
-
         _cinematicCamera.enabled = true;
         _followPlayer.enabled = false;
         
@@ -142,12 +137,14 @@ public class CameraManager : MonoBehaviour {
 
     private void OnAttack()
     {
-        _followPlayer.CameraShake(_shakeForceAttack, _shakeDurationAttack);
+        _shakeCamera.shakeDuration = _shakeDurationAttack;
+        _shakeCamera.shakeAmount = _shakeForceAttack;
     }
 
     private void OnEnemyDeath()
     {
-        _followPlayer.CameraShake(_shakeForceEnemyDeath, _shakeDurationEnemyDeath);
+        _shakeCamera.shakeDuration = _shakeDurationEnemyDeath;
+        _shakeCamera.shakeAmount = _shakeForceEnemyDeath;
     }
 
     private void OnEnterState(GameStatus state)
@@ -161,13 +158,5 @@ public class CameraManager : MonoBehaviour {
 
     private void OnExitState(GameStatus state)
     {
-        /*switch (state)
-        {
-            case GameStatus.CAMERA_SEQUENCE:
-                StopAllCoroutines();
-                _focusPoint.enabled = false;
-                _followPlayer.enabled = true;
-                break;
-        }*/
     }
 }

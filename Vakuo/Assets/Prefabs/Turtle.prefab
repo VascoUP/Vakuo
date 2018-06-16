@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4232552723378840}
   - component: {fileID: 137977229360922514}
   - component: {fileID: 64109600264377088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4128906083967204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4095526416081416}
   - component: {fileID: 54486101902096436}
   - component: {fileID: 114895319572352018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4496694534811870}
   - component: {fileID: 137271076363984904}
   - component: {fileID: 64716347660299442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cabe_a
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4841088633455232}
   - component: {fileID: 137257209700997704}
   - component: {fileID: 64838646189701380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4579003508274908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LEG_FRONT_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4976621445719268}
   - component: {fileID: 137814546132546090}
   - component: {fileID: 64888838314815614}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Olhos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4524650849901748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NECK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578770105244262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BODY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4888639180213932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LEG_BACK_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4573402047698222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bone_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4294064752958624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HEAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 4601569308660734}
   - component: {fileID: 137060158074791486}
   - component: {fileID: 64593894572565084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pernas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 4936199129897172}
   - component: {fileID: 137504357910522464}
   - component: {fileID: 64827561629278686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Carapa_a
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4466752672024020}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: turtle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4758688669759772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LEG_BACK_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,14 +271,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209458133586358}
-  m_LocalRotation: {x: 0.120313995, y: -0.57582647, z: 0.086161874, w: 0.8040675}
+  m_LocalRotation: {x: 0, y: -0.58223647, z: 0, w: 0.8130195}
   m_LocalPosition: {x: -404.08148, y: 14.813686, z: 8.001482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4466752672024020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.02, y: -71.216, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -71.216, z: 0}
 --- !u!4 &4128906083967204
 Transform:
   m_ObjectHideFlags: 1
@@ -593,12 +593,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209458133586358}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9f018a64ce64f64e90eef9e1ea801bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
   _type: 0
   _rigidbody: {fileID: 54486101902096436}
   accelCurve:
@@ -643,8 +643,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  startPosition: {x: -434.79, y: 9.18, z: 39.81}
-  endPosition: {x: -660.172, y: 9.18, z: 119.82644}
+  startPosition: {x: -432.10605, y: 9.18, z: 38.897144}
+  endPosition: {x: -665.4148, y: 9.18, z: 121.60961}
   duration: 30
 --- !u!137 &137060158074791486
 SkinnedMeshRenderer:

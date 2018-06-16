@@ -15,9 +15,13 @@ public class EnemyPathing : MonoBehaviour {
     private CharacterController _characterController;
     [SerializeField]
     private Transform _meshObject;
+
     
     [SerializeField]
     private BezierPathing _pathing;
+
+    [SerializeField]
+    private RunChildDisintegrate _deathMat;
 
     [SerializeField]
     private Transform _target;
@@ -63,9 +67,14 @@ public class EnemyPathing : MonoBehaviour {
 
     public void DamagedByPlayer()
     {
-        Debug.Log("DamagedByPlayer:" + _isInvulnerable);
         if (_isInvulnerable)
             return;
+
+        if (--_lifes <= 0)
+        {
+            _deathMat.enabled = true;
+            _dead = true;
+        }
 
         StopAllCoroutines();
         ChangeState(EnemyStates.DAMAGED);
@@ -189,10 +198,6 @@ public class EnemyPathing : MonoBehaviour {
     private IEnumerator Damaged(float jumpSpeed, float duration)
     {
         Jump(jumpSpeed);
-        if (--_lifes <= 0)
-        {
-            _dead = true;
-        }
         yield return new WaitForSeconds(duration);
         if (!_dead)
             ChangeState(EnemyStates.DECIDE_TO_MOVE);
@@ -257,7 +262,7 @@ public class EnemyPathing : MonoBehaviour {
 
     private float DistanceToPath()
     {
-        Vector3 point = transform.InverseTransformPoint(_pathing.BezierCurve.GetPointAt(0));
+        Vector3 point = _pathing.BezierCurve.GetPointAt(0);
         return (transform.position - point).magnitude;
     }
 
@@ -272,7 +277,7 @@ public class EnemyPathing : MonoBehaviour {
             return !(Mathf.Abs(_target.position.y - transform.position.y) > 4f);
         }
     }
-
+    
 
     private void UpdateEnemy()
     {
@@ -323,7 +328,7 @@ public class EnemyPathing : MonoBehaviour {
             StartState();
         }
 
-        if ((DistanceToPath() > maxDistanceAwayFromPath || !PlayerIsReachable()) && _state != EnemyStates.IDDLE)
+        if ((DistanceToPath() > maxDistanceAwayFromPath || !PlayerIsReachable()) && _state != EnemyStates.IDDLE && !_dead)
         {
             StopAllCoroutines();
             ChangeState(EnemyStates.IDDLE);
@@ -341,7 +346,7 @@ public class EnemyPathing : MonoBehaviour {
 
     private void Update()
     {
-        if(!_dead)
+        if(!_dead || _state == EnemyStates.DAMAGED)
         {
             RunWaitInvulnerability();
             UpdateEnemy();
@@ -349,7 +354,6 @@ public class EnemyPathing : MonoBehaviour {
 
         UpdateYVelocity();
     }
-
 
     private void CollideWithPlayer(AstronautController astronaut)
     {
@@ -369,18 +373,18 @@ public class EnemyPathing : MonoBehaviour {
         _events.onPlayerPushed(astronaut.gameObject, gameObject);
     }
 
-    public void OnTriggerEnter(Collider collider)
+    public void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collider.gameObject.tag == "Player")
+        if (hit.gameObject.tag == "Player")
         {
-            AstronautController astronaut = collider.gameObject.GetComponent<AstronautController>();
+            AstronautController astronaut = hit.gameObject.GetComponent<AstronautController>();
             if (astronaut != null)
                 CollideWithPlayer(astronaut);
         }
 
-        if (collider.tag != "Ground" &&
-            !(collider.tag == "Enemy" && collider.gameObject == gameObject) &&
-            collider.tag != "Enemy Camp" &&
+        if (hit.gameObject.tag != "Ground" &&
+            !(hit.gameObject.tag == "Enemy" && hit.gameObject == gameObject) &&
+            hit.gameObject.tag != "Enemy Camp" &&
             _state == EnemyStates.CHARGE)
         {
             StopAllCoroutines();

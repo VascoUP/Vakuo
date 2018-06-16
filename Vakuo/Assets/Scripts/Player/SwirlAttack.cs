@@ -42,7 +42,7 @@ public class SwirlAttack : MonoBehaviour {
                 {
                     break;
                 }
-                
+
                 Vector3 vec = hit.transform.position;
                 Vector3 direction = vec - _meshObject.transform.position;
 

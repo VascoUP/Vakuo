@@ -33,20 +33,6 @@ public class FollowPlayerCamera : MonoBehaviour
 
     private bool _isShaking = false;
 
-    public float shakeAmount;//The amount to shake this frame.
-    public float shakeDuration;//The duration this frame.
-
-    private float _shakePercentage;//A percentage (0-1) representing the amount of shake to be applied when setting rotation.
-    private float _startAmount;//The initial shake amount (to determine percentage), set when ShakeCamera is called.
-    private float _startDuration;//The initial shake duration, set when ShakeCamera is called.
-    
-    public bool smooth;//Smooth rotation?
-    public float smoothAmount = 5f;//Amount to smooth
-
-    public bool drawLineRendered = false;
-    public LineRenderer laserLineRenderer;
-    public float laserWidth = 0.1f;
-
     private IEnumerator _zoomEffect;
     // (x: Distance, y: Min Height, z: Max Height)
     private Vector3 _targetZoom;
@@ -62,46 +48,6 @@ public class FollowPlayerCamera : MonoBehaviour
             float maxDeltaCam = _maxHeight - _minHeight;
             _headToCamRatio = maxDeltaCam / maxDeltaHead;
         }
-    }
-
-    private IEnumerator Shake()
-    {
-        _isShaking = true;
-
-        Vector2 startOffset = new Vector3(targetLookOffset.x, targetLookOffset.y);
-
-        while (shakeDuration > 0.01f)
-        {
-            targetLookOffset = startOffset;
-
-            Vector2 rotationAmount = Random.insideUnitCircle * shakeAmount;//A Vector3 to add to the Local Rotation
-
-            _shakePercentage = shakeDuration / _startDuration;//Used to set the amount of shake (% * startAmount).
-
-            shakeAmount = _startAmount * _shakePercentage;//Set the amount of shake (% * startAmount).
-            shakeDuration -= Time.deltaTime;
-
-            if (smooth)
-                targetLookOffset = Vector3.Lerp(targetLookOffset, rotationAmount, Time.deltaTime * smoothAmount);
-            else
-                targetLookOffset += rotationAmount;//Set the local rotation the be the rotation amount.
-
-            yield return null;
-        }
-        //transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
-        targetLookOffset = startOffset;
-
-        _isShaking = false;
-    }
-
-    public void CameraShake(float force, float duration)
-    {
-        shakeAmount += force;//Add to the current amount.
-        _startAmount = shakeAmount;//Reset the start amount, to determine percentage.
-        shakeDuration += duration;//Add to the current time.
-        _startDuration = shakeDuration;//Reset the start time.
-
-        if (!_isShaking) StartCoroutine(Shake());//Only call the coroutine if it isn't currently running. Otherwise, just set the variables.
     }
 
     private void FollowPlayer()
@@ -131,8 +77,6 @@ public class FollowPlayerCamera : MonoBehaviour
                 // clamp wanted position to hit position
                 wantedPosition.x = hit.point.x;
                 wantedPosition.z = hit.point.z;
-                //wantedPosition.y = Mathf.Lerp(hit.point.y + _bumperCameraHeight, wantedPosition.y, _positionDamping * Time.deltaTime);
-                //wantedPosition = target.TransformPoint(0, rotation, -dist);
             }
 
         }
@@ -219,32 +163,9 @@ public class FollowPlayerCamera : MonoBehaviour
     }
     #endregion
 
-    #region DrawLine
-
-    void ShootLaserFromTargetPosition()
-    {
-        Vector3 direction = Vector3.Normalize(transform.position - target.transform.position);
-        Vector3 endPosition = target.transform.position + (_bumperDistanceCheck * direction);
-        laserLineRenderer.SetPosition(0, target.TransformPoint(_bumperRayOffset));
-        laserLineRenderer.SetPosition(1, endPosition);
-    }
-
-    #endregion
-
     private void LateUpdate()
     {
-        FollowPlayer();        
-        
-        // Draw line
-        if (drawLineRendered)
-        {
-            ShootLaserFromTargetPosition();
-            laserLineRenderer.enabled = true;
-        }
-        else
-        {
-            laserLineRenderer.enabled = false;
-        }
+        FollowPlayer();
     }
 
     private void OnDestroy()

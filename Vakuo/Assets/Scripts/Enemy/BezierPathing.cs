@@ -46,7 +46,7 @@ public class BezierPathing : MonoBehaviour {
     // Returns true if step was completed
     public bool Step(float percentage, float step)
     {
-        Vector3 point = transform.InverseTransformPoint(BezierCurve.GetPointAt(percentage));
+        Vector3 point = BezierCurve.GetPointAt(percentage);
         Vector3 direction = point - transform.position;
         direction = new Vector3(direction.x, 0f, direction.z);
 
