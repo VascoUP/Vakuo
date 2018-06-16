@@ -79,6 +79,8 @@ public class AstronautController : MonoBehaviour {
 
     public bool showStatus = false;
 
+    private Vector3 spawnPosition;
+
     private void Start () {
         _events.onEnterState += OnEnterState;
         _events.onExitState += OnExitState;
@@ -87,6 +89,9 @@ public class AstronautController : MonoBehaviour {
 
         GlobalControl.SaveEvent += Save;
         GlobalControl.LoadEvent += Load;
+
+        // Save spawning position so that player can respawn at the correct place
+        spawnPosition = gameObject.transform.position;
 	}
 
     private bool IsEndPushed()
@@ -373,6 +378,11 @@ public class AstronautController : MonoBehaviour {
 
             gameObject.transform.position = new Vector3(data.positionX, data.positionY, data.positionZ);
         }
+    }
+
+    public void Respawn()
+    {
+        gameObject.transform.position = spawnPosition;
     }
 }
 
