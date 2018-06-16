@@ -24,6 +24,7 @@ public class MimicController : MonoBehaviour {
     private float _timeBetweenSounds;
 
     public AnimalAction _mimicEmitter;
+    public Vector3 _spawnOffset = new Vector3(2f, 1f, 0f); //Vector3.left;
 
     [Range(1,5)]
     public int numberOfLives;
@@ -275,7 +276,7 @@ public class MimicController : MonoBehaviour {
     private void SpawnVisualClue(int index)
     {
         GameObject spawnedObj = Instantiate(_visualSoundPrefabs[index], _mimicEmitter.transform);
-        spawnedObj.transform.Translate(Vector3.left * 2f + Vector3.up);
+        spawnedObj.transform.Translate(_spawnOffset);
     }
     
     #region UI

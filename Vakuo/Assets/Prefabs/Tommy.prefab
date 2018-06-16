@@ -1670,7 +1670,7 @@ MonoBehaviour:
   _meshObject: {fileID: 1862954389158582}
   _animator: {fileID: 95021245299066884}
   _attackTrigger: {fileID: 1299353139799236}
-  _swirlTime: 0.25
+  _swirlTime: 0.4
   _attackRange: 2
 --- !u!114 &114751182425811736
 MonoBehaviour:

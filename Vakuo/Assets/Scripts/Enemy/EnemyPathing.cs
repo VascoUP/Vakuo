@@ -49,29 +49,59 @@ public class EnemyPathing : MonoBehaviour {
     private bool _dead = false;
 
     private bool _isJumpFrame = false;
-    
+
+    private bool _isInvulnerable = false;
+    private bool _isRunningInvulnerable = false;
+
     private void OnEnable()
     {
         StopAllCoroutines();
         runningCoroutine = null;
         ChangeState(EnemyStates.IDDLE);
     }
+    
 
     public void DamagedByPlayer()
     {
+        Debug.Log("DamagedByPlayer:" + _isInvulnerable);
+        if (_isInvulnerable)
+            return;
+
         StopAllCoroutines();
         ChangeState(EnemyStates.DAMAGED);
     }
 
-    public void OutOfBounds()
+    private void RunWaitInvulnerability()
     {
-        Destroy(gameObject);
+        if (_isInvulnerable && !_isRunningInvulnerable)
+        {
+            IEnumerator waitInvulnerable = InvulnerableToPlayer(0.5f);
+            StartCoroutine(waitInvulnerable);
+        }
     }
+
+    private IEnumerator InvulnerableToPlayer(float duration)
+    {
+        _isRunningInvulnerable = true;
+        yield return new WaitForSeconds(duration);
+        _isInvulnerable = false;
+        _isRunningInvulnerable = false;
+    }
+
 
     private void ChangeState(EnemyStates state)
     {
         _state = state;
         runningState = false;
+    }
+
+    private void StartState()
+    {
+        if (runningCoroutine != null)
+        {
+            runningState = true;
+            StartCoroutine(runningCoroutine);
+        }
     }
 
     private IEnumerator PlayerEntered(float jumpSpeed)
@@ -176,14 +206,6 @@ public class EnemyPathing : MonoBehaviour {
         return true;
     }
 
-    private void StartState()
-    {
-        if (runningCoroutine != null)
-        {
-            runningState = true;
-            StartCoroutine(runningCoroutine);
-        }
-    }
 
     private void Move(Vector3 displacement)
     {
@@ -224,6 +246,15 @@ public class EnemyPathing : MonoBehaviour {
         _characterController.Move(Vector3.up * yVelocity * Time.deltaTime);
     }
 
+    private void WalkPath()
+    {
+        if(_pathing != null)
+        {
+            _pathing.WalkPath();
+        }
+    }
+
+
     private float DistanceToPath()
     {
         Vector3 point = transform.InverseTransformPoint(_pathing.BezierCurve.GetPointAt(0));
@@ -242,13 +273,6 @@ public class EnemyPathing : MonoBehaviour {
         }
     }
 
-    private void WalkPath()
-    {
-        if(_pathing != null)
-        {
-            _pathing.WalkPath();
-        }
-    }
 
     private void UpdateEnemy()
     {
@@ -319,6 +343,7 @@ public class EnemyPathing : MonoBehaviour {
     {
         if(!_dead)
         {
+            RunWaitInvulnerability();
             UpdateEnemy();
         }
 
@@ -331,6 +356,7 @@ public class EnemyPathing : MonoBehaviour {
         if (_dead)
             return;
 
+        _isInvulnerable = true;
         Vector3 direction = astronaut.transform.position - transform.position;
         direction.y = 0;
         Vector3 nDirection = direction.normalized;

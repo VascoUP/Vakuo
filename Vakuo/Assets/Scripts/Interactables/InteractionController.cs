@@ -28,10 +28,13 @@ public class InteractionController : MonoBehaviour
 
 
     private void Start () {
-        Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
-        laserLineRenderer.SetPositions(initLaserPositions);
-        laserLineRenderer.startWidth = laserWidth;
-        laserLineRenderer.endWidth = laserWidth;
+        if(laserLineRenderer != null)
+        {
+            Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
+            laserLineRenderer.SetPositions(initLaserPositions);
+            laserLineRenderer.startWidth = laserWidth;
+            laserLineRenderer.endWidth = laserWidth;
+        }
     }
 
     private void Update()
@@ -61,7 +64,10 @@ public class InteractionController : MonoBehaviour
         }
         else
         {
-            laserLineRenderer.enabled = false;
+            if (laserLineRenderer != null)
+            {
+                laserLineRenderer.enabled = false;
+            }
         }
     }
 

@@ -12,12 +12,15 @@ public class AnimalAction : InteractionAction
     [SerializeField]
     private MimicController _mimicController;
     [SerializeField]
+    private Vector3 _soundOffset = new Vector3(2f,1f,0f);
+    [SerializeField]
     private string _animalName;
     [SerializeField]
     private string _animalIconName;
 
     public override void OnInteraction()
     {
+        _mimicController._spawnOffset = _soundOffset;
         _gameManager.StartMimic(this);
     }
 
