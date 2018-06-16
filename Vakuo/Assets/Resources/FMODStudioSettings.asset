@@ -13,9 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
+<<<<<<< Updated upstream
   sourceProjectPath: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
   SourceProjectPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
   SourceBankPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\Build
+=======
+  sourceProjectPath: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/fmodproj.fspro
+  SourceProjectPathUnformatted: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/fmodproj.fspro
+  SourceBankPathUnformatted: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build
+>>>>>>> Stashed changes
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

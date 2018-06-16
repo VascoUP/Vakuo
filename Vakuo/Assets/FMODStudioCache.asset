@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< Updated upstream
   - {fileID: 114661136990300914}
   - {fileID: 114410905768410378}
   - {fileID: 114472317591815406}
@@ -37,6 +38,33 @@ MonoBehaviour:
   MasterBankRef: {fileID: 114472317591815406}
   StringsBankRef: {fileID: 114661136990300914}
   stringsBankWriteTime: 636646862781104096
+=======
+  - {fileID: 114270982705716386}
+  - {fileID: 114541395063378104}
+  - {fileID: 114724093208671034}
+  - {fileID: 114064679151867336}
+  - {fileID: 114888436465186608}
+  - {fileID: 114418055098779328}
+  - {fileID: 114240395597586614}
+  - {fileID: 114156181681579636}
+  EditorEvents:
+  - {fileID: 114760425577652692}
+  - {fileID: 114933976902209272}
+  - {fileID: 114711448340939698}
+  - {fileID: 114791578215380940}
+  - {fileID: 114693847828723750}
+  - {fileID: 114962521726955406}
+  - {fileID: 114021779000449430}
+  - {fileID: 114057052319588074}
+  - {fileID: 114310440065395960}
+  - {fileID: 114620115444023388}
+  - {fileID: 114992164931581172}
+  - {fileID: 114970298825503054}
+  - {fileID: 114508759418698396}
+  MasterBankRef: {fileID: 114724093208671034}
+  StringsBankRef: {fileID: 114270982705716386}
+  stringsBankWriteTime: 636647000970000000
+>>>>>>> Stashed changes
   cacheVersion: 2
 --- !u!114 &114003170231055020
 MonoBehaviour:
@@ -96,6 +124,63 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3320128
   Exists: 1
+--- !u!114 &114020420240035376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114020630719029874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CanLoop
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114021779000449430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/GamePlay
+  guid: ccfbc0715ac69a42891df1d42629374a
+  Banks:
+  - {fileID: 114418055098779328}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114621072643445992}
+  - {fileID: 114020420240035376}
+  - {fileID: 114540866150345626}
+  - {fileID: 114556054532332598}
+  - {fileID: 114833297801991110}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 159292
 --- !u!114 &114023475720278588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +292,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19797
+<<<<<<< Updated upstream
 --- !u!114 &114060698641809618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +312,88 @@ MonoBehaviour:
     Value: 234880
   Exists: 1
 --- !u!114 &114063020342236982
+=======
+--- !u!114 &114056386363261638
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114057052319588074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange
+  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
+  Banks:
+  - {fileID: 114418055098779328}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114880296083197294}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16991
+--- !u!114 &114059841609646382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Effects.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1379520
+  Exists: 1
+--- !u!114 &114060989537267918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange Transition
+  guid: 9c22611e06ed234da06beb0612331def
+  Banks:
+  - {fileID: 114887674284769492}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114100787165051518}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 38230
+--- !u!114 &114063020342236982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -240,7 +408,97 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< Updated upstream
+--- !u!114 &114079999175449060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange
+  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
+  Banks:
+  - {fileID: 114871634336084808}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114188375267888606}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16991
+--- !u!114 &114087510441039610
+=======
+--- !u!114 &114064679151867336
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Character.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 21120
+  Exists: 1
+<<<<<<< Updated upstream
+--- !u!114 &114094982863703760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Menu/Menu Click
+  guid: a1131d1ee343524ca7668c7723d0e371
+  Banks:
+  - {fileID: 114410905768410378}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114720632660894300}
+  - {fileID: 114712038861767446}
+  - {fileID: 114115099870712016}
+  - {fileID: 114891633443763368}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 684
+--- !u!114 &114096308183731158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114106226246303456
+=======
 --- !u!114 &114067677040636228
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -259,10 +517,32 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+<<<<<<< Updated upstream
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114115099870712016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114115877317777692
+=======
   MinDistance: 1
   MaxDistance: 20
   Length: 13994
 --- !u!114 &114068869261484418
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -310,6 +590,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 799
+--- !u!114 &114075905396120838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Player/Jump
+  guid: ccff08b72f8e0f4bbd49b8d35f9706bc
+  Banks:
+  - {fileID: 114568328351592326}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 799
+--- !u!114 &114075939364603690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114077831074526054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,29 +642,6 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114079999175449060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/Challange
-  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
-  Banks:
-  - {fileID: 114871634336084808}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114188375267888606}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 16991
 --- !u!114 &114087510441039610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +660,92 @@ MonoBehaviour:
   - Name: Desktop
     Value: 21120
   Exists: 1
---- !u!114 &114094982863703760
+<<<<<<< Updated upstream
+--- !u!114 &114186927247374096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Appear
+  guid: 5a8d8b671d701148a70f9c981430596e
+  Banks:
+  - {fileID: 114060698641809618}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4419
+--- !u!114 &114188375267888606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114197699949978536
+=======
+--- !u!114 &114090067009323740
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Appear
+  guid: 5a8d8b671d701148a70f9c981430596e
+  Banks:
+  - {fileID: 114764244478376322}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4419
+--- !u!114 &114090760966514038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Appear
+  guid: 5a8d8b671d701148a70f9c981430596e
+  Banks:
+  - {fileID: 114860557717361360}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4419
+--- !u!114 &114100032390706800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -380,19 +759,19 @@ MonoBehaviour:
   Path: event:/Vakuo/Menu/Menu Click
   guid: a1131d1ee343524ca7668c7723d0e371
   Banks:
-  - {fileID: 114410905768410378}
+  - {fileID: 114699006937523710}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114720632660894300}
-  - {fileID: 114712038861767446}
-  - {fileID: 114115099870712016}
-  - {fileID: 114891633443763368}
+  - {fileID: 114472002377218058}
+  - {fileID: 114056386363261638}
+  - {fileID: 114313996531865878}
+  - {fileID: 114350842549384090}
   MinDistance: 0
   MaxDistance: 0
   Length: 684
---- !u!114 &114096308183731158
+--- !u!114 &114100787165051518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -403,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Can Loop Intro
+  Name: Volume
   Min: 0
   Max: 1
   Default: 0
@@ -429,7 +808,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 33982
---- !u!114 &114115099870712016
+--- !u!114 &114114392785227470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -437,13 +816,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Pause
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Music.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3320128
+  Exists: 1
 --- !u!114 &114115877317777692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +849,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 38230
+--- !u!114 &114127619637603434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114128927695974152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +900,62 @@ MonoBehaviour:
   - Name: Desktop
     Value: 450
   Exists: 1
+--- !u!114 &114141927485068118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114146370111626948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange
+  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
+  Banks:
+  - {fileID: 114114392785227470}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114770090652967596}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16991
+--- !u!114 &114156181681579636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Effects.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1379520
+  Exists: 1
 --- !u!114 &114160388339219962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +971,41 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114164431839667698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+<<<<<<< Updated upstream
+--- !u!114 &114329876257909700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114355539382353826
+=======
 --- !u!114 &114164674367111912
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -563,6 +1050,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11605
+--- !u!114 &114172833689351324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114181446470400414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,43 +1084,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1594
   Exists: 1
---- !u!114 &114186927247374096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Animals/Elephant/Appear
-  guid: 5a8d8b671d701148a70f9c981430596e
-  Banks:
-  - {fileID: 114060698641809618}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4419
---- !u!114 &114188375267888606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Volume
-  Min: 0
-  Max: 1
-  Default: 0
 --- !u!114 &114197699949978536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +1197,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114219513528055610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114220695127684738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +1254,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114240395597586614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Ambience.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
 --- !u!114 &114242664161113470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,6 +1307,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 234880
+  Exists: 1
+--- !u!114 &114270982705716386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1594
   Exists: 1
 --- !u!114 &114271832911766756
 MonoBehaviour:
@@ -885,6 +1401,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114284316919032572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Ambience.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
 --- !u!114 &114291797401724334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +1467,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114329876257909700
+--- !u!114 &114310440065395960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Pause
+  guid: f2cc683438fcaf42bd772d1dc4fbc300
+  Banks:
+  - {fileID: 114418055098779328}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114313996531865878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -944,7 +1500,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Volume
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114323825830639506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Pause
+  guid: f2cc683438fcaf42bd772d1dc4fbc300
+  Banks:
+  - {fileID: 114887674284769492}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114333552089085684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Ambience.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
+--- !u!114 &114345470691756574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Effects.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1379520
+  Exists: 1
+--- !u!114 &114349228344799504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange
+  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
+  Banks:
+  - {fileID: 114887674284769492}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114983596486141692}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16991
+--- !u!114 &114350842549384090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
   Min: 0
   Max: 1
   Default: 0
@@ -1035,6 +1687,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4419
+--- !u!114 &114384881092034612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CanLoop
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114385069837617920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,24 +1764,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 450
   Exists: 1
---- !u!114 &114410905768410378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Misc.bank
-  lastModified: 636646862781133994
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 25632
-  Exists: 1
 --- !u!114 &114415232114471258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,6 +1808,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2282
+--- !u!114 &114418055098779328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Music.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3320128
+  Exists: 1
 --- !u!114 &114421301846363050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1849,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11605
+--- !u!114 &114437859788598318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Ship/Departure
+  guid: 57bdeff8af4b95439b8def9ad8262c45
+  Banks:
+  - {fileID: 114345470691756574}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13994
 --- !u!114 &114444310891098588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,6 +1915,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 684
+--- !u!114 &114452792018242998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Player/Jump
+  guid: ccff08b72f8e0f4bbd49b8d35f9706bc
+  Banks:
+  - {fileID: 114818796464777800}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 799
+--- !u!114 &114453995324305474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Stinger 1
+  guid: 67146d6b4473ea44b955868bf6a9dcbb
+  Banks:
+  - {fileID: 114345470691756574}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14677
 --- !u!114 &114454383288595414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,6 +1992,33 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114468549895112870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/GamePlay
+  guid: ccfbc0715ac69a42891df1d42629374a
+  Banks:
+  - {fileID: 114887674284769492}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114963725630907608}
+  - {fileID: 114623686277144564}
+  - {fileID: 114599938494277764}
+  - {fileID: 114619566350143798}
+  - {fileID: 114618737222868852}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 159292
 --- !u!114 &114468880028410552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1271,6 +2031,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114472002377218058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Main
   Min: 0
   Max: 1
   Default: 0
@@ -1296,24 +2071,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 33982
---- !u!114 &114472317591815406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.bank
-  lastModified: 636646075152154999
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  Exists: 1
 --- !u!114 &114473324666705770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,7 +2144,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 25632
   Exists: 1
---- !u!114 &114505509948474900
+--- !u!114 &114508759418698396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1395,13 +2152,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Can Loop 4
-  Min: 0
-  Max: 1
-  Default: 0
+  Path: event:/Vakuo/Game/Ship/Arrival
+  guid: ed24b08dd702584c8bf8ad701ecf2a36
+  Banks:
+  - {fileID: 114156181681579636}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19797
 --- !u!114 &114511137210739104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,6 +2199,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 234880
   Exists: 1
+--- !u!114 &114519555546672760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Ship/Arrival
+  guid: ed24b08dd702584c8bf8ad701ecf2a36
+  Banks:
+  - {fileID: 114345470691756574}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19797
 --- !u!114 &114521983725224094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +2276,39 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3320128
   Exists: 1
+--- !u!114 &114540866150345626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114541395063378104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Misc.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
 --- !u!114 &114551352041225796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,29 +2324,6 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114553897075552094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/Challange Transition
-  guid: 9c22611e06ed234da06beb0612331def
-  Banks:
-  - {fileID: 114871634336084808}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114955538958480204}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 38230
 --- !u!114 &114554374843138194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,7 +2339,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114555471403039698
+--- !u!114 &114556054532332598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114568328351592326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1554,41 +2365,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Character.bank
-  lastModified: 636646075152025346
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Character.bank
+  lastModified: 636647000970000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 21120
   Exists: 1
---- !u!114 &114563566621324326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/GamePlay
-  guid: ccfbc0715ac69a42891df1d42629374a
-  Banks:
-  - {fileID: 114871634336084808}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114505509948474900}
-  - {fileID: 114825298298419348}
-  - {fileID: 114096308183731158}
-  - {fileID: 114717436298616506}
-  - {fileID: 114329876257909700}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 159292
---- !u!114 &114565152564254938
+--- !u!114 &114570556950256694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1599,12 +2383,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Ambience.bank
-  lastModified: 636646075151975470
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.bank
+  lastModified: 636647000970000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 450
+    Value: 12474
   Exists: 1
 --- !u!114 &114573288098127414
 MonoBehaviour:
@@ -1624,6 +2408,47 @@ MonoBehaviour:
   - Name: Desktop
     Value: 21120
   Exists: 1
+--- !u!114 &114575056199323616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114580991034548262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Menu/Menu Click
+  guid: a1131d1ee343524ca7668c7723d0e371
+  Banks:
+  - {fileID: 114743159880142772}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114989319565585656}
+  - {fileID: 114910696548713350}
+  - {fileID: 114782656016636118}
+  - {fileID: 114219513528055610}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 684
 --- !u!114 &114588732682804860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,6 +2482,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114599938494277764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114610896475071534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,7 +2512,37 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114627748921135628
+--- !u!114 &114618737222868852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114619566350143798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114620115444023388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1683,17 +2553,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/SFX/Stinger 1
-  guid: 67146d6b4473ea44b955868bf6a9dcbb
+  Path: event:/Vakuo/Game/Ship/Departure
+  guid: 57bdeff8af4b95439b8def9ad8262c45
   Banks:
-  - {fileID: 114727544720796262}
+  - {fileID: 114156181681579636}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 14677
+  Length: 13994
+--- !u!114 &114621072643445992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114623686277144564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114633123458741432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +2609,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114633860977206440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114764244478376322}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
 --- !u!114 &114635821434051082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1736,28 +2658,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 159292
---- !u!114 &114636367000425126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/Pause
-  guid: f2cc683438fcaf42bd772d1dc4fbc300
-  Banks:
-  - {fileID: 114871634336084808}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 33982
 --- !u!114 &114652076429443070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,7 +2673,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114655851366547648
+--- !u!114 &114665982585642552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1784,35 +2684,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Animals/Elephant/Purr
-  guid: 19075f020d1c2b44b16f542870c2945d
+  Path: event:/Vakuo/Game/SFX/Stinger 1
+  guid: 67146d6b4473ea44b955868bf6a9dcbb
   Banks:
-  - {fileID: 114060698641809618}
+  - {fileID: 114059841609646382}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4045
---- !u!114 &114661136990300914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636646862781104096
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1594
-  Exists: 1
+  Length: 14677
 --- !u!114 &114667926347502396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,7 +2713,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1379520
   Exists: 1
---- !u!114 &114712038861767446
+--- !u!114 &114671900127933128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1842,10 +2724,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Select
+  Name: Can Loop 1
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114689411609145312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Cry
+  guid: 079dbeee0e6d684ab81ab49e8de002d8
+  Banks:
+  - {fileID: 114764244478376322}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2282
+--- !u!114 &114693847828723750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Appear
+  guid: 5a8d8b671d701148a70f9c981430596e
+  Banks:
+  - {fileID: 114888436465186608}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4419
+--- !u!114 &114699006937523710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Misc.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
+--- !u!114 &114706019080581442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1594
+  Exists: 1
+--- !u!114 &114711448340939698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Cry
+  guid: 079dbeee0e6d684ab81ab49e8de002d8
+  Banks:
+  - {fileID: 114888436465186608}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2282
 --- !u!114 &114714938496745066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,37 +2852,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2282
---- !u!114 &114717436298616506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Can Loop 2
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114720632660894300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Main
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114727544720796262
+--- !u!114 &114724093208671034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1909,13 +2863,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Effects.bank
-  lastModified: 636646862781073834
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.bank
+  lastModified: 636647000970000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1379520
+    Value: 12474
   Exists: 1
+<<<<<<< Updated upstream
+--- !u!114 &114410905768410378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Misc.bank
+  lastModified: 636646862781133994
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
+--- !u!114 &114415232114471258
+=======
+--- !u!114 &114728971181526304
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114860557717361360}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
 --- !u!114 &114730887538881818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,6 +2936,39 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14677
+--- !u!114 &114741409952171190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114743159880142772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Misc.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
 --- !u!114 &114746411512486010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,6 +2981,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114746512679113040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pause
   Min: 0
   Max: 1
   Default: 0
@@ -2009,6 +3055,50 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114760425577652692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Menu/Menu Click
+  guid: a1131d1ee343524ca7668c7723d0e371
+  Banks:
+  - {fileID: 114541395063378104}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114787598002616620}
+  - {fileID: 114172833689351324}
+  - {fileID: 114746512679113040}
+  - {fileID: 114141927485068118}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 684
+--- !u!114 &114764244478376322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Animals.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 234880
+  Exists: 1
 --- !u!114 &114767539743218190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2028,6 +3118,955 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13994
+--- !u!114 &114770090652967596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114782656016636118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114784471348402176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114787598002616620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Path: event:/Vakuo/Game/Music/Pause
+  guid: f2cc683438fcaf42bd772d1dc4fbc300
+  Banks:
+  - {fileID: 114534216818501332}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114472317591815406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.bank
+  lastModified: 636646075152154999
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  Exists: 1
+--- !u!114 &114473324666705770
+=======
+  Name: Main
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114791578215380940
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114888436465186608}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
+--- !u!114 &114818796464777800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Character.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 21120
+  Exists: 1
+--- !u!114 &114819327551652738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 1
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114833297801991110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114837827118523318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Misc.bank
+  lastModified: 636646379577786731
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
+--- !u!114 &114505509948474900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114511137210739104
+=======
+  Path: event:/Vakuo/Game/Ship/Departure
+  guid: 57bdeff8af4b95439b8def9ad8262c45
+  Banks:
+  - {fileID: 114059841609646382}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13994
+--- !u!114 &114839408511993402
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114842204989902568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Pause
+  guid: f2cc683438fcaf42bd772d1dc4fbc300
+  Banks:
+  - {fileID: 114114392785227470}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114845224989669930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114845284255823128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.bank
+  lastModified: 636646075152154999
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  Exists: 1
+--- !u!114 &114849661073799006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
+  Min: 0
+  Max: 1
+  Default: 0
+<<<<<<< Updated upstream
+--- !u!114 &114553897075552094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange Transition
+  guid: 9c22611e06ed234da06beb0612331def
+  Banks:
+  - {fileID: 114871634336084808}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114955538958480204}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 38230
+--- !u!114 &114554374843138194
+=======
+--- !u!114 &114853646821749588
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114555471403039698
+=======
+  Path: event:/Vakuo/Game/Music/Challange Transition
+  guid: 9c22611e06ed234da06beb0612331def
+  Banks:
+  - {fileID: 114013316915414412}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114610896475071534}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 38230
+--- !u!114 &114854150675482502
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Character.bank
+  lastModified: 636646075152025346
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 21120
+  Exists: 1
+--- !u!114 &114563566621324326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/GamePlay
+  guid: ccfbc0715ac69a42891df1d42629374a
+  Banks:
+  - {fileID: 114871634336084808}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114505509948474900}
+  - {fileID: 114825298298419348}
+  - {fileID: 114096308183731158}
+  - {fileID: 114717436298616506}
+  - {fileID: 114329876257909700}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 159292
+--- !u!114 &114565152564254938
+=======
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114444310891098588}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
+--- !u!114 &114860557717361360
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Ambience.bank
+  lastModified: 636646075151975470
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
+--- !u!114 &114573288098127414
+=======
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Animals.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 234880
+  Exists: 1
+--- !u!114 &114862811747620168
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< Updated upstream
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Character.bank
+  lastModified: 636646379577150056
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 21120
+  Exists: 1
+--- !u!114 &114588732682804860
+=======
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Ship/Arrival
+  guid: ed24b08dd702584c8bf8ad701ecf2a36
+  Banks:
+  - {fileID: 114059841609646382}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19797
+--- !u!114 &114874809523949408
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Misc.bank
+  lastModified: 636646862781133994
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 25632
+  Exists: 1
+--- !u!114 &114593101111438314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CanLoop
+  Min: 0
+  Max: 1
+  Default: 0
+<<<<<<< Updated upstream
+--- !u!114 &114610896475071534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114627748921135628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Stinger 1
+  guid: 67146d6b4473ea44b955868bf6a9dcbb
+  Banks:
+  - {fileID: 114727544720796262}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14677
+--- !u!114 &114633123458741432
+=======
+--- !u!114 &114874863516247436
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Electrical Circuit
+  guid: 83e20164e5b3ae458403ec99c22a43b8
+  Banks:
+  - {fileID: 114345470691756574}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114874809523949408}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11605
+--- !u!114 &114875109598966394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange Transition
+  guid: 9c22611e06ed234da06beb0612331def
+  Banks:
+  - {fileID: 114114392785227470}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114127619637603434}
+  MinDistance: 0
+  MaxDistance: 0
+<<<<<<< Updated upstream
+  Length: 159292
+--- !u!114 &114636367000425126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Pause
+  guid: f2cc683438fcaf42bd772d1dc4fbc300
+  Banks:
+  - {fileID: 114871634336084808}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 33982
+--- !u!114 &114652076429443070
+=======
+  Length: 38230
+--- !u!114 &114880296083197294
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+<<<<<<< Updated upstream
+--- !u!114 &114655851366547648
+=======
+--- !u!114 &114884156133698476
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< Updated upstream
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114060698641809618}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
+--- !u!114 &114661136990300914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636646862781104096
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1594
+  Exists: 1
+--- !u!114 &114667926347502396
+=======
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114887674284769492
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Music.bank
+  lastModified: 636647000990000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3320128
+  Exists: 1
+<<<<<<< Updated upstream
+--- !u!114 &114712038861767446
+=======
+--- !u!114 &114888436465186608
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+<<<<<<< Updated upstream
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114714938496745066
+=======
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Animals.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 234880
+  Exists: 1
+--- !u!114 &114892720010670008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Master
+    Bank.strings.bank
+  lastModified: 636646379576433115
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1594
+  Exists: 1
+--- !u!114 &114903852620584474
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Menu/Menu Click
+  guid: a1131d1ee343524ca7668c7723d0e371
+  Banks:
+  - {fileID: 114454383288595414}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+<<<<<<< Updated upstream
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2282
+--- !u!114 &114717436298616506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114720632660894300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Main
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114727544720796262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Effects.bank
+  lastModified: 636646862781073834
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1379520
+  Exists: 1
+--- !u!114 &114730887538881818
+=======
+  Parameters:
+  - {fileID: 114063020342236982}
+  - {fileID: 114023475720278588}
+  - {fileID: 114995793591654180}
+  - {fileID: 114849661073799006}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 684
+--- !u!114 &114903915171026432
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Animals/Elephant/Purr
+  guid: 19075f020d1c2b44b16f542870c2945d
+  Banks:
+  - {fileID: 114513083872954066}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4045
+--- !u!114 &114910696548713350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114912078362568854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.strings.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1594
+  Exists: 1
+--- !u!114 &114927040357628760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Music/Challange
+  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
+  Banks:
+  - {fileID: 114003170231055020}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114593101111438314}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16991
+--- !u!114 &114933976902209272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/Player/Jump
+  guid: ccff08b72f8e0f4bbd49b8d35f9706bc
+  Banks:
+  - {fileID: 114064679151867336}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+<<<<<<< Updated upstream
   MinDistance: 1
   MaxDistance: 20
   Length: 13994
@@ -2084,6 +4123,12 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114839408511993402
+=======
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 799
+--- !u!114 &114938379486407024
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2091,47 +4136,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Select
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114845224989669930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Can Loop 4
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114845284255823128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop\Master Bank.bank
-  lastModified: 636646075152154999
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 12474
-  Exists: 1
---- !u!114 &114849661073799006
+  Path: event:/Vakuo/Game/Music/GamePlay
+  guid: ccfbc0715ac69a42891df1d42629374a
+  Banks:
+  - {fileID: 114114392785227470}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114164431839667698}
+  - {fileID: 114671900127933128}
+  - {fileID: 114784471348402176}
+  - {fileID: 114075939364603690}
+  - {fileID: 114741409952171190}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 159292
+--- !u!114 &114938565133665424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2146,7 +4170,55 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114853646821749588
+--- !u!114 &114939220000673140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build/Desktop/Master Bank.bank
+  lastModified: 636647000970000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  Exists: 1
+--- !u!114 &114940427664647158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114945333062732150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CanLoop
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114953150452062668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2157,39 +4229,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/Challange Transition
-  guid: 9c22611e06ed234da06beb0612331def
+  Path: event:/Vakuo/Game/Ship/Arrival
+  guid: ed24b08dd702584c8bf8ad701ecf2a36
   Banks:
-  - {fileID: 114013316915414412}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114610896475071534}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 38230
---- !u!114 &114854150675482502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Animals/Elephant/Purr
-  guid: 19075f020d1c2b44b16f542870c2945d
-  Banks:
-  - {fileID: 114444310891098588}
+  - {fileID: 114034500954658884}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+<<<<<<< Updated upstream
   Length: 4045
 --- !u!114 &114871634336084808
 MonoBehaviour:
@@ -2262,6 +4312,10 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114892720010670008
+=======
+  Length: 19797
+--- !u!114 &114962521726955406
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2269,9 +4323,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Master
     Bank.strings.bank
   lastModified: 636646379576433115
@@ -2304,72 +4359,78 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 11605
 --- !u!114 &114903852620584474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Menu/Menu Click
-  guid: a1131d1ee343524ca7668c7723d0e371
+=======
+  Path: event:/Vakuo/Game/Music/Challange Transition
+  guid: 9c22611e06ed234da06beb0612331def
   Banks:
-  - {fileID: 114454383288595414}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 114063020342236982}
-  - {fileID: 114023475720278588}
-  - {fileID: 114995793591654180}
-  - {fileID: 114849661073799006}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 684
---- !u!114 &114903915171026432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Animals/Elephant/Purr
-  guid: 19075f020d1c2b44b16f542870c2945d
-  Banks:
-  - {fileID: 114513083872954066}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4045
---- !u!114 &114927040357628760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Music/Challange
-  guid: f2bed141ea5ccf48ab1dd85ba0e154e2
-  Banks:
-  - {fileID: 114003170231055020}
+  - {fileID: 114418055098779328}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+  - {fileID: 114575056199323616}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 38230
+--- !u!114 &114963725630907608
+>>>>>>> Stashed changes
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114970298825503054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Electrical Circuit
+  guid: 83e20164e5b3ae458403ec99c22a43b8
+  Banks:
+  - {fileID: 114156181681579636}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114020630719029874}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11605
+--- !u!114 &114977933841069728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Electrical Circuit
+  guid: 83e20164e5b3ae458403ec99c22a43b8
+  Banks:
+  - {fileID: 114059841609646382}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+<<<<<<< Updated upstream
   - {fileID: 114593101111438314}
   MinDistance: 0
   MaxDistance: 0
@@ -2397,6 +4458,13 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 13994
 --- !u!114 &114938565133665424
+=======
+  - {fileID: 114384881092034612}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11605
+--- !u!114 &114983596486141692
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2407,41 +4475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Animal
+  Name: Volume
   Min: 0
   Max: 1
   Default: 0
---- !u!114 &114940427664647158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Can Loop 2
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114945333062732150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: CanLoop
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114953150452062668
+--- !u!114 &114988948518619588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2452,16 +4490,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Vakuo/Game/Ship/Arrival
-  guid: ed24b08dd702584c8bf8ad701ecf2a36
+  Path: event:/Vakuo/Game/Animals/Elephant/Cry
+  guid: 079dbeee0e6d684ab81ab49e8de002d8
   Banks:
-  - {fileID: 114034500954658884}
+  - {fileID: 114860557717361360}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 2282
+--- !u!114 &114989319565585656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Main
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114992164931581172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Vakuo/Game/SFX/Stinger 1
+  guid: 67146d6b4473ea44b955868bf6a9dcbb
+  Banks:
+  - {fileID: 114156181681579636}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+<<<<<<< Updated upstream
   Length: 19797
 --- !u!114 &114955538958480204
 MonoBehaviour:
@@ -2515,6 +4591,9 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+=======
+  Length: 14677
+>>>>>>> Stashed changes
 --- !u!114 &114995793591654180
 MonoBehaviour:
   m_ObjectHideFlags: 0
