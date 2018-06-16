@@ -9,10 +9,18 @@ public class HealthpotSpawner : MonoBehaviour {
     private Transform _parent;
     [SerializeField]
     private float _probability;
+    private bool isQuit = false;
+
+    private void OnApplicationQuit()
+    {
+        isQuit = true;
+    }
 
     private void OnDestroy()
     {
-        Debug.Log("Destroy");
+        if (isQuit)
+            return;
+
         if(Random.Range(0f, 100f) < _probability)
         {
             GameObject instance = Instantiate(_prefab, _parent);
