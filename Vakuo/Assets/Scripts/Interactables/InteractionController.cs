@@ -21,22 +21,6 @@ public class InteractionController : MonoBehaviour
     private TextMesh _text;
     private bool _isTextActive = false;
 
-    
-    public bool drawLineRendered = false;
-    public LineRenderer laserLineRenderer;
-    public float laserWidth = 0.1f;
-
-
-    private void Start () {
-        if(laserLineRenderer != null)
-        {
-            Vector3[] initLaserPositions = new Vector3[2] { Vector3.zero, Vector3.zero };
-            laserLineRenderer.SetPositions(initLaserPositions);
-            laserLineRenderer.startWidth = laserWidth;
-            laserLineRenderer.endWidth = laserWidth;
-        }
-    }
-
     private void Update()
     {
         if (_target != null &&
@@ -54,20 +38,6 @@ public class InteractionController : MonoBehaviour
         {
             DeactivateText();
             _isFacingMe = false;
-        }
-
-        // Draw line
-        if (_target != null && drawLineRendered)
-        {
-            ShootLaserFromTargetPosition(_target.position + _raycastOffset, _target.TransformDirection(Vector3.forward), _maxRasycastLength);
-            laserLineRenderer.enabled = true;
-        }
-        else
-        {
-            if (laserLineRenderer != null)
-            {
-                laserLineRenderer.enabled = false;
-            }
         }
     }
 
@@ -120,15 +90,4 @@ public class InteractionController : MonoBehaviour
     {
         _target = null;
     }
-
-    #region DrawLine
-
-    void ShootLaserFromTargetPosition(Vector3 targetPosition, Vector3 direction, float length)
-    {
-        Vector3 endPosition = targetPosition + (length * direction);
-        laserLineRenderer.SetPosition(0, targetPosition);
-        laserLineRenderer.SetPosition(1, endPosition);
-    }
-    
-    #endregion
 }
