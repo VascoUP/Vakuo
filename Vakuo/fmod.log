@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000012A94848 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000000071AE1058 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -30,45 +30,139 @@
 [LOG] SystemI::createSound                     : filename = C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Effects.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 000000007614B8E8 : node = 0000000063B83720
-[LOG] SystemI::createSound                     : add node to async list : head = 0000000063EE2C18.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000007614B8E8
+[LOG] SystemI::createSound                     : setdata soundi = 0000000070F478A8 : node = 0000000041FE5700
+[LOG] SystemI::createSound                     : add node to async list : head = 000000007D189668.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000070F478A8
 [LOG] SystemI::createSoundInternal             :     Create name='C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Effects.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 1670336
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14592
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000063B83838
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000041FE5818
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSound                     :     filename = C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Music.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 000000007614AD18 : node = 0000000063B83870
-[LOG] SystemI::createSound                     :     add node to async list : head = 0000000063EE2C18.  list count = 0
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000718B26D8 : node = 0000000071ADEB20
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000007D189668.  list count = 0
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='stinger5', format=2, channels=2, frequency=48000, lengthbytes=100480, lengthpcm=557056, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.221849.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000007614B8E8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000007614AD18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000070F478A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000718B26D8
 [LOG] SystemI::createSoundInternal             :     Create name='C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Music.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 3312480
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 7648
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000063B83988
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000071ADEC38
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Game_play_main_music', format=2, channels=2, frequency=48000, lengthbytes=2112896, lengthpcm=7646018, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.762768.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000007614AD18
-[LOG] SoundI::getSubSound                      : sound 000000007614B8E8.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 000000007614AD18.  Subsound index 0 / 1
-[LOG] SoundI::release                          : Game_play_main_music (000000007614AD18)
-[LOG] SoundI::release                          :     Game_play_main_music (00000000F22B7828)
-[LOG] SoundI::release                          :     Game_play_main_music (000000006504CDA8)
-[LOG] SoundI::release                          : stinger5 (000000007614B8E8)
-[LOG] SoundI::release                          :     stinger5 (00000000F22B7008)
-[LOG] SoundI::release                          :     stinger5 (000000006504C388)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000718B26D8
+[LOG] SoundI::getSubSound                      : sound 0000000070F478A8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000718B26D8.  Subsound index 0 / 1
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000718B2D98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000718B2D98
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 242784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 21312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000006BAFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0D40E4B0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0D40E480
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0D40E580
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0D40E640
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000000B9359C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='gemido3', format=2, channels=2, frequency=48000, lengthbytes=4480, lengthpcm=22389, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.115821.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 242784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 21312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000006BAFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0D40E4B0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0D40E480
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0D40E580
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0D40E640
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000000B9359C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='gemido4', format=2, channels=2, frequency=48000, lengthbytes=2752, lengthpcm=12794, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.099425.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 242784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 21312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000006BAFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0D40E4B0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0D40E480
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0D40E580
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0D40E640
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000000B9359C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='gemido5', format=2, channels=2, frequency=48000, lengthbytes=2912, lengthpcm=12794, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.116874.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 242784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 21312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000006BAFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0D40E4B0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0D40E480
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0D40E580
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0D40E640
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000000B9359C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='gemido2', format=2, channels=2, frequency=48000, lengthbytes=2592, lengthpcm=12794, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.064014.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 242784
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 21312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000006BAFF5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE0D40E4B0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE0D40E480
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE0D40E580
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE0D40E640
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000000B9359C8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='gemido1', format=2, channels=2, frequency=48000, lengthbytes=5312, lengthpcm=38381, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.127468.
+[LOG] SoundI::release                          : Game_play_main_music (00000000718B26D8)
+[LOG] SoundI::release                          :     Game_play_main_music (0000000057FE3038)
+[LOG] SoundI::release                          :     Game_play_main_music (00000000718B2D98)
+[LOG] SoundI::release                          : stinger5 (0000000070F478A8)
+[LOG] SoundI::release                          :     stinger5 (0000000057FE2B58)
+[LOG] SoundI::release                          :     stinger5 (00000000718B2378)
+[LOG] SoundI::release                          :  (000000005F063908)
+[LOG] SoundI::release                          :     gemido1 (00000000419530A8)
+[LOG] SoundI::release                          :  (000000000CCCE358)
+[LOG] SoundI::release                          :     gemido2 (0000000041952BC8)
+[LOG] SoundI::release                          :  (0000000071DB9F78)
+[LOG] SoundI::release                          :     gemido3 (0000000041952548)
+[LOG] SoundI::release                          :  (000000000CCCDF08)
+[LOG] SoundI::release                          :     gemido4 (0000000041952888)
+[LOG] SoundI::release                          :  (000000000CCCD668)
+[LOG] SoundI::release                          :     gemido5 (0000000041952A28)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

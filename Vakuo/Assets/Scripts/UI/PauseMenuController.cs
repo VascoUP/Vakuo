@@ -8,9 +8,10 @@ public class PauseMenuController : MonoBehaviour
     private GameManager _gameManager;
 
     public Button resumeButton;
-    public Button exitButton;
+    /*
     public Button saveButton;
     public Button loadButton;
+     */
 
     void Start()
     {
@@ -19,10 +20,7 @@ public class PauseMenuController : MonoBehaviour
         {
             _gameManager.ChangeState(GameStatus.RUNNING);
         });
-        exitButton.onClick.AddListener(() =>
-        {
-            _gameManager.Quit();
-        });
+        /*
         saveButton.onClick.AddListener(() =>
         {
             GlobalControl.Instance.Save();
@@ -31,5 +29,6 @@ public class PauseMenuController : MonoBehaviour
         {
             GlobalControl.Instance.Load();
         });
+        */
     }
 }
