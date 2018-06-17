@@ -13,15 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-<<<<<<< Updated upstream
-  sourceProjectPath: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
-  SourceProjectPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
-  SourceBankPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\Build
-=======
-  sourceProjectPath: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/fmodproj.fspro
-  SourceProjectPathUnformatted: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/fmodproj.fspro
-  SourceBankPathUnformatted: /Users/pauloteixeira/Desktop/Vakuo/fmodproj/Build
->>>>>>> Stashed changes
+  sourceProjectPath: 
+  SourceProjectPathUnformatted: 
+  SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -49,9 +43,7 @@ MonoBehaviour:
     Value: 1
   - Platform: 2
     Value: 0
-  BankDirectorySettings:
-  - Platform: 2
-    Value: Desktop
+  BankDirectorySettings: []
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024
@@ -63,11 +55,5 @@ MonoBehaviour:
   - Platform: 2
     Value: 32
   Plugins: []
-  MasterBank: Master Bank
-  Banks:
-  - Misc
-  - Character
-  - Animals
-  - Music
-  - Ambience
-  - Effects
+  MasterBank: 
+  Banks: []
