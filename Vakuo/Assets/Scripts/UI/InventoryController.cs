@@ -150,8 +150,8 @@ public class InventoryController : MonoBehaviour {
     void AddSlots()
     {
         Vector3 lastVector = new Vector3();
-        lastVector.x = -150;
-        lastVector.y = 50;
+        lastVector.x = -24;
+        lastVector.y = 40;
         lastVector.z = 0;
 
         for (int i = 0; i < entityInventory.mainContainer.slotAmount; i++)
@@ -162,15 +162,15 @@ public class InventoryController : MonoBehaviour {
                 vector.x = lastVector.x;
                 vector.y = lastVector.y;
             }
-            else if(i != 4)
+            else if(i < 3 || (i > 3 && i < 6) || (i > 6 && i <9))
             {
-                vector.x = lastVector.x + 100;
+                vector.x = lastVector.x + 40;
                 vector.y = lastVector.y;
             }
-            else
+            else if(i == 3 || i == 6)
             {
-                vector.x = -150;
-                vector.y = lastVector.y - 100;
+                vector.x = -24;
+                vector.y = lastVector.y - 36;
             }
             vector.z = 0;
 

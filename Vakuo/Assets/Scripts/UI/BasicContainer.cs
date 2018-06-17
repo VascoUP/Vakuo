@@ -11,7 +11,7 @@ namespace Assets.Scripts.UI
         #endregion
         #region private
         public Dictionary<int, BasicItem> items = new Dictionary<int, BasicItem>(); // collection of all items present in the container, the key being the slot index
-        public int slotAmount = 8; // total number of slots in the container
+        public int slotAmount = 9; // total number of slots in the container
         #endregion
         #region helperfunctions
         // Finds the first empty Slot and returns its index, or -1 when there is no free slot
