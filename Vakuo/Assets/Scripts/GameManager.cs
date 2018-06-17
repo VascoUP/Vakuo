@@ -181,7 +181,6 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameStatus nSate)
     {
-        Debug.Log(nSate);
         _events.onExitState(_state);
         _events.onEnterState(nSate);
         _state = nSate;

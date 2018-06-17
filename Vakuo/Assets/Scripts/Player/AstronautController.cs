@@ -79,8 +79,6 @@ public class AstronautController : MonoBehaviour {
 
     private bool _isGrounded = false;
 
-    public bool showStatus = false;
-
     private Vector3 spawnPosition;
     public float fallDamageVelocityThreshold;
 
@@ -220,7 +218,6 @@ public class AstronautController : MonoBehaviour {
             {
                 PlayerLife playerLife = gameObject.GetComponent<PlayerLife>();
                 int multiplier = Math.Abs((int)(_velocity.y / fallDamageVelocityThreshold) * 6);
-                Debug.Log(multiplier);
                 playerLife.Damage(multiplier);
             }
             _velocity.y = 0f;
@@ -228,10 +225,6 @@ public class AstronautController : MonoBehaviour {
         else
         {
             _velocity.y -= gravity * Time.deltaTime;
-            if(showStatus)
-            {
-                Debug.Log("Update Y Velocity:" + _velocity);
-            }
         }
     }
 
@@ -326,11 +319,6 @@ public class AstronautController : MonoBehaviour {
         Jump();
         Move();
         Animate();
-        if (showStatus)
-        {
-            Debug.Log("IS GROUNDED:" + _cc.isGrounded);
-            Debug.Log("VELOCITY:" + _velocity);
-        }
     }
     
     private void OnEnterState(GameStatus state)
