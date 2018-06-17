@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{40ff66c1-f6b5-4ab7-81a0-1b6214ee2b1a}">
         <relationship name="selectables">
-            <destination>{8b120334-6983-4962-a540-7a70798cef4f}</destination>
+            <destination>{146e784c-9255-4a93-9179-f3db01e16fd3}</destination>
         </relationship>
         <relationship name="uiLastParameterSelection">
             <destination>{91ed687e-29c8-4d92-a966-c1e66e93b0c7}</destination>
@@ -12,11 +12,7 @@
     <object class="MixerInput" id="{a5ae55bb-be9c-44fe-8c17-7f3d025c610f}"/>
     <object class="EventAutomatableProperties" id="{08dee7cc-1a0e-4f2b-8de1-bf43334e9bcc}"/>
     <object class="MarkerTrack" id="{5ee4a532-d0d5-4825-b62d-790ca7a5b1e2}"/>
-    <object class="GroupTrack" id="{3180a5aa-0822-4139-8d29-ae63ad11b5dc}">
-        <property name="uiAutomationTracksVisible">
-            <value>false</value>
-        </property>
-    </object>
+    <object class="GroupTrack" id="{3180a5aa-0822-4139-8d29-ae63ad11b5dc}"/>
     <object class="Timeline" id="{91ed687e-29c8-4d92-a966-c1e66e93b0c7}">
         <property name="uiLastRulerScaleRatio">
             <value>0.02461033634126333</value>
@@ -25,6 +21,11 @@
     <object class="ParameterProxy" id="{156c1a82-4d78-4615-b062-9ea6e5de83fc}">
         <property name="uiLastRulerScaleRatio">
             <value>0.00082034454470877774</value>
+        </property>
+    </object>
+    <object class="ParameterProxy" id="{146e784c-9255-4a93-9179-f3db01e16fd3}">
+        <property name="uiLastRulerScaleRatio">
+            <value>0.00081632653061224493</value>
         </property>
     </object>
     <object class="EventMixerMaster" id="{3a50224f-05d5-4558-9573-d458a17bdba9}">

@@ -4,6 +4,9 @@
         <property name="uiMaxMarkerTracksVisible">
             <value>20</value>
         </property>
+        <relationship name="selectables">
+            <destination>{a7047db9-8164-4ab3-8c34-126e924e767a}</destination>
+        </relationship>
         <relationship name="uiLastParameterSelection">
             <destination>{40589fec-0767-4ac8-a7eb-d7954c6431cc}</destination>
         </relationship>
@@ -23,6 +26,11 @@
     <object class="ParameterProxy" id="{cbe43541-0fa8-49e9-a3e8-6273b0baa8c1}">
         <property name="uiLastRulerScaleRatio">
             <value>0.00080385852090032153</value>
+        </property>
+    </object>
+    <object class="ParameterProxy" id="{a7047db9-8164-4ab3-8c34-126e924e767a}">
+        <property name="uiLastRulerScaleRatio">
+            <value>0.00082034454470877774</value>
         </property>
     </object>
     <object class="ParameterProxy" id="{81325afb-cbee-473a-8e29-19ac642fddbc}">
