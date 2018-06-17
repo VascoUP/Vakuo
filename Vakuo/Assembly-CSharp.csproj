@@ -168,6 +168,7 @@
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
      <None Include="Assets\Packages\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+     <None Include="Assets\Scripts\text\GameOver.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
      <None Include="Assets\Packages\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\ACES.cginc" />

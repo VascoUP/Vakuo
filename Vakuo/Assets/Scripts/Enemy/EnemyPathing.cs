@@ -28,6 +28,9 @@ public class EnemyPathing : MonoBehaviour {
     [SerializeField]
     private CharacterController _targetCC;
 
+    [SerializeField]
+    private GameObject deathSound;
+
     // Instance of event manager
     public EventManager _events;
 
@@ -76,6 +79,7 @@ public class EnemyPathing : MonoBehaviour {
         {
             _deathMat.enabled = true;
             _dead = true;
+            deathSound.SetActive(true);
         }
 
         StopAllCoroutines();

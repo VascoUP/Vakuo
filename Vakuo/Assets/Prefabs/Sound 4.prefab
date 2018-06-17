@@ -140,14 +140,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/Vakuo/Game/SFX/Chords
   PlayEvent: 11
-  StopEvent: 2
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params:
   - Name: Chord Type
-    Value: 1
+    Value: 0.4
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

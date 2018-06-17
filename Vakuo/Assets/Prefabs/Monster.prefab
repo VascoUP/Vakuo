@@ -444,6 +444,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1665342432427382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4280998368480036}
+  - component: {fileID: 114397951994438684}
+  m_Layer: 12
+  m_Name: Death Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1679777481744868
 GameObject:
   m_ObjectHideFlags: 1
@@ -839,7 +855,7 @@ Transform:
   m_Children:
   - {fileID: 4883415874308756}
   m_Father: {fileID: 4232796317285972}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4232796317285972
 Transform:
@@ -851,6 +867,7 @@ Transform:
   m_LocalPosition: {x: -29.500002, y: 0, z: 31.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4280998368480036}
   - {fileID: 4212315810715420}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -866,6 +883,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4430861557278062}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4280998368480036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665342432427382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4232796317285972}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4283314385715810
@@ -1541,6 +1571,28 @@ MonoBehaviour:
   walkSpeed: 4
   turnSpeed: 10000
   percentagePerSecond: 9
+--- !u!114 &114397951994438684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665342432427382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Vakuo/Game/Others/Monster
+  PlayEvent: 11
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114546876736411030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1558,6 +1610,7 @@ MonoBehaviour:
   _deathMat: {fileID: 114122888463431060}
   _target: {fileID: 0}
   _targetCC: {fileID: 0}
+  deathSound: {fileID: 1665342432427382}
   _events: {fileID: 0}
   gravity: 15
   walkSpeed: 4
@@ -1629,9 +1682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fdc95fa6a1d854290a6c3dd1937ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 1942660757804822, guid: 87d804217908e6d4890dc73f18229d53, type: 2}
+  _prefab: {fileID: 1536257247084292, guid: b65046173d254a6499e1f5ce882b0d67, type: 2}
   _parent: {fileID: 0}
-  _probability: 80
+  _probability: 50
 --- !u!114 &114672142015367318
 MonoBehaviour:
   m_ObjectHideFlags: 1
