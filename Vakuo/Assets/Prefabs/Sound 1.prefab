@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4081801733261642}
   - component: {fileID: 114997150458429742}
+  - component: {fileID: 114501634534283854}
   m_Layer: 0
   m_Name: Sound 1
   m_TagString: Untagged
@@ -113,6 +114,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551461817475908}
   m_Mesh: {fileID: 4300006, guid: f13720786fc41484ebe7149139df0d1e, type: 3}
+--- !u!114 &114501634534283854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988548551421804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Vakuo/Game/SFX/Chords
+  PlayEvent: 11
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Chord Type
+    Value: 0.1
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &114997150458429742
 MonoBehaviour:
   m_ObjectHideFlags: 1
