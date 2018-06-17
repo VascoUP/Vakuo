@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         onUpdate -= FirstFrame;
     }
 
-    private void SetTimeScale(float timeScale)
+    public void SetTimeScale(float timeScale)
     {
         Time.timeScale = timeScale;
         Time.fixedDeltaTime = 0.02F * Time.timeScale;

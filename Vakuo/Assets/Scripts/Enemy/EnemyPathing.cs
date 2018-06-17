@@ -21,6 +21,9 @@ public class EnemyPathing : MonoBehaviour {
     private BezierPathing _pathing;
 
     [SerializeField]
+    private HealthpotSpawner _spawner;
+
+    [SerializeField]
     private RunChildDisintegrate _deathMat;
 
     [SerializeField]
@@ -208,7 +211,10 @@ public class EnemyPathing : MonoBehaviour {
         if (!_dead)
             ChangeState(EnemyStates.DECIDE_TO_MOVE);
         else
+        {
+            _spawner.SpawnHealth();
             Destroy(transform.parent.gameObject);
+        }
     }
 
     private bool WillAttackPlayer()

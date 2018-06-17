@@ -119,6 +119,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyPathing.cs" />
      <Compile Include="Assets\Scripts\EventManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
      <Compile Include="Assets\Scripts\Global\GlobalControl.cs" />
      <Compile Include="Assets\Scripts\Input\InputStateMachine.cs" />
      <Compile Include="Assets\Scripts\Interactables\CollectableController.cs" />
