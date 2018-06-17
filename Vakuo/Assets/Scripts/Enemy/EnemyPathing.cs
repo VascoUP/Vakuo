@@ -410,6 +410,7 @@ public class EnemyPathing : MonoBehaviour {
         }
 
         if (hit.gameObject.tag != "Ground" &&
+            hit.gameObject.tag != "Mountain" &&
             !(hit.gameObject.tag == "Enemy" && hit.gameObject == gameObject) &&
             hit.gameObject.tag != "Enemy Camp" &&
             _state == EnemyStates.CHARGE)

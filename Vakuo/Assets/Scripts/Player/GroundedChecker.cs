@@ -9,6 +9,7 @@ public class GroundedChecker : MonoBehaviour {
     private CharacterController _cc;
 
     private bool _previousFrameGrounded = true;
+    private bool _sentEvent = false;
     private float _highestPoint;
 
     [SerializeField]
@@ -19,8 +20,14 @@ public class GroundedChecker : MonoBehaviour {
         _cc = GetComponent<CharacterController>();
     }
 
-	private void Update ()
+    public bool IsGrounded() {
+        return _sentEvent;
+    }
+
+	private void LateUpdate ()
     { 
+        _sentEvent = false;
+
 		if(_previousFrameGrounded)
         {
             if(!_cc.isGrounded)
@@ -39,6 +46,7 @@ public class GroundedChecker : MonoBehaviour {
                 if(fallDistance >= _minDistanceForEvent)
                 {
                     _events.onPlayerGrounded();
+                    _sentEvent = true;
                 }
             }
             else if(_highestPoint < transform.position.y)

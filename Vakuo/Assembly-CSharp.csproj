@@ -148,6 +148,7 @@
      <Compile Include="Assets\Scripts\Player\GroundedChecker.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMeshController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerSoundController.cs" />
      <Compile Include="Assets\Scripts\Player\SwirlAttack.cs" />
      <Compile Include="Assets\Scripts\text\Intro.cs" />
      <Compile Include="Assets\Scripts\text\IntroText.cs" />
