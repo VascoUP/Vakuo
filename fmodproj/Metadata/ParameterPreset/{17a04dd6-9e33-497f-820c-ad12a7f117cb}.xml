@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{17a04dd6-9e33-497f-820c-ad12a7f117cb}">
+        <property name="name">
+            <value>Volume Tension</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{db53c91d-ee4b-4839-95bf-7aea727980d0}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{db53c91d-ee4b-4839-95bf-7aea727980d0}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.30000001192092896</value>
+        </property>
+    </object>
+</objects>

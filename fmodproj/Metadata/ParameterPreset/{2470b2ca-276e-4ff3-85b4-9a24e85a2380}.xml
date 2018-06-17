@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{2470b2ca-276e-4ff3-85b4-9a24e85a2380}">
+        <property name="name">
+            <value>Volume Challange Transition</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{7af9b356-81bc-410b-8c89-f519974bb6b0}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{7af9b356-81bc-410b-8c89-f519974bb6b0}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.30000001192092896</value>
+        </property>
+    </object>
+</objects>

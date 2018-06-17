@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{bf1e04c3-25d9-4418-a3f1-47730e6044d5}">
+        <property name="name">
+            <value>Volume Fantasm</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{8ceb9e94-7d6e-42fd-afbb-813103fa8a6d}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{8ceb9e94-7d6e-42fd-afbb-813103fa8a6d}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

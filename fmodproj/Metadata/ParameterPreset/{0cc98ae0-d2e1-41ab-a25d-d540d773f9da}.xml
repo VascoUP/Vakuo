@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{0cc98ae0-d2e1-41ab-a25d-d540d773f9da}">
+        <property name="name">
+            <value>Volume Drones</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{6c9204ed-fb38-4cf3-8ed5-7b54c3553cc0}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{6c9204ed-fb38-4cf3-8ed5-7b54c3553cc0}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

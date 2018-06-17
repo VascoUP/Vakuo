@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{4ada17ce-7ab3-476d-bcdd-51a5b05c3d10}">
+        <property name="name">
+            <value>Volume Mountain</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{d4235d67-ac4d-4985-8a6d-4f87a160cb80}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{d4235d67-ac4d-4985-8a6d-4f87a160cb80}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.30000001192092896</value>
+        </property>
+    </object>
+</objects>
