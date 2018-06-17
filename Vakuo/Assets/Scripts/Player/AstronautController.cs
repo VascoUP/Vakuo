@@ -82,6 +82,7 @@ public class AstronautController : MonoBehaviour {
     public bool showStatus = false;
 
     private Vector3 spawnPosition;
+    public float fallDamageVelocityThreshold;
 
     private void Start () {
         _events.onEnterState += OnEnterState;
@@ -215,6 +216,13 @@ public class AstronautController : MonoBehaviour {
     {
         if (!_isJumpFrame && _isGrounded)
         {
+            if (Math.Abs(_velocity.y) > fallDamageVelocityThreshold)
+            {
+                PlayerLife playerLife = gameObject.GetComponent<PlayerLife>();
+                int multiplier = Math.Abs((int)(_velocity.y / fallDamageVelocityThreshold) * 6);
+                Debug.Log(multiplier);
+                playerLife.Damage(multiplier);
+            }
             _velocity.y = 0f;
         }
         else
