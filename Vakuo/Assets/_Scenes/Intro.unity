@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ff851fe06c44e018047d978ba0c5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textRate: 0.02
+  textRate: 0.1
   file: {fileID: 4900000, guid: 6487c9bc5489e4953aaeaafe3f7eeef7, type: 3}
   textBackground: {fileID: 1997976899}
   backgroundOpacity: 0.724
