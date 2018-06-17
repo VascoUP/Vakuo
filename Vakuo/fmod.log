@@ -27,7 +27,7 @@
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
-[LOG] SystemI::createSound                     : filename = C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop/Effects.bank : mode 02010082
+[LOG] SystemI::createSound                     : filename = C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Effects.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
 [LOG] SystemI::createSound                     : setdata soundi = 0000000075A9AC48 : node = 0000000042054060
@@ -38,11 +38,11 @@
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 1670336
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14592
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000012566CF8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000042054178
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSound                     :     filename = C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop/Music.bank : mode 02010082
+[LOG] SystemI::createSound                     :     filename = C:\Users\vasco\Documents\Vakuo\fmodproj\Build\Desktop/Music.bank : mode 02010082
 [LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] SystemI::createSound                     :     setdata soundi = 0000000075A99808 : node = 0000000042054AE0
 [LOG] SystemI::createSound                     :     add node to async list : head = 000000001B037BA8.  list count = 0
