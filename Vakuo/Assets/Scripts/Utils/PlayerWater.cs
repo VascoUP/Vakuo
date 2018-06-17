@@ -25,7 +25,9 @@ public class PlayerWater : MonoBehaviour {
     {
         if(collider.gameObject.tag == "Player" && !running)
         {
-            StartCoroutine(KillPlayerOnWater(collider.gameObject));
+            AstronautController controller = collider.gameObject.GetComponent<AstronautController>();
+            if(controller != null)
+                StartCoroutine(KillPlayerOnWater(collider.gameObject));
         }
     }
 }
