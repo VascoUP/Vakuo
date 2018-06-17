@@ -25,6 +25,8 @@ public class FollowPlayerCamera : MonoBehaviour
     public Vector2 targetLookOffset;
 
     [SerializeField]
+    private LayerMask _bumperLayers;
+    [SerializeField]
     private float _bumperDistanceCheck;
     [SerializeField]
     private float _bumperCameraHeight;
@@ -67,9 +69,10 @@ public class FollowPlayerCamera : MonoBehaviour
         // cast the bumper ray out from rear and check to see if there is anything behind
         if (Physics.Raycast(
             target.TransformPoint(_bumperRayOffset), direction, out hit, 
-            _bumperDistanceCheck, ~(1 << LayerMask.NameToLayer("Trigger")))
+            _bumperDistanceCheck, _bumperLayers)
             && hit.transform != target) // ignore ray-casts that hit the user. DR
         {
+            Debug.Log(hit.transform.gameObject.name);
             float dist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), hit.point);
             float wantedDist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), wantedPosition);
             if (dist < wantedDist)
