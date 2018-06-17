@@ -74,7 +74,7 @@ public class PlayerLife : MonoBehaviour
     {
         while (this.lifes < count)
         {
-			AddImage((int)this.lifes);
+            AddImage((int)this.lifes);
             this.lifes++;
         }
     }
@@ -123,7 +123,12 @@ public class PlayerLife : MonoBehaviour
     {
         for (int i = 0; i < multiplier; ++i)
         {
-            Damage();
+            float livesRemaining = RemoveLifes();
+            if (livesRemaining <= 0)
+            {
+                Respawn();
+                break;
+            }
         }
     }
 
