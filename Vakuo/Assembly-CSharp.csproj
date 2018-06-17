@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DestoryParticleSystem.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
      <Compile Include="Assets\Packages\Bezier\Scripts\BezierGenerator.cs" />
@@ -103,7 +102,6 @@
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
-     <Compile Include="Assets\PlayerWater.cs" />
      <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
      <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
@@ -141,8 +139,10 @@
      <Compile Include="Assets\Scripts\Modifiers\HealthpotController.cs" />
      <Compile Include="Assets\Scripts\Modifiers\HealthpotSpawner.cs" />
      <Compile Include="Assets\Scripts\Modifiers\JumperController.cs" />
+     <Compile Include="Assets\Scripts\Particles\DestoryParticleSystem.cs" />
      <Compile Include="Assets\Scripts\Platforms\PlatformTranslator.cs" />
      <Compile Include="Assets\Scripts\Platforms\ScriptActivator.cs" />
+     <Compile Include="Assets\Scripts\Platforms\TurtleLookAtPath.cs" />
      <Compile Include="Assets\Scripts\Player\AstronautController.cs" />
      <Compile Include="Assets\Scripts\Player\FallAbility.cs" />
      <Compile Include="Assets\Scripts\Player\GroundedChecker.cs" />
@@ -158,8 +158,8 @@
      <Compile Include="Assets\Scripts\UI\InventoryController.cs" />
      <Compile Include="Assets\Scripts\UI\ItemSlot.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenuController.cs" />
+     <Compile Include="Assets\Scripts\Utils\PlayerWater.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
-     <Compile Include="Assets\TurtleLookAtPath.cs" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Packages\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
