@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
+     <Compile Include="Assets\InitializeCamera.cs" />
      <Compile Include="Assets\Packages\Bezier\Scripts\BezierGenerator.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierCurve.cs" />
      <Compile Include="Assets\Packages\BezierCurves\Scripts\BezierPoint.cs" />
