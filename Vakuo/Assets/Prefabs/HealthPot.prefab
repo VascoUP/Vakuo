@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4477731011328524}
   - component: {fileID: 33583320901542994}
   - component: {fileID: 23472320131868810}
-  - component: {fileID: 136189081349498968}
+  - component: {fileID: 65839841682216508}
   - component: {fileID: 114361022294304860}
   m_Layer: 10
   m_Name: HealthPot
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536257247084292}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: -2.27, y: 1.5, z: 21.54}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!23 &23472320131868810
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -84,7 +84,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536257247084292}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 77c4ce6eb6e12af408fe95635091482c, type: 3}
+--- !u!65 &65839841682216508
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536257247084292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: -0.005572498, y: -0.5493535, z: 0.074299}
 --- !u!114 &114361022294304860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,16 +111,3 @@ MonoBehaviour:
   _particlesPrefab: {fileID: 1890210481002212, guid: 8e230442cb2ebb54f9ef70df8be29857,
     type: 2}
   _speed: 180
---- !u!136 &136189081349498968
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1536257247084292}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
