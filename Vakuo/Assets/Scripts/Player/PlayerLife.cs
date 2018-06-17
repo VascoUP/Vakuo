@@ -57,6 +57,14 @@ public class PlayerLife : MonoBehaviour {
         return this.lifes; //Para depois ver se o player morre ou não
 	}
 
+    void RemoveAllLifes()
+    {
+        while (this.lifes >= 0)
+        {
+            RemoveLifes();
+        }
+    }
+
     void AddLifes(float count)
     {
         while (this.lifes < count)
@@ -90,9 +98,22 @@ public class PlayerLife : MonoBehaviour {
         float livesRemaining = RemoveLifes();
         if (livesRemaining <= 0)
         {
-            AstronautController controller = gameObject.GetComponent<AstronautController>();
-            controller.Respawn();
-            AddLifes(maxLifes);
+            Respawn();
         }
+    }
+
+    public void Damage(int multiplier)
+    {
+        for (int i = 0; i < multiplier; ++i)
+        {
+            Damage();
+        }
+    }
+
+    private void Respawn()
+    {
+        AstronautController controller = gameObject.GetComponent<AstronautController>();
+        controller.Respawn();
+        AddLifes(maxLifes);
     }
 }
