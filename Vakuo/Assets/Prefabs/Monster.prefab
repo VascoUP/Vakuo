@@ -1607,6 +1607,7 @@ MonoBehaviour:
   _characterController: {fileID: 143029003590396394}
   _meshObject: {fileID: 4212315810715420}
   _pathing: {fileID: 114390246748764492}
+  _spawner: {fileID: 114645076417233686}
   _deathMat: {fileID: 114122888463431060}
   _target: {fileID: 0}
   _targetCC: {fileID: 0}
