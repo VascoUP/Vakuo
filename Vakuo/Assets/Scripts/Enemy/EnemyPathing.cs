@@ -57,6 +57,8 @@ public class EnemyPathing : MonoBehaviour {
     private bool _isInvulnerable = false;
     private bool _isRunningInvulnerable = false;
 
+    private bool _isPDead = false;
+
     private void OnEnable()
     {
         StopAllCoroutines();
@@ -202,7 +204,7 @@ public class EnemyPathing : MonoBehaviour {
         if (!_dead)
             ChangeState(EnemyStates.DECIDE_TO_MOVE);
         else
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
     }
 
     private bool WillAttackPlayer()
@@ -281,7 +283,13 @@ public class EnemyPathing : MonoBehaviour {
 
     private void UpdateEnemy()
     {
-        if (_target != null && _state == EnemyStates.IDDLE)
+        if (_isPDead && _state != EnemyStates.IDDLE)
+        {
+            StopAllCoroutines();
+            ChangeState(EnemyStates.IDDLE);
+        }
+
+        if (_target != null && _state == EnemyStates.IDDLE && !_isPDead)
         {
             float distToP = (_target.transform.position - transform.position).magnitude;
             if (distToP < distToAttack &&
@@ -354,10 +362,16 @@ public class EnemyPathing : MonoBehaviour {
 
         UpdateYVelocity();
     }
+    
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
 
     private void CollideWithPlayer(AstronautController astronaut)
     {
-        if (_dead)
+        if (_dead || _isPDead)
             return;
 
         _isInvulnerable = true;

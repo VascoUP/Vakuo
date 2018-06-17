@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlatformTranslator : ScriptActivator
 {
-    private enum PlatformType { PINGPONG, REPEAT };
+    protected enum PlatformType { PINGPONG, REPEAT };
 
     [SerializeField]
-    private PlatformType _type;
+    protected PlatformType _type;
 
     [SerializeField]
     private Rigidbody _rigidbody;

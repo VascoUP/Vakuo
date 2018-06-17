@@ -103,6 +103,7 @@
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\Packages\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\PlayerWater.cs" />
      <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
      <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
      <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
@@ -158,6 +159,7 @@
      <Compile Include="Assets\Scripts\UI\ItemSlot.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenuController.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
+     <Compile Include="Assets\TurtleLookAtPath.cs" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Packages\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
      <None Include="Assets\Packages\PostProcessing\Resources\Shaders\MotionBlur.cginc" />

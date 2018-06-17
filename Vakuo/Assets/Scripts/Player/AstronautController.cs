@@ -10,6 +10,8 @@ public class AstronautController : MonoBehaviour {
 	[SerializeField]
     private EventManager _events;
     [SerializeField]
+    private GameManager _manager;
+    [SerializeField]
     private GameObject _jumpTrigger;
     
     public Animator _animator;
