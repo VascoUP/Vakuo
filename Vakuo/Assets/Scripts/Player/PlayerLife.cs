@@ -4,15 +4,17 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerLife : MonoBehaviour {
-	public GameObject panel;
+public class PlayerLife : MonoBehaviour
+{
+    public GameObject panel;
     public GameObject heartPrefab;
     private float maxLifes;
 	public float lifes;
 
 	private List<Image> heartsImages;
 
-	private void OnEnable () {
+	private void OnEnable ()
+    {
         this.heartsImages = new List<Image>();
         CreateLifePanel();
         maxLifes = lifes;
@@ -37,6 +39,9 @@ public class PlayerLife : MonoBehaviour {
 	}
 
 	float RemoveLifes() {
+        if (this.lifes <= 0)
+            return this.lifes;
+
         this.lifes -= 0.25f;
 
         if (this.lifes >= 0)
@@ -91,6 +96,18 @@ public class PlayerLife : MonoBehaviour {
             this.lifes = maxLifes;
             this.heartsImages[this.heartsImages.Count - 1].fillAmount = 1f;
         }
+    }
+
+    public void Kill()
+    {
+        foreach(Image image in this.heartsImages)
+        {
+            Destroy(image);
+        }
+
+        this.lifes = 0f;
+        this.heartsImages.Clear();
+        AddLifes(maxLifes);
     }
 
     public void Damage()

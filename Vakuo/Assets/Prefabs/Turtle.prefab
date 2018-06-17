@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4095526416081416}
   - component: {fileID: 54486101902096436}
-  - component: {fileID: 114895319572352018}
+  - component: {fileID: 114500898296008534}
   m_Layer: 9
   m_Name: Turtle
   m_TagString: Untagged
@@ -271,14 +271,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209458133586358}
-  m_LocalRotation: {x: 0, y: -0.58223647, z: 0, w: 0.8130195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -404.08148, y: 14.813686, z: 8.001482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4466752672024020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -71.216, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4128906083967204
 Transform:
   m_ObjectHideFlags: 1
@@ -587,7 +587,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
---- !u!114 &114895319572352018
+--- !u!114 &114500898296008534
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209458133586358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f018a64ce64f64e90eef9e1ea801bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f0de9e7064dbd14995dba369e726f54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
@@ -614,23 +614,23 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.111187644
-      value: 0.0139228515
-      inSlope: 0.28507882
-      outSlope: 0.28507882
+      time: 0.15
+      value: 0
+      inSlope: -0
+      outSlope: -0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.07462212
+      outWeight: 0.0850356
     - serializedVersion: 3
-      time: 0.8811795
-      value: 0.982773
-      inSlope: 0.29674047
-      outSlope: 0.29674047
+      time: 0.9
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.56020564
+      outWeight: 0.61995196
     - serializedVersion: 3
       time: 1
       value: 1
@@ -643,9 +643,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  startPosition: {x: -432.10605, y: 9.18, z: 38.897144}
-  endPosition: {x: -665.4148, y: 9.18, z: 121.60961}
+  startPosition: {x: -432.106, y: 9.18, z: 38.89714}
+  endPosition: {x: -668.7576, y: 9.18, z: 122.7465}
   duration: 30
+  _meshObject: {fileID: 1796586766192622}
+  _speed: 1
 --- !u!137 &137060158074791486
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

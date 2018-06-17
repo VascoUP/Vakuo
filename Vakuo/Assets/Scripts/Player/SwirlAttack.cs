@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwirlAttack : MonoBehaviour {
-
+    [SerializeField]
+    private EventManager _events;
     [SerializeField]
     private GameObject _meshObject;
     [SerializeField]
@@ -19,6 +20,11 @@ public class SwirlAttack : MonoBehaviour {
 
     private HashSet<int> _enemiesHit = new HashSet<int>();
     
+    private void OnEnable()
+    {
+        _events = Utils.GetComponentOnGameObject<EventManager>("Game Events");
+    }
+
     private IEnumerator Attack(int combo)
     {
         var time = 0f;
@@ -49,6 +55,7 @@ public class SwirlAttack : MonoBehaviour {
                 if (Vector3.Dot(direction, _meshObject.transform.right) > 0.7 ||
                     Vector3.Dot(direction, -_meshObject.transform.right) > 0.7)
                 {
+                    _events.onAttack();
                     EnemyPathing enemy = hit.transform.gameObject.GetComponent<EnemyPathing>();
                     if(enemy != null)
                     {

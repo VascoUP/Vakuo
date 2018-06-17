@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _inventoryUI;
 
+
     private void Start()
     {
         _events.onEnterState += OnEnterState;
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
             SetTimeScale(nextTimeScale);
             yield return null;
         }
+
         ChangeState(GameStatus.RUNNING);
     }
 
@@ -179,6 +181,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameStatus nSate)
     {
+        Debug.Log(nSate);
         _events.onExitState(_state);
         _events.onEnterState(nSate);
         _state = nSate;
