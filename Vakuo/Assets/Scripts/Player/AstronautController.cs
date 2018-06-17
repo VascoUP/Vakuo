@@ -380,6 +380,7 @@ public class AstronautController : MonoBehaviour {
 
     public void Respawn()
     {
+        _velocity.y = 0;
         gameObject.transform.position = spawnPosition;
     }
 }
