@@ -4,6 +4,9 @@
         <property name="uiMaxMarkerTracksVisible">
             <value>9</value>
         </property>
+        <relationship name="selectables">
+            <destination>{2395ee7e-2434-47e5-9729-002960123394}</destination>
+        </relationship>
         <relationship name="uiLastParameterSelection">
             <destination>{0ab3ddac-18e8-416e-a77e-8077177b8032}</destination>
         </relationship>
@@ -16,9 +19,6 @@
     <object class="Timeline" id="{0ab3ddac-18e8-416e-a77e-8077177b8032}">
         <property name="uiLastRulerScaleRatio">
             <value>0.024741116352201258</value>
-        </property>
-        <property name="uiLastHorizontalScrollBarValue">
-            <value>657</value>
         </property>
     </object>
     <object class="ParameterProxy" id="{066d9066-aebd-4dd3-931e-56306accfae4}">
@@ -48,7 +48,6 @@
         </property>
     </object>
     <object class="EventMixerGroup" id="{7afdb114-0ff7-486e-938b-54ff2efa610b}"/>
-    <object class="LoopRegion" id="{b27702a5-f78b-4eba-b5a2-595d480660ca}"/>
     <object class="MixerBusEffectChain" id="{6fbed840-fdbb-4918-a509-999eca23b88d}"/>
     <object class="MixerBusPanner" id="{a91feb9d-411a-4598-b793-71762b58b1d3}"/>
     <object class="MixerBusFader" id="{2861775f-caa0-46c6-a981-f6dfc9f9b21e}"/>
