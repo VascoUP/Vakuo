@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{5fb9a62d-a152-4cee-8ccf-3f252e7cbc65}">
+        <property name="name">
+            <value>Volume Pause</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{a8918762-670a-4b2f-9b89-ce236d85278e}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{a8918762-670a-4b2f-9b89-ce236d85278e}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.30000001192092896</value>
+        </property>
+    </object>
+</objects>

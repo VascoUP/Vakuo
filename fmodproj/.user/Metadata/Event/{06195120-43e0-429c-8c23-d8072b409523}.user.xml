@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{06195120-43e0-429c-8c23-d8072b409523}">
+        <relationship name="selectables">
+            <destination>{7f6a9136-7766-43f4-807c-3f0542da35a8}</destination>
+        </relationship>
         <relationship name="uiLastParameterSelection">
             <destination>{13c27aa6-91c1-4422-a18d-a1f8401769db}</destination>
         </relationship>
@@ -12,7 +15,7 @@
     <object class="GroupTrack" id="{d92087e1-c4de-4841-865c-4bd5c67b030a}"/>
     <object class="Timeline" id="{13c27aa6-91c1-4422-a18d-a1f8401769db}">
         <property name="uiLastRulerScaleRatio">
-            <value>0.036309433962264145</value>
+            <value>0.02461033634126333</value>
         </property>
     </object>
     <object class="EventMixerMaster" id="{669b42b2-48c8-4875-a880-71af4cc96ffa}">
@@ -22,10 +25,15 @@
     </object>
     <object class="MixerBusEffectChain" id="{53294cb0-ad77-421e-a997-79b725bee749}"/>
     <object class="MixerBusPanner" id="{1b6bfa7c-03b7-47a2-8753-1ccac2946a2d}"/>
+    <object class="MultiSound" id="{7f6a9136-7766-43f4-807c-3f0542da35a8}"/>
     <object class="EventMixerGroup" id="{91944574-6c84-4d04-9030-2ff0a1d47717}"/>
     <object class="MixerBusEffectChain" id="{eb014e5c-c5b8-47c0-b55d-c4a49b9492f6}"/>
     <object class="MixerBusPanner" id="{a81b41ce-88a9-442f-a89e-d5850d6f2842}"/>
     <object class="MixerBusFader" id="{2938fa87-1fd1-446f-95c9-11f8f4027da1}"/>
+    <object class="RandomizerModulator" id="{325bcbae-cddf-471e-bca6-6fdced04872b}"/>
+    <object class="SingleSound" id="{fc7d98c6-6331-4020-a1de-eb75088c7296}"/>
+    <object class="SingleSound" id="{e18a7767-bbf1-4092-b9c5-a36c829d5ec2}"/>
+    <object class="SingleSound" id="{3c15716e-7422-41f9-9076-4c37354d96bf}"/>
     <object class="MixerBusEffectChain" id="{1b792ea3-6d53-48c3-9886-560c2a48c37a}"/>
     <object class="MixerBusPanner" id="{09053064-c3f8-4cb2-8555-ce489f6d3d35}"/>
     <object class="MixerBusFader" id="{3783848e-add5-44eb-856a-0a2bd2860576}"/>
