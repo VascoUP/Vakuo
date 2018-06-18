@@ -69,6 +69,8 @@ public class MimicController : MonoBehaviour {
         _state = MimicStatus.ANIMAL_TURN;
         _numberOfSounds = initialNumberOfSounds;
 
+        transform.position = _mimicEmitter.transform.position;
+
         InteractionController ic = _mimicEmitter.GetComponent<InteractionController>();
         if (ic != null)
             ic.enabled = false;
