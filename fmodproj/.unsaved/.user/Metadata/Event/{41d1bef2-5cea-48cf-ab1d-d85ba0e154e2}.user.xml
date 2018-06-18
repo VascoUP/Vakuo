@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="Event" id="{41d1bef2-5cea-48cf-ab1d-d85ba0e154e2}">
+        <relationship name="uiLastParameterSelection">
+            <destination>{47d28c5c-af52-4672-b16b-de809ca7e3c3}</destination>
+        </relationship>
+    </object>
+    <object class="MasterTrack" id="{b613d018-2d05-40ba-bdf5-3624ad37cf0d}"/>
+    <object class="MixerInput" id="{7f86a803-e254-4922-924e-7fe482d421c2}"/>
+    <object class="EventAutomatableProperties" id="{be5031f4-6b6d-4ca6-a497-d09cddf9e69e}"/>
+    <object class="MarkerTrack" id="{458b2b83-9ef9-497a-870d-6d2e13328e9c}"/>
+    <object class="GroupTrack" id="{d558ff86-4a0a-4310-bc1f-c0a30cbc195d}"/>
+    <object class="Timeline" id="{47d28c5c-af52-4672-b16b-de809ca7e3c3}">
+        <property name="uiLastRulerScaleRatio">
+            <value>0.015707268220793141</value>
+        </property>
+    </object>
+    <object class="ParameterProxy" id="{3e80cc4f-7446-4254-a403-3f0b56cff184}">
+        <property name="uiLastRulerScaleRatio">
+            <value>0.00080385852090032153</value>
+        </property>
+    </object>
+    <object class="ParameterProxy" id="{b0af0405-98a3-4beb-a884-b404115fe881}">
+        <property name="uiLastRulerScaleRatio">
+            <value>0.00082034454470877774</value>
+        </property>
+    </object>
+    <object class="EventMixerMaster" id="{c9028800-3f66-4db0-beaf-78a12205f7ac}">
+        <relationship name="input">
+            <destination>{f31f72fc-3a24-4364-b1aa-68a5b2944abb}</destination>
+        </relationship>
+    </object>
+    <object class="MixerBusEffectChain" id="{f1678202-0432-4fd7-a6a8-75e1f6cc337d}"/>
+    <object class="MixerBusPanner" id="{dbec3760-8435-40a0-b605-4e75f7a4c06e}"/>
+    <object class="AutomationTrack" id="{4f65d125-d199-43ff-953d-95ab4970c615}"/>
+    <object class="SingleSound" id="{87e4499e-1ac0-402c-9073-5a2be6fa2be0}">
+        <property name="uiTriggerBehaviorDrawerVisible">
+            <value>true</value>
+        </property>
+    </object>
+    <object class="EventMixerGroup" id="{f31f72fc-3a24-4364-b1aa-68a5b2944abb}"/>
+    <object class="LoopRegion" id="{4c7aef22-3b7b-4673-9c6c-c22646ed41ab}"/>
+    <object class="MixerBusEffectChain" id="{c5f77ed5-6a5e-4bb7-974d-deb983b033ff}"/>
+    <object class="MixerBusPanner" id="{bc87f573-4a46-4352-bf7c-f69d22391218}"/>
+    <object class="MixerBusFader" id="{34e6486f-25c3-4926-9579-10535812142e}"/>
+    <object class="RandomizerModulator" id="{360ae32b-36df-445f-865f-a55063a279c2}"/>
+    <object class="RandomizerModulator" id="{056a4733-1a86-48e3-baec-8a2cac84b219}"/>
+    <object class="MixerBusEffectChain" id="{a99e6d75-8879-4aed-aa59-0c51296d1b27}"/>
+    <object class="MixerBusPanner" id="{e0ca37e7-3bda-4242-b1ca-46a651d4cad3}"/>
+    <object class="MixerBusFader" id="{a9ce602b-a61f-4bcd-8317-7a122e80da05}"/>
+    <object class="MixerBusFader" id="{dca74b91-9096-4d2b-8229-8a9cf9180d26}"/>
+</objects>
