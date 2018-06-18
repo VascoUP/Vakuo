@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _hurtTrigger;
+
     public GameObject panel;
     public GameObject heartPrefab;
     private float maxLifes;
@@ -99,6 +102,8 @@ public class PlayerLife : MonoBehaviour
 
     public void Kill()
     {
+        _hurtTrigger.SetActive(true);
+        _hurtTrigger.SetActive(false);
         foreach(Image image in this.heartsImages)
         {
             Destroy(image);
@@ -111,6 +116,8 @@ public class PlayerLife : MonoBehaviour
 
     public void Damage()
     {
+        _hurtTrigger.SetActive(true);
+        _hurtTrigger.SetActive(false);
         float livesRemaining = RemoveLifes();
         if (livesRemaining <= 0)
         {
