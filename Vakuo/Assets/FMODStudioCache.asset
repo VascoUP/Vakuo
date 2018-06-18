@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 114378654766201544}
   MasterBankRef: {fileID: 114389360411165450}
   StringsBankRef: {fileID: 114224232873107504}
-  stringsBankWriteTime: 636648863095330473
+  stringsBankWriteTime: 636648865088435980
   cacheVersion: 2
 --- !u!114 &114000639448739842
 MonoBehaviour:
@@ -208,8 +208,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114171839947458986}
-  - {fileID: 114432342598353144}
+  - {fileID: 114349001656363100}
+  - {fileID: 114143718550686148}
   MinDistance: 1
   MaxDistance: 20
   Length: 64061
@@ -578,6 +578,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 234880
   Exists: 1
+--- !u!114 &114067091569354468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114068810902817264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,6 +641,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114073564803298724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CanLoop
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114080944873918528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Misc.bank
-  lastModified: 636648863097375524
+  lastModified: 636648865090414750
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -723,6 +753,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114090326968186570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume GamePlay
   Min: 0
   Max: 1
   Default: 0
@@ -1072,6 +1117,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3321248
   Exists: 1
+--- !u!114 &114143718550686148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114146437965602968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1249,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114164493038206566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114164507447524390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,6 +1317,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 38230
+--- !u!114 &114168787423141796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114171839947458986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,6 +1515,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114204081455063040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114208134804453196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,7 +1648,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 55
   Length: 4419
 --- !u!114 &114220163864825204
 MonoBehaviour:
@@ -1618,7 +1723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Master
     Bank.strings.bank
-  lastModified: 636648863095330473
+  lastModified: 636648865088435980
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1860,6 +1965,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114253846898141940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Fantasm
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114254972651821848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1999,12 +2119,12 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114468583558282970}
-  - {fileID: 114364288745730166}
-  - {fileID: 114646304783769504}
-  - {fileID: 114357636387545968}
-  - {fileID: 114742991147521186}
-  - {fileID: 114223170884731554}
+  - {fileID: 114645858740197006}
+  - {fileID: 114616047355679028}
+  - {fileID: 114090326968186570}
+  - {fileID: 114930162106550386}
+  - {fileID: 114323730206770876}
+  - {fileID: 114448343081923376}
   MinDistance: 0
   MaxDistance: 0
   Length: 159292
@@ -2330,7 +2450,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 30
   Length: 2282
 --- !u!114 &114282330872021784
 MonoBehaviour:
@@ -2645,6 +2765,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 33982
+--- !u!114 &114323730206770876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 2
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114331294169935782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2817,36 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 33982
+--- !u!114 &114340788836296826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Challange
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114349001656363100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Action
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114349020538953940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,6 +2968,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114364107513330502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Mountain
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114364288745730166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2882,6 +3062,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114370746204188268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Drones
   Min: 0
   Max: 1
   Default: 0
@@ -3040,7 +3235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Master
     Bank.bank
-  lastModified: 636648863095295380
+  lastModified: 636648865088390852
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -3375,6 +3570,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114430250526285344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Challange Transition
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114432342598353144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3529,6 +3739,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114448343081923376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114449290254276114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3661,6 +3886,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114462835195655456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Chord Type
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114463766248511054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3748,7 +3988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Ambience.bank
-  lastModified: 636648863096353196
+  lastModified: 636648865089283361
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -3843,6 +4083,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 565
+--- !u!114 &114478026165178400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114478211380748492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,6 +4188,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114486222656155356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114486783268770886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3967,8 +4237,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114486783268770886}
-  - {fileID: 114520229702141628}
+  - {fileID: 114340788836296826}
+  - {fileID: 114486222656155356}
   MinDistance: 0
   MaxDistance: 0
   Length: 16991
@@ -4069,10 +4339,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114138184519845594}
-  - {fileID: 114975586172335716}
-  - {fileID: 114130786642860230}
-  - {fileID: 114894670659918040}
+  - {fileID: 114650777570095890}
+  - {fileID: 114875685146906472}
+  - {fileID: 114067091569354468}
+  - {fileID: 114929196992019404}
   MinDistance: 0
   MaxDistance: 0
   Length: 684
@@ -4118,7 +4388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Animals.bank
-  lastModified: 636648863096585256
+  lastModified: 636648865089514018
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -4568,6 +4838,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14677
+--- !u!114 &114599569235910734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Tension
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114610197864416302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4580,6 +4865,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Volume Drones
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114610254204170188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
   Min: 0
   Max: 1
   Default: 0
@@ -4606,6 +4906,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114616047355679028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 1
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114618559431548204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4775,8 +5090,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114252298763047322}
-  - {fileID: 114710540991643974}
+  - {fileID: 114164493038206566}
+  - {fileID: 114364107513330502}
   MinDistance: 1
   MaxDistance: 20
   Length: 137875
@@ -4844,6 +5159,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114645858740197006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114646304783769504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4871,6 +5201,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114650777570095890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Main
   Min: 0
   Max: 1
   Default: 0
@@ -4930,8 +5275,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114295406454523360}
-  - {fileID: 114860958597796188}
+  - {fileID: 114665941605180372}
+  - {fileID: 114168787423141796}
   MinDistance: 1
   MaxDistance: 20
   Length: 299690
@@ -4962,7 +5307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Music.bank
-  lastModified: 636648863097644585
+  lastModified: 636648865090710532
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -5013,6 +5358,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Can Loop 4
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114665941605180372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume Birds
   Min: 0
   Max: 1
   Default: 0
@@ -5450,8 +5810,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114209693731681188}
-  - {fileID: 114825840932496612}
+  - {fileID: 114370746204188268}
+  - {fileID: 114610254204170188}
   MinDistance: 1
   MaxDistance: 20
   Length: 72000
@@ -5560,8 +5920,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114650829838217180}
-  - {fileID: 114744208268167534}
+  - {fileID: 114478026165178400}
+  - {fileID: 114430250526285344}
   MinDistance: 0
   MaxDistance: 0
   Length: 38230
@@ -5584,8 +5944,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114042260606997144}
-  - {fileID: 114855062172764280}
+  - {fileID: 114599569235910734}
+  - {fileID: 114912514571741552}
   MinDistance: 1
   MaxDistance: 20
   Length: 43951
@@ -6161,7 +6521,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 45
   Length: 7245
 --- !u!114 &114811646860437476
 MonoBehaviour:
@@ -6488,8 +6848,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114622076382420310}
-  - {fileID: 114761021722251718}
+  - {fileID: 114253846898141940}
+  - {fileID: 114204081455063040}
   MinDistance: 1
   MaxDistance: 20
   Length: 308170
@@ -6716,6 +7076,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 95000
+--- !u!114 &114875685146906472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Select
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114875967744407244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6758,7 +7133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Character.bank
-  lastModified: 636648863096871000
+  lastModified: 636648865089906742
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -6927,6 +7302,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114912514571741552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114919775003037552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6978,6 +7368,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114929196992019404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Animal
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114929303777003114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7022,6 +7427,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 13994
+--- !u!114 &114930162106550386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Can Loop Intro
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114930187744098820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7168,7 +7588,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114515103973658228}
+  - {fileID: 114462835195655456}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -7191,7 +7611,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114475728334220044}
+  - {fileID: 114073564803298724}
   MinDistance: 1
   MaxDistance: 35
   Length: 11605
@@ -7415,7 +7835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build\Desktop\Effects.bank
-  lastModified: 636648863097149613
+  lastModified: 636648865090187488
   LoadResult: 0
   FileSizes:
   - Name: Desktop
