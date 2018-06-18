@@ -5,7 +5,7 @@
             <value>Fantasm</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{1d337847-964d-4917-a950-78f0be1482bf}</destination>
@@ -138,7 +138,6 @@
     <object class="MixerBusEffectChain" id="{b468de38-1e24-4764-b7c6-035615075a03}">
         <relationship name="effects">
             <destination>{ffdf4e5a-e86f-4337-9b65-8f87f81c816d}</destination>
-            <destination>{ecf77699-e853-4210-8a45-aefc05961ffd}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{53b62320-9358-4db3-8bbd-de8b54914b42}"/>
@@ -159,7 +158,6 @@
     </object>
     <object class="MixerBusPanner" id="{a0260ba9-f535-4040-a9bc-b0d5e5bbc821}"/>
     <object class="MixerBusFader" id="{ffdf4e5a-e86f-4337-9b65-8f87f81c816d}"/>
-    <object class="SpatialiserEffect" id="{ecf77699-e853-4210-8a45-aefc05961ffd}"/>
     <object class="AutomationCurve" id="{647cd457-c122-489c-8ec3-cae4973545c3}">
         <relationship name="parameter">
             <destination>{6c514d39-4569-446a-8945-3f1cef32ea4a}</destination>
