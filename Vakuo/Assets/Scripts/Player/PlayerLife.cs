@@ -88,7 +88,6 @@ public class PlayerLife : MonoBehaviour
             this.lifes++;
             index++;
             AddImage(index);
-            Debug.Log("ADDED IMAGE AT " + index + " lifes " + this.lifes + " " + ((this.lifes + 1f) - this.heartsImages.Count));
             this.heartsImages[index].fillAmount = (this.lifes + 1f) - this.heartsImages.Count;
         }
         else
