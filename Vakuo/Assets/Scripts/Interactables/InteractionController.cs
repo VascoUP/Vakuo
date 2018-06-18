@@ -82,7 +82,6 @@ public class InteractionController : MonoBehaviour
             (_target == null || 
             _target.GetInstanceID() != other.transform.GetInstanceID()))
         {
-            Debug.Log(_target);
             _target = other.transform;
         }
     }

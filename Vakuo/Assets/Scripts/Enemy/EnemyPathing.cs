@@ -51,6 +51,7 @@ public class EnemyPathing : MonoBehaviour {
     public float distanceToCharge;
     public float maxDistanceAwayFromPath;
     public float maxRotation;
+    public float minDistToUpdate = 100f;
 
     public float _pushYSpeed;
     public float _pushHorizontalSpeed;
@@ -149,8 +150,6 @@ public class EnemyPathing : MonoBehaviour {
         {
             direction.Normalize();
             Move(direction * moveSpeed * Time.deltaTime);
-            //_characterController.Move(direction * moveSpeed * Time.deltaTime);
-
             yield return null;
 
             direction = target.transform.position - transform.position;
@@ -177,8 +176,6 @@ public class EnemyPathing : MonoBehaviour {
             float deltaTime = Time.deltaTime;
             time += deltaTime;
             Move(direction * moveSpeed * deltaTime);
-            //_characterController.Move(direction * moveSpeed * deltaTime);
-
             yield return null;
         }
 
@@ -187,20 +184,7 @@ public class EnemyPathing : MonoBehaviour {
 
     private IEnumerator RunFromPlayer(Vector3 point, float moveSpeed)
     {
-        /*
-        Vector3 direction = point - transform.position;
-        direction.Normalize();
-
-        while (Mathf.Approximately(transform.position.x, point.x) &&
-                Mathf.Approximately(transform.position.y, point.y) &&
-                Mathf.Approximately(transform.position.z, point.z))
-        {
-            //TODO: Move might lead to a point where the enemy runs forever
-            _characterController.Move(direction * moveSpeed * Time.deltaTime);
-        }
-        */
         yield return null;
-
         ChangeState(EnemyStates.DECIDE_TO_MOVE);
     }
 
@@ -219,7 +203,6 @@ public class EnemyPathing : MonoBehaviour {
 
     private bool WillAttackPlayer()
     {
-        //TODO: Communicate between all enemies to decide which one attacks
         return true;
     }
 
@@ -302,10 +285,15 @@ public class EnemyPathing : MonoBehaviour {
         if (_target != null && _state == EnemyStates.IDDLE && !_isPDead)
         {
             float distToP = (_target.transform.position - transform.position).magnitude;
+            // Change to Player Entered when he's at a certain distance
             if (distToP < distToAttack &&
                 PlayerIsReachable())
             {
                 _state = EnemyStates.PLAYER_ENTERED;
+            }
+            // Don't update if player is to far from you
+            else if(distToP > minDistToUpdate) {
+                return;
             }
         }
 
@@ -415,11 +403,9 @@ public class EnemyPathing : MonoBehaviour {
             }
         }
 
-        if (hit.gameObject.tag != "Ground" &&
-            hit.gameObject.tag != "Mountain" &&
-            !(hit.gameObject.tag == "Enemy" && hit.gameObject == gameObject) &&
-            hit.gameObject.tag != "Enemy Camp" &&
-            _state == EnemyStates.CHARGE)
+        if (_state == EnemyStates.CHARGE &&
+            hit.gameObject.tag != "Ground" &&
+            hit.gameObject.tag != "Mountain")
         {
             StopAllCoroutines();
             runningCoroutine = null;
