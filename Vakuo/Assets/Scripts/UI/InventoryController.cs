@@ -19,11 +19,18 @@ public class InventoryController : MonoBehaviour {
     public GameObject slotPrefab; 
     #endregion
 
+    #region sound
+    [Header("Sounds")]
+    [SerializeField]
+    private GameObject _inventorySound;
+    #endregion
+
     #region public
     public InventoryEvent onItemSelected;
     #endregion
 
     #region private 
+    [Header("Buttons")]
     [SerializeField]
     private Button _backButton;
     // a flag that is set when the inventory needs refreshing that is reset each frame, we do this not to have more than 1 refresh each frame
@@ -56,6 +63,9 @@ public class InventoryController : MonoBehaviour {
             {
                 onItemSelected(itemSlot.inventoryItemReference.Name);
             }
+            
+            _inventorySound.SetActive(true);
+            _inventorySound.SetActive(false);
         }
     }
 

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\fmodproj.fspro
-  SourceProjectPathUnformatted: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\fmodproj.fspro
-  SourceBankPathUnformatted: C:\Users\alcin\OneDrive\Documentos\gits\Vakuo\fmodproj\Build
+  sourceProjectPath: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
+  SourceProjectPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\fmodproj.fspro
+  SourceBankPathUnformatted: C:\Users\vasco\Documents\Vakuo\fmodproj\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0

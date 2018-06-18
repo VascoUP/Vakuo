@@ -17,12 +17,15 @@ public class SwirlAttack : MonoBehaviour {
     private float _attackRange;
 
     private bool _isAttacking = false;
+    private bool _canAttack = true;
 
     private HashSet<int> _enemiesHit = new HashSet<int>();
     
     private void OnEnable()
     {
         _events = Utils.GetComponentOnGameObject<EventManager>("Game Events");
+        _events.onEnterState += OnEnterState;
+        _events.onExitState += OnExitState;
     }
 
     private IEnumerator Attack(int combo)
@@ -76,11 +79,41 @@ public class SwirlAttack : MonoBehaviour {
 	// Update is called once per frame
 	private void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Mouse0) && !_isAttacking)
+		if(_canAttack && !_isAttacking && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _attackTrigger.SetActive(true);
             _attackTrigger.SetActive(false);
             StartCoroutine(Attack(0));
         }
 	}
+    
+    private void OnEnterState(GameStatus state)
+    {
+        switch (state)
+        {
+            case GameStatus.RUNNING:
+            case GameStatus.CAMERA_SEQUENCE:
+                _canAttack = true;
+                break;
+        }
+    }
+
+    private void OnExitState(GameStatus state)
+    {
+        switch (state)
+        {
+            case GameStatus.RUNNING:
+            case GameStatus.CAMERA_SEQUENCE:
+                _canAttack = false;
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _events.onEnterState -= OnEnterState;
+        _events.onExitState -= OnExitState;
+
+        StopAllCoroutines();
+    }
 }
