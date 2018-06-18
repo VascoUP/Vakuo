@@ -49,6 +49,9 @@ public class SelectInventoryItem : MonoBehaviour {
 			// Enable inventory selection
 			EnableSelection (true);
         }
+        else {
+            EnableSelection(false);
+        }
     }
 
     private void AnimalSelected(string animal)
