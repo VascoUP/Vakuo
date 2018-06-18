@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            // Show mousse
+            Cursor.visible = true;
             SceneManager.LoadScene(outroSceneIndex);
         }
     }
