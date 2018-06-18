@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{61574984-fa50-4a18-95f4-936d66666716}">
+        <property name="name">
+            <value>Volume Turtle</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{b7f064ca-1254-4066-8422-3f387d49a10d}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{b7f064ca-1254-4066-8422-3f387d49a10d}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
