@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{a34ae036-57c1-4503-8e8c-4c68a32ef983}">
+        <property name="name">
+            <value>Volume Purr</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{cdadccf3-95e0-42f8-8a17-eb175b90a65a}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{cdadccf3-95e0-42f8-8a17-eb175b90a65a}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

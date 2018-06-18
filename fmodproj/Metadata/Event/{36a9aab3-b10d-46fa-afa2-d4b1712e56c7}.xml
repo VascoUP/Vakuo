@@ -5,7 +5,7 @@
             <value>MountainAmbient</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{1d337847-964d-4917-a950-78f0be1482bf}</destination>
@@ -167,7 +167,6 @@
     <object class="MixerBusEffectChain" id="{33dc907e-4ac5-4581-a9bd-3add4d6d75aa}">
         <relationship name="effects">
             <destination>{e94d426c-5d54-4565-9172-d1ac964e00d9}</destination>
-            <destination>{7e7fd72d-9248-4569-83a6-363cdffd98fe}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{5fcd6502-a236-4aec-8fa3-2e0be4f75761}"/>
@@ -204,7 +203,6 @@
     </object>
     <object class="MixerBusPanner" id="{3edaf07c-ce3c-4187-b7a1-70247d2ace9f}"/>
     <object class="MixerBusFader" id="{e94d426c-5d54-4565-9172-d1ac964e00d9}"/>
-    <object class="SpatialiserEffect" id="{7e7fd72d-9248-4569-83a6-363cdffd98fe}"/>
     <object class="AutomationPoint" id="{53846265-5fa5-495e-8dff-808c285a575f}">
         <property name="position">
             <value>0</value>

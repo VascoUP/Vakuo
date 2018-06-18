@@ -5,7 +5,7 @@
             <value>Tension</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{1d337847-964d-4917-a950-78f0be1482bf}</destination>
@@ -150,7 +150,6 @@
     <object class="MixerBusEffectChain" id="{6fbed840-fdbb-4918-a509-999eca23b88d}">
         <relationship name="effects">
             <destination>{31caa870-e288-453f-9a3b-ddd0eb42dacd}</destination>
-            <destination>{ddfe9e29-4d23-494f-a804-7266040f7e3c}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{a91feb9d-411a-4598-b793-71762b58b1d3}"/>
@@ -179,7 +178,6 @@
     </object>
     <object class="MixerBusPanner" id="{dc080e46-58be-496b-826c-4251bf4524f1}"/>
     <object class="MixerBusFader" id="{31caa870-e288-453f-9a3b-ddd0eb42dacd}"/>
-    <object class="SpatialiserEffect" id="{ddfe9e29-4d23-494f-a804-7266040f7e3c}"/>
     <object class="AutomationCurve" id="{00f3eea7-70e0-472b-afb3-d98f67f74e9a}">
         <relationship name="parameter">
             <destination>{6c514d39-4569-446a-8945-3f1cef32ea4a}</destination>

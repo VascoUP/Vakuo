@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{59a7cfd5-69aa-4e94-9fdf-10d03c3160d3}">
         <relationship name="selectables">
-            <destination>{cc063cf3-ee9f-4985-b07e-a2bddb923701}</destination>
+            <destination>{df9d5dce-6227-4fb4-8550-4c9e3bfdf3fc}</destination>
         </relationship>
         <relationship name="uiLastParameterSelection">
             <destination>{56dc50af-9315-4270-9572-350a8adc53ef}</destination>
@@ -38,6 +38,7 @@
     <object class="AutomationTrack" id="{d0d9e7df-5d66-4a79-a8aa-6cb48b815677}"/>
     <object class="MultiSound" id="{ee057214-9b61-4b02-a088-4dda53057170}"/>
     <object class="EventMixerGroup" id="{9f9f6fb6-6fc8-4403-b51b-f4d34b09cc2a}"/>
+    <object class="LoopRegion" id="{7dffd911-e6e8-4b5e-80be-d56122df22a0}"/>
     <object class="MixerBusEffectChain" id="{50839899-3af2-4597-b740-ee978f70e673}"/>
     <object class="MixerBusPanner" id="{1b3b865d-9665-44c0-85ad-b9c045c7892e}"/>
     <object class="MixerBusFader" id="{7ed056af-4214-4456-9e17-d1904e0173b1}"/>
@@ -48,6 +49,5 @@
     <object class="MixerBusEffectChain" id="{50b7db24-3a89-4604-beb1-bd06f6d82103}"/>
     <object class="MixerBusPanner" id="{c691ac21-cfc6-46a7-8d19-e8e58ec7bb17}"/>
     <object class="MixerBusFader" id="{5d7ae35a-4a0a-4bf1-9947-6bf15dc2da92}"/>
-    <object class="SpatialiserEffect" id="{db200ee1-0a55-4e83-a996-f8bb84dd9a22}"/>
     <object class="MixerBusFader" id="{58456d2a-d266-4a85-a112-92248d2feb6d}"/>
 </objects>

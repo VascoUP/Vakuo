@@ -5,7 +5,7 @@
             <value>Action</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{1d337847-964d-4917-a950-78f0be1482bf}</destination>
@@ -77,6 +77,9 @@
         <relationship name="modules">
             <destination>{9df198d3-a1f6-4446-87de-77affc2b9d51}</destination>
         </relationship>
+        <relationship name="markers">
+            <destination>{08ff37b1-67e0-4102-88dc-9513d42c3fe1}</destination>
+        </relationship>
     </object>
     <object class="ParameterProxy" id="{a5c110dd-a6da-4915-bc1c-668667b87423}">
         <relationship name="preset">
@@ -138,10 +141,23 @@
             <destination>{00cc4346-675b-4b69-a347-6061bde5ba47}</destination>
         </relationship>
     </object>
+    <object class="LoopRegion" id="{08ff37b1-67e0-4102-88dc-9513d42c3fe1}">
+        <property name="position">
+            <value>0</value>
+        </property>
+        <property name="length">
+            <value>64.06154166666667</value>
+        </property>
+        <relationship name="timeline">
+            <destination>{4e918e73-cf86-4e88-8b5f-20dfddf7f00e}</destination>
+        </relationship>
+        <relationship name="markerTrack">
+            <destination>{889bc57b-5a54-4f33-92f0-2be1670bef37}</destination>
+        </relationship>
+    </object>
     <object class="MixerBusEffectChain" id="{6fdc2eec-f284-40e4-b6ed-35a68c3e6cec}">
         <relationship name="effects">
             <destination>{a4092692-7aff-4dce-99a5-d69c3a16e3b0}</destination>
-            <destination>{0fab3dbc-6687-49f7-a003-409d70202493}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{05b8abd4-b374-4304-980c-1ab0887ddb46}"/>
@@ -162,7 +178,6 @@
     </object>
     <object class="MixerBusPanner" id="{52cf461f-b53c-4f0d-bffa-d7f0e5710c7e}"/>
     <object class="MixerBusFader" id="{a4092692-7aff-4dce-99a5-d69c3a16e3b0}"/>
-    <object class="SpatialiserEffect" id="{0fab3dbc-6687-49f7-a003-409d70202493}"/>
     <object class="AutomationCurve" id="{df8f989f-a5e8-4721-bd47-80adfbebe6e3}">
         <relationship name="parameter">
             <destination>{6c514d39-4569-446a-8945-3f1cef32ea4a}</destination>
