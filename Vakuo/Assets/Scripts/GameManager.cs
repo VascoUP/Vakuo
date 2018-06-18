@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         _events.onExitState += OnExitState;
         _events.onPlayerPushed += OnPlayerPushed;
 
+        _mimic.gameObject.SetActive(false);
         _mimic.enabled = false;
 
         onUpdate += FirstFrame;
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour
                 SetTimeScale(_cameraSequenceSlowScale);
                 break;
             case GameStatus.MIMIC:
+                _mimic.gameObject.SetActive(true);
                 _mimic.enabled = true;
                 break;
             case GameStatus.INVENTORY_SELECTION:
@@ -168,6 +170,7 @@ public class GameManager : MonoBehaviour
                 SetTimeScale(1f);
                 break;
             case GameStatus.MIMIC:
+                _mimic.gameObject.SetActive(false);
                 _mimic.enabled = false;
                 break;
             case GameStatus.INVENTORY_SELECTION:
