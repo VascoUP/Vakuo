@@ -28,7 +28,7 @@ public class PlayerLife : MonoBehaviour
     }
 
 	void AddImage(int index){
-        float x = 80 * index;
+        float x = (60 * index) + 10;
 
         Transform transform = panel.transform;
 		GameObject instance = Instantiate(heartPrefab, panel.transform);
