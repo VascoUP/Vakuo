@@ -559,15 +559,15 @@ MonoBehaviour:
 
     Left Mouse Button - To combat enemy creatures
 
-    1 - To mimic the sound represented by a triangle
+    1 - To mimic the sound represented by a pyramid
 
     2 - To mimic the sound represented by a cube
 
-    3 - To mimic the sound represented by a cube
+    3 - To mimic the sound represented by a prisma-like solid
 
-    4 - To mimic the sound represented by a cube
+    4 - To mimic the sound represented by a sphere-like solid
 
-    I - To access inventory'
+    I - To access inventory in the places indicated'
 --- !u!222 &550246472
 CanvasRenderer:
   m_ObjectHideFlags: 0

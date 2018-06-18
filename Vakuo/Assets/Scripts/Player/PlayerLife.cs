@@ -28,12 +28,12 @@ public class PlayerLife : MonoBehaviour
     }
 
 	void AddImage(int index){
-        float x = 60 * index;
+        float x = 80 * index;
 
         Transform transform = panel.transform;
 		GameObject instance = Instantiate(heartPrefab, panel.transform);
 		RectTransform rect = instance.GetComponent<RectTransform>();
-        rect.Translate(new Vector3(x, 0, 0));
+        rect.Translate(new Vector3(x, -20, 0));
 		Image myImage = instance.GetComponent<Image>();
 		this.heartsImages.Add(myImage);
 	}
