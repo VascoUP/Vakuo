@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerSoundController : MonoBehaviour {
 	[SerializeField]
-    private EventManager _events;
-	[SerializeField]
 	private CharacterController cc;
 	[SerializeField]
 	private GameObject groundSound0;

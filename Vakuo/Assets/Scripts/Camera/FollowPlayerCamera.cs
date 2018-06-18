@@ -72,7 +72,6 @@ public class FollowPlayerCamera : MonoBehaviour
             _bumperDistanceCheck, _bumperLayers)
             && hit.transform != target) // ignore ray-casts that hit the user. DR
         {
-            Debug.Log(hit.transform.gameObject.name);
             float dist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), hit.point);
             float wantedDist = Vector3.Distance(target.TransformPoint(_bumperRayOffset), wantedPosition);
             if (dist < wantedDist)

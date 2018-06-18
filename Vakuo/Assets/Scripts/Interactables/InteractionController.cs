@@ -78,7 +78,7 @@ public class InteractionController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && 
+        if (other.gameObject.tag == "Player" && other.gameObject.name == "Tommy" && 
             (_target == null || 
             _target.GetInstanceID() != other.transform.GetInstanceID()))
         {

@@ -28,12 +28,12 @@ public class PlayerLife : MonoBehaviour
     }
 
 	void AddImage(int index){
-        float x = 60 * index;
+        float x = (60 * index) + 10;
 
         Transform transform = panel.transform;
 		GameObject instance = Instantiate(heartPrefab, panel.transform);
 		RectTransform rect = instance.GetComponent<RectTransform>();
-        rect.Translate(new Vector3(x, 0, 0));
+        rect.Translate(new Vector3(x, -20, 0));
 		Image myImage = instance.GetComponent<Image>();
 		this.heartsImages.Add(myImage);
 	}
@@ -88,7 +88,6 @@ public class PlayerLife : MonoBehaviour
             this.lifes++;
             index++;
             AddImage(index);
-            Debug.Log("ADDED IMAGE AT " + index + " lifes " + this.lifes + " " + ((this.lifes + 1f) - this.heartsImages.Count));
             this.heartsImages[index].fillAmount = (this.lifes + 1f) - this.heartsImages.Count;
         }
         else
