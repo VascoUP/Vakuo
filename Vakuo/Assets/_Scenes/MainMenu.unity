@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 742354184}
   - component: {fileID: 742354183}
   - component: {fileID: 742354182}
+  - component: {fileID: 742354185}
   m_Layer: 5
   m_Name: Main Panel
   m_TagString: Untagged
@@ -866,6 +867,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &742354185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742354181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Vakuo/Game/Music/Pause
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Volume Pause
+    Value: 0.7
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &911837433
 GameObject:
   m_ObjectHideFlags: 0
