@@ -33,8 +33,6 @@ public class FollowPlayerCamera : MonoBehaviour
     [SerializeField]
     private Vector3 _bumperRayOffset;
 
-    private bool _isShaking = false;
-
     private IEnumerator _zoomEffect;
     // (x: Distance, y: Min Height, z: Max Height)
     private Vector3 _targetZoom;
