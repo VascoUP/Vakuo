@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{d4781ac5-236f-4efe-992f-2c0e140a6435}">
+        <property name="name">
+            <value>Volume Lake</value>
+        </property>
+        <relationship name="folder">
+            <destination>{b9b835e6-652c-4653-985c-25240c41b750}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{88c4e33c-fdfb-48e9-bd48-e5cbf96057f5}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{88c4e33c-fdfb-48e9-bd48-e5cbf96057f5}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.30000001192092896</value>
+        </property>
+    </object>
+</objects>
