@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _inventoryUI;
 
+    [SerializeField]
+    private GameObject _pauseSound;
 
     private void Start()
     {
@@ -123,6 +125,9 @@ public class GameManager : MonoBehaviour
             case GameStatus.PAUSED:
                 onUpdate += UpdateGenericMenu;
 
+                _pauseSound.SetActive(true);
+                _pauseSound.SetActive(false);
+
                 Time.timeScale = 0f;
                 _pauseUI.SetActive(true);
 
@@ -143,6 +148,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameStatus.INVENTORY_SELECTION:
                 onUpdate += UpdateGenericMenu;
+                
+                _pauseSound.SetActive(true);
+                _pauseSound.SetActive(false);
 
                 Time.timeScale = 0f;
                 _inventoryUI.SetActive(true);
