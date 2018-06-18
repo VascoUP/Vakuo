@@ -113,6 +113,9 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{11cc1474-b1ba-4283-842f-f0eea063527a}">
+        <property name="volume">
+            <value>2</value>
+        </property>
         <property name="name">
             <value>Pop up sound</value>
         </property>
@@ -146,7 +149,7 @@
     </object>
     <object class="EventMixerGroup" id="{bd2459cd-62db-430e-8038-4812f6d5b018}">
         <property name="volume">
-            <value>-3</value>
+            <value>-2.5</value>
         </property>
         <property name="name">
             <value>Elephant cry</value>
@@ -208,7 +211,11 @@
     </object>
     <object class="MixerBusPanner" id="{5737061d-35cb-4210-9e1c-48541bf257e6}"/>
     <object class="MixerBusFader" id="{53a1d462-23ba-4a53-b4fd-4aa508e43da6}"/>
-    <object class="SpatialiserEffect" id="{ed4d1f38-cec0-4970-bfae-5eca00cd49c9}"/>
+    <object class="SpatialiserEffect" id="{ed4d1f38-cec0-4970-bfae-5eca00cd49c9}">
+        <property name="maximumDistance">
+            <value>55</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{4e29485a-82bc-4caf-afbe-72e2c2111cf5}"/>
     <object class="MixerBusFader" id="{ca4012e9-75e0-466c-9750-58f4d07d899d}"/>
 </objects>
