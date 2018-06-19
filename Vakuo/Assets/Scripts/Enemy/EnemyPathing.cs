@@ -282,9 +282,9 @@ public class EnemyPathing : MonoBehaviour {
             ChangeState(EnemyStates.IDDLE);
         }
 
+        float distToP = (_target.transform.position - transform.position).magnitude;
         if (_target != null && _state == EnemyStates.IDDLE && !_isPDead)
         {
-            float distToP = (_target.transform.position - transform.position).magnitude;
             // Change to Player Entered when he's at a certain distance
             if (distToP < distToAttack &&
                 PlayerIsReachable())
@@ -334,7 +334,9 @@ public class EnemyPathing : MonoBehaviour {
             StartState();
         }
 
-        if ((DistanceToPath() > maxDistanceAwayFromPath || !PlayerIsReachable()) && _state != EnemyStates.IDDLE && !_dead)
+        if (((DistanceToPath() > maxDistanceAwayFromPath && distToP > distToAttack)|| 
+            !PlayerIsReachable()) && 
+            _state != EnemyStates.IDDLE && !_dead)
         {
             StopAllCoroutines();
             ChangeState(EnemyStates.IDDLE);
@@ -387,7 +389,7 @@ public class EnemyPathing : MonoBehaviour {
 
     private void DamagePlayer(PlayerLife astronautLives)
     {
-        astronautLives.Damage();
+        astronautLives.Damage(2);
     }
 
     public void OnControllerColliderHit(ControllerColliderHit hit)

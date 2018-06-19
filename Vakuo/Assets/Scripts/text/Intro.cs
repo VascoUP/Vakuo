@@ -52,7 +52,7 @@ public class Intro : MonoBehaviour {
             }
         } else
 
-            if (endOfLine)
+        if (endOfLine && Input.anyKeyDown)
         {
             line++;
             cursor = 0;

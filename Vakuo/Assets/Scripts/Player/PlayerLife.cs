@@ -28,17 +28,21 @@ public class PlayerLife : MonoBehaviour
         {
             AddImage(i);
         }
+        Debug.Log("End create panel");
     }
 
 	void AddImage(int index){
         float x = (60 * index) + 10;
 
+        Debug.Log(x + "->" + index);
+
         Transform transform = panel.transform;
 		GameObject instance = Instantiate(heartPrefab, panel.transform);
 		RectTransform rect = instance.GetComponent<RectTransform>();
-        rect.Translate(new Vector3(x, -20, 0));
+        rect.anchoredPosition = new Vector3(x, -20, 0);
 		Image myImage = instance.GetComponent<Image>();
 		this.heartsImages.Add(myImage);
+        Debug.Log(rect.position + "->" + index);
 	}
 
 	float RemoveLifes() {
@@ -51,7 +55,7 @@ public class PlayerLife : MonoBehaviour
         {
             if (Math.Abs(this.lifes % 1) <= (Double.Epsilon * 100))
             {
-                this.heartsImages[this.heartsImages.Count - 1].fillAmount = 0;
+                Destroy(this.heartsImages[this.heartsImages.Count - 1].gameObject);
                 this.heartsImages.RemoveAt(this.heartsImages.Count - 1);
             }
             else
@@ -106,7 +110,7 @@ public class PlayerLife : MonoBehaviour
         _hurtTrigger.SetActive(false);
         foreach(Image image in this.heartsImages)
         {
-            Destroy(image);
+            Destroy(image.gameObject);
         }
 
         this.lifes = 0f;
@@ -127,6 +131,8 @@ public class PlayerLife : MonoBehaviour
 
     public void Damage(int multiplier)
     {
+        _hurtTrigger.SetActive(true);
+        _hurtTrigger.SetActive(false);
         for (int i = 0; i < multiplier; ++i)
         {
             float livesRemaining = RemoveLifes();
