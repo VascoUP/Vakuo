@@ -630,7 +630,7 @@ MonoBehaviour:
 
     D - To move the player to the right
 
-    E - To interact with animals and objects found in the world
+    E - To interact with objects found in the world
 
     Left Mouse Button - To combat enemy creatures
 
@@ -642,7 +642,11 @@ MonoBehaviour:
 
     4 - To mimic the sound represented by a sphere-like solid
 
-    I - To access inventory in the places indicated'
+    I - To access inventory in the places indicated
+
+    ESC - To access the pause menu
+
+    SPACE BAR - To make the player jump'
 --- !u!222 &550246472
 CanvasRenderer:
   m_ObjectHideFlags: 0
